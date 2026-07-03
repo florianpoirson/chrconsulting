@@ -131,29 +131,45 @@
       text-transform:uppercase;
       color:var(--muted);
     }
-    
     .btn:hover{
   transform: translateY(-1px);
 }
     .tricolor-line{
-    width:260px;
+    width:270px;
     height:1px;
-    margin:-8px auto 55px;
+    margin:-4px auto 50px;
     display:flex;
-    gap:56px;
+    align-items:center;
+    justify-content:center;
 }
-
 .tricolor-line .blue{
-    flex:1;
+    width:90px;
     height:1px;
     background:#5F78A6;
 }
-
+.tricolor-line .space{
+    width:90px;
+}
 .tricolor-line .red{
-    flex:1;
+    width:90px;
     height:1px;
     background:#C43B3B;
 }
+    .language-switch{
+    position:fixed;
+    top:42px;
+    right:52px;
+    color:var(--blue);
+    text-decoration:none;
+    font-size:13px;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    font-weight:400;
+    transition:opacity .2s ease;
+}
+
+.language-switch:hover{
+    opacity:.65;
 }
     .seo-content{
   position:absolute;
@@ -244,6 +260,7 @@
     <img class="logo" src="Logo.jpg" alt="CHR Consulting">
     <div class="tricolor-line">
     <div class="blue"></div>
+    <div class="space"></div>
     <div class="red"></div>
 </div>
   <h1 style="
