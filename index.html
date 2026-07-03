@@ -49,15 +49,14 @@
       color:var(--ink);
       font-family:Inter, Arial, sans-serif;
     }
-
     .card{
       width:min(720px,92vw);
       padding:48px 28px;
       text-align:center;
       border:1px solid var(--line);
       border-radius:18px;
-    }
-
+      position:relative;
+}
     .logo{
       max-width:260px;
       width:60%;
@@ -65,7 +64,6 @@
       margin:0 auto 16px;
       display:block;
     }
-
     .consulting{
       font-size:13px;
       letter-spacing:.45em;
@@ -155,13 +153,13 @@
     height:1px;
     background:#C43B3B;
 }
-    .language-switch{
-    position:fixed;
-    top:42px;
-    right:52px;
+   .language-switch{
+    position:absolute;
+    top:26px;
+    right:28px;
     color:var(--blue);
     text-decoration:none;
-    font-size:13px;
+    font-size:12px;
     letter-spacing:.25em;
     text-transform:uppercase;
     font-weight:400;
@@ -237,10 +235,8 @@
 </head>
 <body>
   <main class="card">
-    <a class="language-switch" href="index.html">FR</a>
     <!-- SEO invisible -->
     <section class="seo-content">
-    <a class="language-switch" href="en.html">EN</a>
     <!-- SEO invisible -->
     <section class="seo-content">
 
