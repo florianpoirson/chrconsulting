@@ -24,7 +24,7 @@
 :root{
   --marine:#0F2F63;--marine-2:#143A78;--roi:#0042AE;--azur:#7890C0;--azur-clair:#9FB2D9;
   --ciel:#EAF0FA;--ciel-2:#F4F8FF;--blanc:#FFFFFF;--encre:#12203A;--gris:#5B6B84;--brume:#A9BAD6;
-  --ligne:rgba(15,47,99,.12);--ligne-marine:rgba(255,255,255,.12);
+  --ligne:rgba(15,47,99,.12);--ligne-marine:rgba(255,255,255,.12);--vert:#1F9D6B;--vert-bg:rgba(31,157,107,.12);--orange:#D98A2B;--orange-bg:rgba(217,138,43,.14);--rouge:#C6472F;--rouge-bg:rgba(198,71,47,.12);
   --display:'Jost','Century Gothic',var(--sans),sans-serif;--sans:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -209,7 +209,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 .socials a:hover{background:var(--azur);border-color:var(--azur);color:#fff;transform:translateY(-2px)}
 .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:2rem;font-size:.78rem;color:var(--brume)}
 .foot-bottom a:hover{color:#fff}
-@media(max-width:900px){.nav-links{display:none}.burger{display:flex}.approche-grid,.c360-inner,.founder-grid,.book-inner{grid-template-columns:1fr;gap:3rem}.exp-grid,.refs-marquee,.hero-meta,.impact-grid,.gal-grid{grid-template-columns:repeat(2,1fr)}.c360-visual{order:-1}.hero-mark{opacity:.06}}
+@media(max-width:900px){.nav-links{display:none}.nav-cta{display:none}.burger{display:flex}.approche-grid,.c360-inner,.founder-grid,.book-inner{grid-template-columns:1fr;gap:3rem}.exp-grid,.refs-marquee,.hero-meta,.impact-grid,.gal-grid{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1fr;gap:2.4rem}.c360-visual{order:-1}.hero-mark{opacity:.06}}
 @media(max-width:560px){.wrap,.nav-inner{padding-left:22px;padding-right:22px}.exp-grid,.refs-marquee,.hero-meta,.founder-stats,.impact-grid,.gal-grid{grid-template-columns:1fr}.trust .wrap{flex-direction:column;align-items:flex-start}.trust .sig{text-align:left}}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.wa-float{animation:none}}
 .wa-float{position:fixed;right:24px;bottom:24px;z-index:90;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.55),0 4px 12px rgba(0,0,0,.25);transition:transform .3s,box-shadow .3s;animation:wa-pulse 2.6s ease-in-out infinite}
@@ -219,6 +219,53 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 .wa-tip::after{content:"";position:absolute;right:-5px;top:50%;transform:translateY(-50%);border-left:6px solid var(--marine);border-top:6px solid transparent;border-bottom:6px solid transparent}
 @keyframes wa-pulse{0%,100%{box-shadow:0 12px 30px -8px rgba(37,211,102,.55),0 0 0 0 rgba(37,211,102,.45)}50%{box-shadow:0 12px 30px -8px rgba(37,211,102,.55),0 0 0 12px rgba(37,211,102,0)}}
 @media(max-width:560px){.wa-float{right:18px;bottom:18px;width:54px;height:54px}.wa-tip{display:none}}
+/* ---- Calculateur de ratios ---- */
+.calc-sec{background:#fff}
+.calc{margin-top:3rem;background:#fff;border:1px solid var(--ligne);border-radius:12px;overflow:hidden;box-shadow:0 30px 70px -45px rgba(15,47,99,.5)}
+.calc-top{padding:2rem 2.2rem 1.6rem;border-bottom:1px solid var(--ligne)}
+.calc-step-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--azur);margin-bottom:1rem}
+.seg-choices{display:flex;flex-wrap:wrap;gap:.6rem}
+.seg{font-family:var(--sans);font-size:.9rem;font-weight:500;color:var(--marine);background:var(--ciel);border:1px solid var(--ligne);border-radius:100px;padding:.6rem 1.15rem;cursor:pointer;transition:all .25s}
+.seg:hover{border-color:var(--azur)}
+.seg.active{background:var(--roi);color:#fff;border-color:var(--roi)}
+.calc-body{display:grid;grid-template-columns:.9fr 1.1fr;gap:0}
+.calc-inputs{padding:2rem 2.2rem;border-right:1px solid var(--ligne)}
+.cfield{margin-bottom:1.3rem}
+.cfield:last-child{margin-bottom:0}
+.cfield label{display:block;font-size:.82rem;font-weight:600;color:var(--marine);margin-bottom:.45rem}
+.cfield .hint{font-weight:400;color:var(--gris);font-size:.76rem}
+.cinput{position:relative;display:flex;align-items:center}
+.cinput input{width:100%;font-family:var(--sans);font-size:1.05rem;font-weight:500;color:var(--encre);border:1px solid var(--ligne);border-radius:6px;padding:.7rem .9rem;padding-right:2.6rem;transition:border-color .2s,box-shadow .2s;background:var(--ciel-2)}
+.cinput input:focus{outline:none;border-color:var(--roi);box-shadow:0 0 0 3px rgba(0,66,174,.12);background:#fff}
+.cinput .unit{position:absolute;right:.9rem;font-size:.9rem;color:var(--gris);font-weight:500;pointer-events:none}
+.calc-results{padding:2rem 2.2rem;background:var(--ciel-2)}
+.results-empty{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--gris);gap:.8rem;min-height:280px;font-size:.92rem;line-height:1.5}
+.results-empty svg{opacity:.35}
+.ratio{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.95rem 1.1rem;border-radius:8px;margin-bottom:.6rem;background:#fff;border:1px solid var(--ligne)}
+.ratio.show{animation:cpop .45s cubic-bezier(.16,1,.3,1) both}
+@keyframes cpop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.ratio .r-name{font-weight:600;font-size:.92rem;color:var(--marine)}
+.ratio .r-name small{display:block;font-weight:400;font-size:.74rem;color:var(--gris);margin-top:.15rem}
+.ratio .r-right{display:flex;align-items:center;gap:.9rem}
+.ratio .r-val{font-family:var(--display);font-size:1.5rem;font-weight:500;color:var(--marine);min-width:3.4rem;text-align:right}
+.cpill{font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.28rem .6rem;border-radius:100px;white-space:nowrap}
+.cpill.vert{color:var(--vert);background:var(--vert-bg)}
+.cpill.orange{color:var(--orange);background:var(--orange-bg)}
+.cpill.rouge{color:var(--rouge);background:var(--rouge-bg)}
+.ratio.vert{border-left:3px solid var(--vert)}
+.ratio.orange{border-left:3px solid var(--orange)}
+.ratio.rouge{border-left:3px solid var(--rouge)}
+.verdict{margin-top:1.2rem;padding:1.1rem 1.2rem;border-radius:8px;font-size:.92rem;line-height:1.5}
+.verdict.vert{background:var(--vert-bg);color:#146A48}
+.verdict.orange{background:var(--orange-bg);color:#8A5410}
+.verdict.rouge{background:var(--rouge-bg);color:#8A2A19}
+.verdict strong{font-weight:700}
+.calc-cta{margin-top:1.3rem;display:flex;flex-wrap:wrap;gap:.7rem;align-items:center}
+.calc-wa{display:inline-flex;align-items:center;gap:.6rem;background:#25D366;color:#fff;font-weight:600;font-size:.9rem;padding:.8rem 1.3rem;border-radius:6px;transition:transform .25s,box-shadow .25s;text-decoration:none;border:none;cursor:pointer}
+.calc-wa:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(37,211,102,.6)}
+.calc-disc{font-size:.74rem;color:var(--gris);margin-top:1rem;font-style:italic}
+@media(max-width:820px){.calc-body{grid-template-columns:1fr}.calc-inputs{border-right:none;border-bottom:1px solid var(--ligne)}}
+
 </style>
 <script type="application/ld+json">
 {
@@ -288,7 +335,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
       <span class="txt"><span class="mark">CHR Consulting</span><span class="sub">Paris · depuis 2012</span></span>
     </a>
     <nav class="nav-links">
-      <a href="#approche">Approche</a><a href="#expertises">Expertises</a><a href="#c360">Ouverture 360</a><a href="#fondateur">Le cabinet</a><a href="#references">Parcours</a>
+      <a href="#approche">Approche</a><a href="#expertises">Expertises</a><a href="#calculateur">Diagnostic</a><a href="#c360">Ouverture 360</a><a href="#fondateur">Le cabinet</a><a href="#references">Parcours</a>
     </nav>
     <a href="#contact" class="nav-cta">Parler de votre projet</a>
     <a href="/en.html" class="lang-switch" title="English version" aria-label="Switch to English">EN</a>
@@ -517,6 +564,39 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
   </div>
 </section>
 
+<section class="calc-sec" id="calculateur">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Outil · Diagnostic express</span>
+      <h2 class="section-title">Vos ratios sont-ils dans le vert ?</h2>
+      <p class="lead" style="margin-top:1.2rem">Choisissez votre type d'établissement, saisissez vos chiffres, et situez-vous instantanément face aux standards du métier. La méthode CHR Consulting, en direct.</p>
+    </div>
+    <div class="calc reveal">
+      <div class="calc-top">
+        <div class="calc-step-label">1 · Votre type d'établissement</div>
+        <div class="seg-choices" id="c_segs"></div>
+      </div>
+      <div class="calc-body">
+        <div class="calc-inputs">
+          <div class="calc-step-label">2 · Vos chiffres (mensuels ou annuels, HT)</div>
+          <div class="cfield"><label>Chiffre d'affaires HT</label><div class="cinput"><input type="number" id="c_ca" placeholder="100000"><span class="unit">€</span></div></div>
+          <div class="cfield"><label>Coût matières <span class="hint">(food + boissons)</span></label><div class="cinput"><input type="number" id="c_food" placeholder="30000"><span class="unit">€</span></div></div>
+          <div class="cfield"><label>Masse salariale <span class="hint">(salaires + charges)</span></label><div class="cinput"><input type="number" id="c_staff" placeholder="33000"><span class="unit">€</span></div></div>
+          <div class="cfield"><label>Loyer <span class="hint">(charges locatives incluses)</span></label><div class="cinput"><input type="number" id="c_rent" placeholder="9000"><span class="unit">€</span></div></div>
+          <div class="cfield"><label>Résultat d'exploitation <span class="hint">(optionnel)</span></label><div class="cinput"><input type="number" id="c_ebit" placeholder="10000"><span class="unit">€</span></div></div>
+        </div>
+        <div class="calc-results">
+          <div class="results-empty" id="c_empty">
+            <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
+            <div>Sélectionnez votre type d'établissement<br>et renseignez au moins votre CA<br>pour voir vos ratios.</div>
+          </div>
+          <div id="c_out" style="display:none"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-final" id="contact">
   <div class="wrap">
     <span class="eyebrow on-dark">Parlons de votre projet</span>
@@ -548,7 +628,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
       </div>
       <div class="foot-col">
         <h5>Naviguer</h5>
-        <a href="#approche">Approche</a><a href="#expertises">Expertises</a><a href="#c360">Ouverture 360</a><a href="#fondateur">Le cabinet</a><a href="#references">Parcours</a>
+        <a href="#approche">Approche</a><a href="#expertises">Expertises</a><a href="#calculateur">Diagnostic</a><a href="#c360">Ouverture 360</a><a href="#fondateur">Le cabinet</a><a href="#references">Parcours</a>
       </div>
       <div class="foot-col">
         <h5>Contact</h5>
@@ -594,5 +674,61 @@ document.querySelectorAll('[data-count]').forEach(el=>countIO.observe(el));
   <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.5 9.5 0 0 1-4.83-1.32l-.35-.21-3.59.94.96-3.5-.23-.36a9.46 9.46 0 0 1-1.45-5.05c0-5.24 4.27-9.5 9.51-9.5 2.54 0 4.92.99 6.72 2.78a9.44 9.44 0 0 1 2.78 6.73c0 5.24-4.27 9.5-9.5 9.5zm8.09-17.6A11.4 11.4 0 0 0 12.04.5C5.76.5.65 5.61.65 11.89c0 2.09.55 4.13 1.59 5.93L.5 23.5l5.82-1.53a11.35 11.35 0 0 0 5.72 1.46h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.18-5.9-3.33-8.05z"/></svg>
   <span class="wa-tip">Discutons de votre projet</span>
 </a>
+
+<script>
+(function(){
+  const C = {"seg": {"rapide": "Rapide / Snacking", "trad": "Traditionnel / Bistrot", "gastro": "Gastronomique", "cafe": "Café / Bar", "hotel": "F&B Hôtel"}, "bl": {"food": ["Food cost", "Coût matières / CA"], "staff": ["Masse salariale", "Personnel / CA"], "prime": ["Prime cost", "Food + personnel / CA"], "rent": ["Loyer / CA", "Charges locatives / CA"], "margin": ["Marge brute", "(CA − matières) / CA"], "ebit": ["Résultat d'exploitation", "REX / CA"]}, "pill": {"vert": "Sain", "orange": "Vigilance", "rouge": "Alerte"}, "vr": "<strong>Plusieurs signaux d'alerte.</strong> Votre structure de coûts pèse sur la rentabilité. Un audit ciblé identifierait vite les leviers à activer.", "vo": "<strong>Des points de vigilance.</strong> La base est là, mais certains ratios méritent un ajustement pour sécuriser vos marges.", "vv": "<strong>Des fondamentaux sains.</strong> Vos ratios sont dans les standards du métier. L'enjeu : tenir cette discipline et l'optimiser encore.", "wabtn": "Analyser mes résultats avec un expert", "disc": "Indicateurs fournis à titre de repère. Les seuils varient selon l'emplacement, le format et le positionnement de l'établissement.", "mi": "Bonjour CHR Consulting, j'ai testé le diagnostic de ratios sur votre site", "mo": ". Mes résultats : ", "me": ". J'aimerais en discuter."};
+  const BENCH={
+    food:{dir:"lower",s:{rapide:[28,32],trad:[30,34],gastro:[32,38],cafe:[24,30],hotel:[30,35]}},
+    staff:{dir:"lower",s:{rapide:[28,33],trad:[32,38],gastro:[38,45],cafe:[30,36],hotel:[34,40]}},
+    prime:{dir:"lower",s:{rapide:[58,64],trad:[62,68],gastro:[68,75],cafe:[55,62],hotel:[64,72]}},
+    rent:{dir:"lower",s:{rapide:[8,12],trad:[8,12],gastro:[7,11],cafe:[10,14],hotel:[null,null]}},
+    margin:{dir:"higher",s:{rapide:[68,62],trad:[66,60],gastro:[62,56],cafe:[70,64],hotel:[65,60]}},
+    ebit:{dir:"higher",s:{rapide:[12,6],trad:[10,5],gastro:[8,3],cafe:[12,6],hotel:[10,5]}}
+  };
+  let seg=null;
+  const segsEl=document.getElementById("c_segs");
+  if(!segsEl)return;
+  Object.entries(C.seg).forEach(([k,v])=>{
+    const b=document.createElement("button");b.className="seg";b.type="button";b.textContent=v;
+    b.onclick=()=>{seg=k;document.querySelectorAll("#c_segs .seg").forEach(s=>s.classList.remove("active"));b.classList.add("active");compute();};
+    segsEl.appendChild(b);
+  });
+  ["ca","food","staff","rent","ebit"].forEach(id=>{const el=document.getElementById("c_"+id);if(el)el.addEventListener("input",compute);});
+  function statusOf(key,val){const bench=BENCH[key];const p=bench.s[seg];if(!p||p[0]==null)return null;
+    if(bench.dir==="lower"){if(val<=p[0])return"vert";if(val<=p[1])return"orange";return"rouge";}
+    else{if(val>=p[0])return"vert";if(val>=p[1])return"orange";return"rouge";}}
+  function compute(){
+    const g=id=>document.getElementById("c_"+id);
+    const ca=+g("ca").value,food=+g("food").value,staff=+g("staff").value,rent=+g("rent").value;
+    const ebit=g("ebit").value===""?null:+g("ebit").value;
+    const empty=document.getElementById("c_empty"),out=document.getElementById("c_out");
+    if(!seg||!ca){empty.style.display="flex";out.style.display="none";return;}
+    empty.style.display="none";out.style.display="block";
+    const v={};
+    if(food)v.food=food/ca*100;
+    if(staff)v.staff=staff/ca*100;
+    if(food&&staff)v.prime=(food+staff)/ca*100;
+    if(rent)v.rent=rent/ca*100;
+    if(food)v.margin=(ca-food)/ca*100;
+    if(ebit!=null)v.ebit=ebit/ca*100;
+    const order=["food","staff","prime","rent","margin","ebit"];
+    let html="",c={vert:0,orange:0,rouge:0};
+    order.forEach(k=>{if(v[k]==null)return;const st=statusOf(k,v[k]);if(st)c[st]++;
+      html+=`<div class="ratio show ${st||""}"><div class="r-name">${C.bl[k][0]}<small>${C.bl[k][1]}</small></div><div class="r-right"><span class="r-val">${v[k].toFixed(1)}%</span>${st?`<span class="cpill ${st}">${C.pill[st]}</span>`:""}</div></div>`;
+    });
+    let vc,vt;
+    if(c.rouge>=2){vc="rouge";vt=C.vr;}
+    else if(c.rouge===1||c.orange>=2){vc="orange";vt=C.vo;}
+    else{vc="vert";vt=C.vv;}
+    html+=`<div class="verdict ${vc}">${vt}</div>`;
+    const parts=order.filter(k=>v[k]!=null).map(k=>`${C.bl[k][0]} ${v[k].toFixed(1)}%`).join(", ");
+    const msg=`${C.mi} (${C.seg[seg]})${C.mo}${parts}${C.me}`;
+    const wa="https://wa.me/33679894512?text="+encodeURIComponent(msg);
+    html+=`<div class="calc-cta"><a class="calc-wa" href="${wa}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>${C.wabtn}</a></div><p class="calc-disc">${C.disc}</p>`;
+    out.innerHTML=html;
+  }
+})();
+</script>
 </body>
 </html>
