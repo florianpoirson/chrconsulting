@@ -29,4 +29,18 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://www.chrconsulting.fr/mentions-legales/</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.chrconsulting.fr/confidentialite/</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>
