@@ -362,8 +362,8 @@ body.splash-on{overflow:hidden}
       <span class="txt"><span class="mark">CHR Consulting</span><span class="sub">Paris · depuis 2012</span></span>
     </a>
     <nav class="nav-links">
-      <a href="#approche">Approche</a><a href="#expertises">Expertises</a><a href="/ratios">Diagnostic</a><a href="#c360">Ouverture 360</a><a href="#fondateur">Le cabinet</a><a href="#references">Parcours</a>
-    </nav>
+  <a href="#approche">Approche</a><a href="#expertises">Expertises</a><a href="/ratios">Diagnostic</a><a href="#c360">Ouverture 360</a><a href="#rdv-expert">Rendez-vous expert</a><a href="#fondateur">Le cabinet</a><a href="#references">Parcours</a>
+</nav>
     <a href="#contact" class="nav-cta">Parler de votre projet</a>
     <a href="/en.html" class="lang-switch" title="English version" aria-label="Switch to English">EN</a>
     <div class="burger" id="burger"><span></span><span></span><span></span></div>
@@ -590,7 +590,41 @@ body.splash-on{overflow:hidden}
     </div>
   </div>
 </section>
+<section class="expertises" id="rdv-expert">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Format court</span>
+      <h2 class="section-title">Rendez-vous expert — Un problème, une heure, des réponses.</h2>
+      <p class="lead" style="margin-top:1.2rem">Besoin d'un avis extérieur rapide, sans engager un accompagnement complet&nbsp;? Le Rendez-vous expert est un échange individuel d'une heure avec Florian Poirson, pour traiter n'importe quel sujet lié à votre projet ou à votre exploitation — audit express, second avis sur un choix stratégique, déblocage d'une situation, préparation d'ouverture, lecture de vos ratios. Vous posez le sujet, nous l'approfondissons ensemble.</p>
+    </div>
 
+    <div class="exp-grid reveal" style="grid-template-columns:repeat(4,1fr)">
+      <div class="exp"><div class="no">01 · Format</div><h3 style="font-size:1.25rem">Sur-mesure</h3><p>Vous choisissez le sujet&nbsp;; l'échange s'adapte à votre problématique, pas l'inverse.</p></div>
+      <div class="exp"><div class="no">02 · Format</div><h3 style="font-size:1.25rem">Sans engagement</h3><p>Une session ponctuelle, sans suite obligatoire ni proposition commerciale imposée.</p></div>
+      <div class="exp"><div class="no">03 · Format</div><h3 style="font-size:1.25rem">Actionnable</h3><p>Vous repartez avec des pistes concrètes, pas des généralités.</p></div>
+      <div class="exp"><div class="no">04 · Format</div><h3 style="font-size:1.25rem">Immédiat</h3><p>Réservation en ligne, créneau confirmé instantanément.</p></div>
+    </div>
+
+    <div class="founder-stats reveal" style="grid-template-columns:repeat(4,1fr);border-top:none;margin-top:3rem;padding-top:0">
+      <div class="s"><div class="v">1h</div><div class="l">Durée</div></div>
+      <div class="s"><div class="v">150&nbsp;€</div><div class="l">Tarif</div></div>
+      <div class="s"><div class="v">Visio</div><div class="l">Format</div></div>
+      <div class="s"><div class="v">Lun-ven</div><div class="l">10h-17h</div></div>
+    </div>
+
+    <div class="hero-actions reveal" style="margin-top:2.5rem">
+      <button
+        data-cal-namespace="entretien-expert"
+        data-cal-link="chrconsultingparis/entretien-expert"
+        data-cal-config='{"layout":"month_view"}'
+        class="btn btn-primary dark"
+        style="border:none;cursor:pointer;font-family:inherit"
+      >
+        Réserver un entretien expert <span class="arw">→</span>
+      </button>
+    </div>
+  </div>
+</section>
 <section class="calc-sec" id="calculateur">
   <div class="wrap">
     <div class="section-head reveal">
@@ -819,6 +853,10 @@ document.querySelectorAll('[data-count]').forEach(el=>countIO.observe(el));
   document.getElementById('cb-refuse').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','refused');}catch(e){}hide();});
 })();
 </script>
-
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "entretien-expert", {origin:"https://cal.com"});
+  Cal.ns["entretien-expert"]("ui", {"theme":"light","styles":{"branding":{"brandColor":"#0042AE"}},"layout":"month_view"});
+</script>
 </body>
 </html>
