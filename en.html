@@ -212,12 +212,12 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 @media(max-width:900px){.nav-links{display:none}.nav-cta{display:none}.burger{display:flex}.approche-grid,.c360-inner,.founder-grid,.book-inner{grid-template-columns:1fr;gap:3rem}.exp-grid,.refs-marquee,.hero-meta,.impact-grid,.gal-grid{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1fr;gap:2.4rem}.c360-visual{order:-1}.hero-mark{opacity:.06}}
 @media(max-width:560px){.wrap,.nav-inner{padding-left:22px;padding-right:22px}.exp-grid,.refs-marquee,.hero-meta,.founder-stats,.impact-grid,.gal-grid{grid-template-columns:1fr}.trust .wrap{flex-direction:column;align-items:flex-start}.trust .sig{text-align:left}}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.wa-float{animation:none}}
-.wa-float{position:fixed;right:24px;bottom:24px;z-index:90;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.55),0 4px 12px rgba(0,0,0,.25);transition:transform .3s,box-shadow .3s;animation:wa-pulse 2.6s ease-in-out infinite}
-.wa-float:hover{transform:scale(1.08);box-shadow:0 16px 40px -8px rgba(37,211,102,.7),0 6px 16px rgba(0,0,0,.3)}
+.wa-float{position:fixed;right:24px;bottom:24px;z-index:90;width:60px;height:60px;border-radius:50%;background:var(--roi);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(0,66,174,.55),0 4px 12px rgba(0,0,0,.25);transition:transform .3s,box-shadow .3s;animation:wa-pulse 2.6s ease-in-out infinite}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 16px 40px -8px rgba(0,66,174,.7),0 6px 16px rgba(0,0,0,.3)}
 .wa-float:hover .wa-tip{opacity:1;transform:translateX(0);pointer-events:auto}
 .wa-tip{position:absolute;right:74px;white-space:nowrap;background:var(--marine);color:#fff;font-size:.82rem;font-weight:500;padding:.6rem .95rem;border-radius:6px;box-shadow:0 8px 24px -10px rgba(0,0,0,.5);opacity:0;transform:translateX(8px);pointer-events:none;transition:opacity .3s,transform .3s}
 .wa-tip::after{content:"";position:absolute;right:-5px;top:50%;transform:translateY(-50%);border-left:6px solid var(--marine);border-top:6px solid transparent;border-bottom:6px solid transparent}
-@keyframes wa-pulse{0%,100%{box-shadow:0 12px 30px -8px rgba(37,211,102,.55),0 0 0 0 rgba(37,211,102,.45)}50%{box-shadow:0 12px 30px -8px rgba(37,211,102,.55),0 0 0 12px rgba(37,211,102,0)}}
+@keyframes wa-pulse{0%,100%{box-shadow:0 12px 30px -8px rgba(0,66,174,.55),0 0 0 0 rgba(0,66,174,.45)}50%{box-shadow:0 12px 30px -8px rgba(0,66,174,.55),0 0 0 12px rgba(0,66,174,0)}}
 @media(max-width:560px){.wa-float{right:18px;bottom:18px;width:54px;height:54px}.wa-tip{display:none}}
 /* ---- Calculateur de ratios ---- */
 .calc-sec{background:#fff}
@@ -346,7 +346,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
       <span class="txt"><span class="mark">CHR Consulting</span><span class="sub">Paris · since 2012</span></span>
     </a>
     <nav class="nav-links">
-      <a href="#approche">Approach</a><a href="#expertises">Expertise</a><a href="/ratios">Diagnosis</a><a href="#c360">360 Opening</a><a href="#fondateur">The firm</a><a href="#references">Background</a>
+      <a href="#approche">Approach</a><a href="#c360">360 Opening</a><a href="#rdv-expert">Expert consultation</a><a href="#fondateur">The firm</a>
     </nav>
     <a href="#contact" class="nav-cta">Discuss your project</a>
     <a href="/" class="lang-switch" title="Version française" aria-label="Passer en français">FR</a>
@@ -574,6 +574,41 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
     </div>
   </div>
 </section>
+<section class="expertises" id="rdv-expert">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Expert consultation</span>
+      <h2 class="section-title">Expert consultation — One problem, 1 hour, real answers.</h2>
+      <p class="lead" style="margin-top:1.2rem">Need a quick outside opinion without committing to a full engagement? The Expert Consultation is a one-hour, one-to-one session with Florian Poirson to work through any topic related to your project or your venue — a fast audit, a second opinion on a strategic choice, unblocking a situation, preparing for an opening, or reading your ratios. You bring the topic, we dig into it together.</p>
+    </div>
+
+    <div class="exp-grid reveal" style="grid-template-columns:repeat(4,1fr)">
+      <div class="exp"><div class="no" style="font-size:1rem;font-weight:700;letter-spacing:normal;text-transform:none;color:var(--marine);margin-bottom:.5rem">01 - Tailored</div><p>You choose the topic; the conversation adapts to your situation, not the other way around.</p></div>
+      <div class="exp"><div class="no" style="font-size:1rem;font-weight:700;letter-spacing:normal;text-transform:none;color:var(--marine);margin-bottom:.5rem">02 - No commitment</div><p>A one-off session, with no mandatory follow-up or sales pitch attached.</p></div>
+      <div class="exp"><div class="no" style="font-size:1rem;font-weight:700;letter-spacing:normal;text-transform:none;color:var(--marine);margin-bottom:.5rem">03 - Actionable</div><p>You walk away with concrete next steps, not generalities.</p></div>
+      <div class="exp"><div class="no" style="font-size:1rem;font-weight:700;letter-spacing:normal;text-transform:none;color:var(--marine);margin-bottom:.5rem">04 - Instant</div><p>Book online, slot confirmed immediately.</p></div>
+    </div>
+
+    <div class="founder-stats reveal" style="grid-template-columns:repeat(4,1fr);border-top:none;margin-top:3rem;padding-top:0">
+      <div class="s"><div class="v">1h</div><div class="l">Duration</div></div>
+      <div class="s"><div class="v">€150 incl. tax</div><div class="l">Price</div></div>
+      <div class="s"><div class="v">Video call</div><div class="l">Format</div></div>
+      <div class="s"><div class="v">Mon-Fri</div><div class="l">10am-5pm</div></div>
+    </div>
+
+    <div class="hero-actions reveal" style="margin-top:2.5rem">
+      <button
+        data-cal-namespace="entretien-expert"
+        data-cal-link="chrconsultingparis/entretien-expert"
+        data-cal-config='{"layout":"month_view"}'
+        class="btn btn-primary dark"
+        style="border:none;cursor:pointer;font-family:inherit"
+      >
+        Book an expert consultation <span class="arw">→</span>
+      </button>
+    </div>
+  </div>
+</section>
 
 <section class="calc-sec" id="calculateur">
   <div class="wrap">
@@ -615,6 +650,15 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
     <p class="lead on-dark">A new venture, a venue to turn around, an opening to secure? Let’s talk — the first meeting is free and without commitment.</p>
     <div class="hero-actions">
       <a href="https://wa.me/33679894512?text=Bonjour%20CHR%20Consulting,%20je%20souhaite%20échanger%20sur%20mon%20projet." class="btn btn-primary" target="_blank" rel="noopener">Message us on WhatsApp <span class="arw">→</span></a>
+      <button
+        data-cal-namespace="entretien-expert"
+        data-cal-link="chrconsultingparis/entretien-expert"
+        data-cal-config='{"layout":"month_view"}'
+        class="btn btn-ghost"
+        style="border:1px solid rgba(159,178,217,.45);color:#fff;background:transparent;cursor:pointer;font-family:inherit"
+      >
+        Book an expert consultation <span class="arw">→</span>
+      </button>
       <a href="mailto:contact@chrconsulting.fr?subject=Introduction%20request%20—%20CHR%20Consulting" class="btn btn-ghost">Send an email</a>
     </div>
     <div class="cta-socials">
@@ -782,6 +826,10 @@ document.querySelectorAll('[data-count]').forEach(el=>countIO.observe(el));
   document.getElementById('cb-refuse').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','refused');}catch(e){}hide();});
 })();
 </script>
-
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "entretien-expert", {origin:"https://cal.com"});
+  Cal.ns["entretien-expert"]("ui", {"theme":"light","styles":{"branding":{"brandColor":"#0042AE"}},"layout":"month_view"});
+</script>
 </body>
 </html>
