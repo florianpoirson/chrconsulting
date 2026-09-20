@@ -130,6 +130,7 @@ section{padding:clamp(5rem,10vw,8.5rem) 0}
 .gal-item figcaption strong{display:block;font-family:var(--display);font-weight:500;font-size:1.2rem;color:var(--marine);letter-spacing:.01em}
 .gal-item figcaption span{display:block;font-size:.9rem;color:var(--gris);margin-top:.3rem;line-height:1.5}
 .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:3.5rem;background:var(--ligne);border:1px solid var(--ligne);border-radius:6px;overflow:hidden}
+.exp-grid-4{grid-template-columns:repeat(4,1fr)}
 .exp{background:#fff;padding:2.3rem 2rem;transition:background .35s;position:relative}
 .exp:hover{background:var(--ciel)}
 .exp .no{font-size:.72rem;font-weight:700;letter-spacing:.12em;color:var(--azur)}
@@ -209,8 +210,8 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 .socials a:hover{background:var(--azur);border-color:var(--azur);color:#fff;transform:translateY(-2px)}
 .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:2rem;font-size:.78rem;color:var(--brume)}
 .foot-bottom a:hover{color:#fff}
-@media(max-width:900px){.nav-links{display:none}.nav-cta{display:none}.burger{display:flex}.approche-grid,.c360-inner,.founder-grid,.book-inner{grid-template-columns:1fr;gap:3rem}.exp-grid,.refs-marquee,.hero-meta,.impact-grid,.gal-grid{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1fr;gap:2.4rem}.c360-visual{order:-1}.hero-mark{opacity:.06}}
-@media(max-width:560px){.wrap,.nav-inner{padding-left:22px;padding-right:22px}.exp-grid,.refs-marquee,.hero-meta,.founder-stats,.impact-grid,.gal-grid{grid-template-columns:1fr}.trust .wrap{flex-direction:column;align-items:flex-start}.trust .sig{text-align:left}}
+@media(max-width:900px){.nav-links{display:none}.nav-cta{display:none}.burger{display:flex}.approche-grid,.c360-inner,.founder-grid,.book-inner{grid-template-columns:1fr;gap:3rem}.exp-grid,.exp-grid-4,.refs-marquee,.hero-meta,.impact-grid,.gal-grid{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1fr;gap:2.4rem}.c360-visual{order:-1}.hero-mark{opacity:.06}}
+@media(max-width:560px){.wrap,.nav-inner{padding-left:22px;padding-right:22px}.exp-grid,.exp-grid-4,.refs-marquee,.hero-meta,.founder-stats,.impact-grid,.gal-grid{grid-template-columns:1fr}.trust .wrap{flex-direction:column;align-items:flex-start}.trust .sig{text-align:left}}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.wa-float{animation:none}}
 .wa-float{position:fixed;right:24px;bottom:24px;z-index:90;width:60px;height:60px;border-radius:50%;background:var(--roi);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(0,66,174,.55),0 4px 12px rgba(0,0,0,.25);transition:transform .3s,box-shadow .3s;animation:wa-pulse 2.6s ease-in-out infinite}
 .wa-float:hover{transform:scale(1.08);box-shadow:0 16px 40px -8px rgba(0,66,174,.7),0 6px 16px rgba(0,0,0,.3)}
@@ -598,7 +599,7 @@ body.splash-on{overflow:hidden}
       <p class="lead" style="margin-top:1.2rem">Besoin d'un avis extérieur rapide, sans engager un accompagnement complet&nbsp;? Le Rendez-vous expert est un échange individuel d'1 heure avec Florian Poirson, pour traiter n'importe quel sujet lié à votre projet ou à votre exploitation — audit express, second avis sur un choix stratégique, déblocage d'une situation, préparation d'ouverture, lecture de vos ratios. Vous posez le sujet, nous l'approfondissons ensemble.</p>
     </div>
 
-    <div class="exp-grid reveal" style="grid-template-columns:repeat(4,1fr)">
+    <div class="exp-grid exp-grid-4 reveal">
       <div class="exp"><div class="no" style="font-size:1rem;font-weight:700;letter-spacing:normal;text-transform:none;color:var(--marine);margin-bottom:.5rem">01 - Sur mesure</div><p>Vous choisissez le sujet&nbsp;; l'échange s'adapte à votre problématique, pas l'inverse.</p></div>
       <div class="exp"><div class="no" style="font-size:1rem;font-weight:700;letter-spacing:normal;text-transform:none;color:var(--marine);margin-bottom:.5rem">02 - Sans engagement</div><p>Une session ponctuelle, sans suite obligatoire ni proposition commerciale imposée.</p></div>
       <div class="exp"><div class="no" style="font-size:1rem;font-weight:700;letter-spacing:normal;text-transform:none;color:var(--marine);margin-bottom:.5rem">03 - Actionnable</div><p>Vous repartez avec des pistes concrètes, pas des généralités.</p></div>
