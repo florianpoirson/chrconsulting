@@ -34,6 +34,19 @@
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/lightspeed/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chrconsulting.fr/lightspeed/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chrconsulting.fr/lightspeed/"/>
+  </url>
+
+  <url>
+    <loc>https://www.chrconsulting.fr/lightspeed/en.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/lightspeed/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chrconsulting.fr/lightspeed/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chrconsulting.fr/lightspeed/"/>
   </url>
 
   <url>
