@@ -259,11 +259,12 @@ function renderRecap() {
       <div class="qrow"><div class="qf"><label for="q-email">E-mail de réception des documents <span class="req">*</span></label><input id="q-email" type="email" required value="${esc(email)}" autocomplete="email"></div></div>
       <input type="text" name="site" id="q-site" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
       <label class="qc"><input type="checkbox" id="q-adapt" required><span>Je comprends que ce PMS est établi à partir de mes déclarations, sans visite des locaux, et qu’il m’appartient de l’adapter, de l’appliquer et de le tenir à jour.</span></label>
-      <label class="qc"><input type="checkbox" id="q-cgv" required><span>J’accepte les <a href="/pms/cgv/" target="_blank" rel="noopener">conditions générales de vente</a> et je demande la mise à disposition immédiate des documents, ce qui met fin au droit de rétractation.</span></label>
+      <label class="qc"><input type="checkbox" id="q-cgv" required><span>J’accepte les <a href="${CFG.cgvUrl || '/pms/cgv/'}" target="_blank" rel="noopener">conditions générales de vente</a> et je demande la mise à disposition immédiate des documents, ce qui met fin au droit de rétractation.</span></label>
       <div class="qpay"><div><div class="qprice">${esc(prix)}</div><small>${esc(CFG.prixDetail || 'Paiement sécurisé par Stripe · facture envoyée par e-mail')}</small></div>
-      <button type="submit" class="calc-wa big" id="q-submit">Payer et recevoir mon PMS →</button></div>
+      <button type="submit" class="calc-wa big" id="q-submit">${CFG.essai ? 'Générer mes documents (essai, sans paiement)' : 'Payer et recevoir mon PMS →'}</button></div>
       <p class="qerr" id="q-err" role="alert"></p>
     </form>
+    <div id="q-result"></div>
     <div class="qnav"><button type="button" class="qback" data-nav="-1">← Étape précédente</button><button type="button" class="qback" id="q-reset">Effacer mes réponses</button></div>`;
 }
 
@@ -278,6 +279,7 @@ async function commander(ev) {
     const missing = STEPS[i].fields.flatMap((f) => (f.t === 'row' ? f.items : [f])).filter((f) => f.req && !String(get(f.p) ?? '').trim());
     if (missing.length) { err.innerHTML = `Information manquante à l’étape ${i + 1} : ${esc(missing.map((m) => m.l).join(', '))}. <button type="button" class="linkbtn" data-go="${i}">Compléter</button>`; return; }
   }
+  if (CFG.essai) return essai();
   if (!CFG.api) { err.textContent = 'Le paiement en ligne sera ouvert très prochainement. Contactez-nous sur WhatsApp pour commander dès maintenant.'; return; }
   const btn = $('#q-submit'); btn.disabled = true; btn.textContent = 'Redirection vers le paiement…';
   try {
@@ -291,6 +293,39 @@ async function commander(ev) {
     btn.disabled = false; btn.textContent = 'Payer et recevoir mon PMS →';
   }
 }
+
+// ---------- version d'essai : documents fabriqués sur place, sans paiement ----------
+async function essai() {
+  const out = $('#q-result'); const btn = $('#q-submit');
+  btn.disabled = true; btn.textContent = 'Fabrication en cours…';
+  out.innerHTML = '<div class="dl-status wait">Préparation des documents… <span class="dl-spin"></span><br><small>Comptez quelques secondes ; le PMS fait une centaine de pages.</small></div>';
+  try {
+    const [{ fabriquer, taille }, modele] = await Promise.all([import('./fabrication.js'), fetch(CFG.modeleUrl).then((r) => { if (!r.ok) throw new Error('Modèle introuvable.'); return r.json(); })]);
+    const reponses = JSON.parse(JSON.stringify(R)); delete reponses._init; delete reponses._email;
+    const t0 = performance.now();
+    const { fichiers, fiches } = await fabriquer({ reponses, modele, cfg: CFG });
+    const dl = window.claude && window.claude.use ? await window.claude.use('downloads').catch(() => null) : null;
+    out.innerHTML = `<div class="dl-status ok"><strong>Documents prêts</strong> en ${((performance.now() - t0) / 1000).toFixed(1).replace('.', ',')} s : ${fiches} fiches de suivi incluses. Dans la version en ligne, cette étape a lieu après le paiement, sur la page de téléchargement, et le lien est envoyé par e-mail.</div>
+      <div id="dl-files">${fichiers.map((f, i) => `<div class="dl-file"><div><span class="dl-fmt">${f.fmt}</span><h3>${f.label}</h3><p>${f.desc} ${taille(f.blob)}</p></div><button type="button" class="calc-wa" data-dl="${i}">Télécharger</button></div>`).join('')}</div><p class="qerr" id="q-dlerr" role="alert"></p>`;
+    out.querySelectorAll('[data-dl]').forEach((b) => b.addEventListener('click', async () => {
+      const f = fichiers[+b.dataset.dl]; $('#q-dlerr').textContent = '';
+      if (dl) {
+        try { await dl.save({ filename: f.name, data: f.blob }); } catch (e) { if (e && e.code !== 'declined') $('#q-dlerr').textContent = `Téléchargement impossible ici (${e.code || e.message}).`; }
+      } else { const a = document.createElement('a'); a.href = URL.createObjectURL(f.blob); a.download = f.name; document.body.appendChild(a); a.click(); a.remove(); }
+    }));
+  } catch (e) {
+    console.error(e);
+    out.innerHTML = `<div class="dl-status err">${esc(e.message)}</div>`;
+  }
+  btn.disabled = false; btn.textContent = 'Générer à nouveau';
+}
+
+// Exemple rempli (version d'essai)
+async function exemple() {
+  try { const ex = await (await fetch(CFG.exempleUrl)).json(); R = { ...ex, _init: 1 }; save(); step = 0; render(); }
+  catch { /* exemple indisponible */ }
+}
+if (CFG.essai && CFG.exempleUrl) document.addEventListener('click', (ev) => { if (ev.target.closest('#q-exemple')) { ev.preventDefault(); exemple(); } });
 
 // ---------- logo : redimensionné dans le navigateur ----------
 function readLogo(file) {
