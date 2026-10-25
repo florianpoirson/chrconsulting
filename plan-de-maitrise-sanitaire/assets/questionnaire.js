@@ -9,6 +9,8 @@ const CGV_VERSION = CFG.cgvVersion || '2026-10-25';
 const euros = (n) => `${Number(n).toFixed(2).replace('.', ',')}\u00a0€`;
 export const PRIX = (() => { const ht = Number(CFG.prixHT ?? 50), tva = Number(CFG.tauxTVA ?? 20); const t = Math.round(ht * tva) / 100; return { ht, tva, montantTVA: t, ttc: ht + t }; })();
 const $ = (s, el = document) => el.querySelector(s);
+// Code d'accès (PMS inclus dans une mission CHR Consulting) : saisi au récapitulatif ou transmis par lien (?code=…)
+let codeAcces = CFG.essai ? '' : (new URLSearchParams(location.search).get('code') || '').trim().toUpperCase().slice(0, 40);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 // ---------- état ----------
@@ -263,15 +265,30 @@ function renderRecap() {
       <div class="qrow"><div class="qf"><label for="q-email">E-mail de réception des documents <span class="req">*</span></label><input id="q-email" type="email" required value="${esc(email)}" autocomplete="email"></div></div>
       <input type="text" name="site" id="q-site" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
       <label class="qc"><input type="checkbox" id="q-cgv" required><span>J’accepte les <a href="${CFG.cgvUrl || '/plan-de-maitrise-sanitaire/cgv/'}" target="_blank" rel="noopener">conditions générales de vente</a>.</span></label>
-      <label class="qc"><input type="checkbox" id="q-retract" required><span>Je demande la mise à disposition immédiate des documents et je renonce à mon droit de rétractation.</span></label>
+      <label class="qc" id="q-retract-l"${codeAcces ? ' hidden' : ''}><input type="checkbox" id="q-retract" required><span>Je demande la mise à disposition immédiate des documents et je renonce à mon droit de rétractation.</span></label>
       <label class="qc"><input type="checkbox" id="q-adapt" required><span>Je comprends que ce PMS est établi à partir de mes déclarations, sans visite des locaux, et qu’il m’appartient de l’adapter, de l’appliquer et de le tenir à jour.</span></label>
-      <div class="qpay"><div><div class="qprice">${euros(PRIX.ht)} <span class="qprice-u">HT</span></div><div class="qprice-ttc">${euros(PRIX.ttc)} TTC <small>(dont TVA ${PRIX.tva}\u00a0% : ${euros(PRIX.montantTVA)})</small></div><small>Paiement sécurisé par Stripe · facture envoyée par e-mail</small></div>
-      <button type="submit" class="calc-wa big" id="q-submit">${CFG.essai ? 'Générer mes documents (essai, sans paiement)' : 'Payer et recevoir mon PMS →'}</button></div>
+      ${CFG.essai ? '' : `<details class="qcode"${codeAcces ? ' open' : ''}><summary>Vous êtes accompagné par CHR Consulting ? Utilisez votre code d’accès</summary>
+        <div class="qf"><label for="q-code">Code d’accès</label><input id="q-code" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="40" placeholder="CHR-XXXX-XXXX" value="${esc(codeAcces)}"><small class="qhelp">Le PMS est alors inclus dans votre accompagnement : aucun paiement n’est demandé.</small></div></details>`}
+      <div class="qpay"><div id="q-pay-info">${payInfo()}</div>
+      <button type="submit" class="calc-wa big" id="q-submit">${boutonTexte()}</button></div>
       <p class="qerr" id="q-err" role="alert"></p>
       <p class="qnote">Vos réponses servent uniquement à établir votre PMS. Elles sont conservées 12 mois au plus après la commande, puis supprimées (voir la <a href="${CFG.confidentialiteUrl || '/confidentialite'}" target="_blank" rel="noopener">politique de confidentialité</a>). Le brouillon enregistré sur cet appareil s’efface après 12 mois ou à votre demande.</p>
     </form>
     <div id="q-result"></div>
     <div class="qnav"><button type="button" class="qback" data-nav="-1">← Étape précédente</button><button type="button" class="qback" id="q-reset">Effacer mes réponses</button></div>`;
+}
+
+function payInfo() {
+  if (codeAcces) return '<div class="qprice">Inclus</div><div class="qprice-ttc">dans votre accompagnement CHR Consulting</div><small>Aucun paiement · documents envoyés par e-mail</small>';
+  return `<div class="qprice">${euros(PRIX.ht)} <span class="qprice-u">HT</span></div><div class="qprice-ttc">${euros(PRIX.ttc)} TTC <small>(dont TVA ${PRIX.tva}\u00a0% : ${euros(PRIX.montantTVA)})</small></div><small>Paiement sécurisé par Stripe · facture envoyée par e-mail</small>`;
+}
+const boutonTexte = () => (CFG.essai ? 'Générer mes documents (essai, sans paiement)' : codeAcces ? 'Générer mon PMS →' : 'Payer et recevoir mon PMS →');
+function majCode(v) {
+  codeAcces = String(v || '').trim().toUpperCase();
+  const info = $('#q-pay-info'); if (info) info.innerHTML = payInfo();
+  const btn = $('#q-submit'); if (btn && !btn.disabled) btn.textContent = boutonTexte();
+  const l = $('#q-retract-l'); if (l) l.hidden = !!codeAcces;
+  const e = $('#q-err'); if (e) e.textContent = '';
 }
 
 async function commander(ev) {
@@ -280,23 +297,25 @@ async function commander(ev) {
   const email = $('#q-email').value.trim();
   R._email = email; save();
   if (!$('#q-email').checkValidity() || !email) { err.textContent = 'Indiquez une adresse e-mail valide.'; return; }
-  if (!$('#q-cgv').checked || !$('#q-retract').checked || !$('#q-adapt').checked) { err.textContent = 'Cochez les trois cases pour continuer.'; return; }
+  if (!$('#q-cgv').checked || (!codeAcces && !$('#q-retract').checked) || !$('#q-adapt').checked) { err.textContent = codeAcces ? 'Cochez les deux cases pour continuer.' : 'Cochez les trois cases pour continuer.'; return; }
   for (let i = 0; i < STEPS.length; i++) {
     const missing = STEPS[i].fields.flatMap((f) => (f.t === 'row' ? f.items : [f])).filter((f) => f.req && !String(get(f.p) ?? '').trim());
     if (missing.length) { err.innerHTML = `Information manquante à l’étape ${i + 1} : ${esc(missing.map((m) => m.l).join(', '))}. <button type="button" class="linkbtn" data-go="${i}">Compléter</button>`; return; }
   }
   if (CFG.essai) return essai();
   if (!CFG.api) { err.textContent = 'Le paiement en ligne sera ouvert très prochainement. Contactez-nous sur WhatsApp pour commander dès maintenant.'; return; }
-  const btn = $('#q-submit'); btn.disabled = true; btn.textContent = 'Redirection vers le paiement…';
+  const code = codeAcces;
+  const btn = $('#q-submit'); btn.disabled = true; btn.textContent = code ? 'Vérification du code…' : 'Redirection vers le paiement…';
   try {
     const reponses = JSON.parse(JSON.stringify(R)); delete reponses._init; delete reponses._email; delete reponses._savedAt;
-    const res = await fetch(`${CFG.api}/pms-commande`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ reponses, email, cgv: true, cgvVersion: CGV_VERSION, renonciation: true, site: $('#q-site').value }) });
+    const res = await fetch(`${CFG.api}/pms-commande`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ reponses, email, cgv: true, cgvVersion: CGV_VERSION, renonciation: !code, ...(code ? { code } : {}), site: $('#q-site').value }) });
     const data = await res.json().catch(() => ({}));
-    if (!res.ok || !data.url) throw new Error(data.error || 'Le service de paiement ne répond pas.');
+    if (res.status === 403) { btn.disabled = false; btn.textContent = boutonTexte(); err.textContent = `${data.error || 'Code d’accès refusé.'} Vérifiez le code reçu de CHR Consulting, ou videz le champ pour payer en ligne.`; $('#q-code')?.focus(); return; }
+    if (!res.ok || !data.url) throw new Error(data.error || (code ? 'Le service ne répond pas.' : 'Le service de paiement ne répond pas.'));
     location.href = data.url;
   } catch (e) {
     err.textContent = `${e.message} Réessayez dans un instant ; si le problème persiste, contactez-nous.`;
-    btn.disabled = false; btn.textContent = 'Payer et recevoir mon PMS →';
+    btn.disabled = false; btn.textContent = boutonTexte();
   }
 }
 
@@ -358,6 +377,7 @@ root.addEventListener('input', (ev) => {
   const el = ev.target;
   if (el.dataset.p) { set(el.dataset.p, el.type === 'number' ? (el.value === '' ? '' : Number(el.value)) : el.value); el.closest('.qf')?.classList.remove('err'); }
   else if (el.dataset.r) { const list = get(el.dataset.r) || []; list[+el.dataset.i] = { ...(list[+el.dataset.i] || {}), [el.dataset.k]: el.value }; set(el.dataset.r, list); }
+  else if (el.id === 'q-code') majCode(el.value);
   else if (el.dataset.catd) { const c = (R.categories || []).find((x) => x.label === el.dataset.catd); if (c) { c.detail = el.value; save(); } }
 });
 root.addEventListener('change', async (ev) => {
