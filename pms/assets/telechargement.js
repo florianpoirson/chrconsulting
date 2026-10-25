@@ -32,7 +32,7 @@ async function main() {
     const { fichiers, fiches } = await fabriquer({ reponses: d.reponses, modele: d.modele, date: d.payee_le ? new Date(d.payee_le) : new Date(), cfg: CFG });
     filesEl.innerHTML = fichiers.map((f, i) => `<div class="dl-file"><div><span class="dl-fmt">${f.fmt}</span><h3>${f.label}</h3><p>${f.desc} ${taille(f.blob)}</p></div><a class="calc-wa" data-i="${i}" href="#" download="${f.name}">Télécharger</a></div>`).join('');
     fichiers.forEach((f, i) => { filesEl.querySelector(`[data-i="${i}"]`).href = URL.createObjectURL(f.blob); });
-    status(`<strong>Vos documents sont prêts.</strong> ${fiches} fiches de suivi incluses. Ce lien reste valable : conservez l’e-mail de confirmation pour les télécharger à nouveau.`, 'ok');
+    status(`<strong>Vos documents sont prêts.</strong> ${fiches} fiches de suivi incluses. Le lien reçu par e-mail permet de les télécharger à nouveau pendant 12 mois.`, 'ok');
     $('#dl-next').hidden = false;
   } catch (e) {
     console.error(e);

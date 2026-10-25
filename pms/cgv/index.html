@@ -386,6 +386,12 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 .recap-note{font-size:.82rem!important;margin-top:.8rem!important}
 .qpay{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;flex-wrap:wrap;margin-top:.6rem;padding:1.3rem 1.5rem;border-radius:10px;background:var(--ciel);border:1px solid var(--ligne)}
 .qprice{font-family:var(--display);font-size:2.2rem;font-weight:500;color:var(--marine);line-height:1}
+.qprice-u{font-size:1.1rem;color:var(--gris)}
+.qprice-ttc{font-size:.95rem;font-weight:600;color:var(--marine);margin:.35rem 0 .2rem}
+.qprice-ttc small{font-weight:400;color:var(--gris)}
+.qnote{font-size:.8rem;color:var(--gris);line-height:1.5}
+.qnote a{color:var(--roi);text-decoration:underline}
+.qback.danger{color:var(--rouge)}
 .qerr{color:var(--rouge);font-size:.9rem;min-height:1.2em}
 .linkbtn{background:none;border:none;color:var(--roi);font-weight:600;text-decoration:underline;cursor:pointer;font-size:inherit;font-family:inherit}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
@@ -442,7 +448,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
   <div class="wrap">
     <span class="eyebrow on-dark reveal">Générateur de PMS</span>
     <h1 class="reveal">Conditions générales<br><em>de vente</em>.</h1>
-    <p class="sub reveal">Version du 24 octobre 2026.</p>
+    <p class="sub reveal">Version du 25 octobre 2026.</p>
   </div>
 </section>
 <section class="cgv">
@@ -466,7 +472,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
     <p>Le prix est indiqué sur la page de commande, hors taxes et toutes taxes comprises. Il est payable en totalité à la commande, par carte bancaire ou tout autre moyen proposé par la plateforme de paiement sécurisé Stripe. Une facture est adressée par e-mail. CHR Consulting n’a jamais accès aux données de carte bancaire.</p>
 
     <h2>5. Commande et mise à disposition</h2>
-    <p>La commande est définitive après confirmation du paiement. Les documents sont générés immédiatement et mis à disposition sur une page de téléchargement ; le lien d’accès est également envoyé à l’adresse e-mail indiquée lors de la commande. Ce lien est personnel. Le client est invité à enregistrer les fichiers dès leur réception.</p>
+    <p>La commande est définitive après confirmation du paiement. Les documents sont générés immédiatement et mis à disposition sur une page de téléchargement ; le lien d’accès est également envoyé à l’adresse e-mail indiquée lors de la commande. Ce lien est personnel. Ce lien permet de télécharger à nouveau les documents pendant 12 mois à compter du paiement. Le client est invité à enregistrer les fichiers dès leur réception.</p>
 
     <h2>6. Droit de rétractation</h2>
     <p>Le générateur s’adresse aux professionnels de la restauration, pour les besoins de leur activité. Lorsque le client a la qualité de consommateur, il reconnaît, en cochant la case prévue lors de la commande, demander la fourniture immédiate d’un contenu numérique et renoncer expressément à son droit de rétractation, conformément à l’article L. 221-28, 13° du code de la consommation.</p>
@@ -479,7 +485,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
     <p>La structure, les textes et les modèles de fiches restent la propriété de CHR Consulting. Le client bénéficie d’un droit d’utilisation, de modification et de reproduction des documents pour les seuls besoins de l’établissement désigné dans la commande. Toute revente, diffusion ou utilisation pour un autre établissement est interdite sans accord écrit.</p>
 
     <h2>9. Données personnelles</h2>
-    <p>Les réponses au questionnaire sont conservées dans le navigateur du client jusqu’à la commande, puis enregistrées par CHR Consulting pour générer les documents, permettre leur nouveau téléchargement et établir la facture. Elles sont hébergées dans l’Union européenne et ne sont jamais cédées. Le client dispose d’un droit d’accès, de rectification et d’effacement en écrivant à contact@chrconsulting.fr. Voir la <a href="/confidentialite" style="color:var(--roi)">politique de confidentialité</a>.</p>
+    <p>Les réponses au questionnaire restent dans le navigateur du client jusqu’à la commande ; ce brouillon s’efface après 12 mois ou à sa demande. À la commande, elles sont enregistrées par CHR Consulting pour générer les documents et permettre leur nouveau téléchargement. Elles sont conservées 12 mois au plus après le paiement (30 jours pour une commande non payée), puis supprimées. Les factures sont conservées par la plateforme de paiement pendant la durée légale. Les données ne sont jamais cédées ; elles sont traitées par nos prestataires techniques (Supabase pour la base de données, Stripe pour le paiement et la facturation, Brevo pour l’envoi des e-mails). Le client dispose d’un droit d’accès, de rectification et d’effacement en écrivant à contact@chrconsulting.fr. Voir la <a href="/confidentialite" style="color:var(--roi)">politique de confidentialité</a>.</p>
 
     <h2>10. Réclamations et droit applicable</h2>
     <p>Toute réclamation est adressée à contact@chrconsulting.fr. Les présentes conditions sont soumises au droit français. À défaut de solution amiable, les tribunaux de Paris sont compétents, sous réserve des règles d’ordre public applicables aux consommateurs, qui peuvent également recourir gratuitement à un médiateur de la consommation.</p>
@@ -522,7 +528,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
   <span class="wa-tip">Discutons de votre projet</span>
 </a>
 
-<script>window.PMS_CONFIG={"api": "", "prixAffiche": "50 € HT", "prixDetail": "soit 60 € TTC · paiement sécurisé par Stripe · facture envoyée par e-mail"};</script>
+<script>window.PMS_CONFIG={"api": "", "prixHT": 50, "tauxTVA": 20, "cgvVersion": "2026-10-25"};</script>
 
 <script>
 const nav=document.getElementById('nav');

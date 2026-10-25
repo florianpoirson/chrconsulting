@@ -4,12 +4,17 @@ import { ZONES, STOCKAGE, EQUIPEMENTS } from './engine/derive.js';
 
 const CFG = window.PMS_CONFIG || {};
 const KEY = 'chr_pms_brouillon_v1';
+const DOUZE_MOIS = 365 * 24 * 3600 * 1000;
+const CGV_VERSION = CFG.cgvVersion || '2026-10-25';
+const euros = (n) => `${Number(n).toFixed(2).replace('.', ',')}\u00a0€`;
+export const PRIX = (() => { const ht = Number(CFG.prixHT ?? 50), tva = Number(CFG.tauxTVA ?? 20); const t = Math.round(ht * tva) / 100; return { ht, tva, montantTVA: t, ttc: ht + t }; })();
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 // ---------- état ----------
 let R = {};
 try { R = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch { R = {}; }
+if (R._savedAt && Date.now() - R._savedAt > DOUZE_MOIS) { R = {}; try { localStorage.removeItem(KEY); } catch { /* */ } }
 const get = (path) => path.split('.').reduce((o, k) => (o == null ? undefined : o[k]), R);
 function set(path, v) {
   const ks = path.split('.'); let o = R;
@@ -20,7 +25,7 @@ function set(path, v) {
 let saveT;
 function save() {
   clearTimeout(saveT);
-  saveT = setTimeout(() => { try { localStorage.setItem(KEY, JSON.stringify(R)); flash('Brouillon enregistré sur cet appareil'); } catch { /* stockage indisponible */ } }, 400);
+  saveT = setTimeout(() => { R._savedAt = Date.now(); try { localStorage.setItem(KEY, JSON.stringify(R)); flash('Brouillon enregistré sur cet appareil'); } catch { /* stockage indisponible */ } }, 400);
 }
 function flash(t) { const el = $('#q-save'); if (!el) return; el.textContent = t; el.classList.add('on'); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove('on'), 1600); }
 
@@ -243,7 +248,6 @@ function contenus() {
 
 function renderRecap() {
   const e = R.etab || {};
-  const prix = CFG.prixAffiche || '50 € HT';
   const email = R._email || (R.direction || {}).email || e.email || '';
   const zones = ZONES.filter(([k]) => get(`zones.${k}`)).length;
   const enc = STOCKAGE.reduce((a, [k]) => a + (Number(get(`stock.${k}.n`)) || 0), 0);
@@ -258,11 +262,13 @@ function renderRecap() {
     <form class="qform" id="q-order" novalidate>
       <div class="qrow"><div class="qf"><label for="q-email">E-mail de réception des documents <span class="req">*</span></label><input id="q-email" type="email" required value="${esc(email)}" autocomplete="email"></div></div>
       <input type="text" name="site" id="q-site" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <label class="qc"><input type="checkbox" id="q-cgv" required><span>J’accepte les <a href="${CFG.cgvUrl || '/pms/cgv/'}" target="_blank" rel="noopener">conditions générales de vente</a>.</span></label>
+      <label class="qc"><input type="checkbox" id="q-retract" required><span>Je demande la mise à disposition immédiate des documents et je renonce à mon droit de rétractation.</span></label>
       <label class="qc"><input type="checkbox" id="q-adapt" required><span>Je comprends que ce PMS est établi à partir de mes déclarations, sans visite des locaux, et qu’il m’appartient de l’adapter, de l’appliquer et de le tenir à jour.</span></label>
-      <label class="qc"><input type="checkbox" id="q-cgv" required><span>J’accepte les <a href="${CFG.cgvUrl || '/pms/cgv/'}" target="_blank" rel="noopener">conditions générales de vente</a> et je demande la mise à disposition immédiate des documents, ce qui met fin au droit de rétractation.</span></label>
-      <div class="qpay"><div><div class="qprice">${esc(prix)}</div><small>${esc(CFG.prixDetail || 'Paiement sécurisé par Stripe · facture envoyée par e-mail')}</small></div>
+      <div class="qpay"><div><div class="qprice">${euros(PRIX.ht)} <span class="qprice-u">HT</span></div><div class="qprice-ttc">${euros(PRIX.ttc)} TTC <small>(dont TVA ${PRIX.tva}\u00a0% : ${euros(PRIX.montantTVA)})</small></div><small>Paiement sécurisé par Stripe · facture envoyée par e-mail</small></div>
       <button type="submit" class="calc-wa big" id="q-submit">${CFG.essai ? 'Générer mes documents (essai, sans paiement)' : 'Payer et recevoir mon PMS →'}</button></div>
       <p class="qerr" id="q-err" role="alert"></p>
+      <p class="qnote">Vos réponses servent uniquement à établir votre PMS. Elles sont conservées 12 mois au plus après la commande, puis supprimées (voir la <a href="${CFG.confidentialiteUrl || '/confidentialite'}" target="_blank" rel="noopener">politique de confidentialité</a>). Le brouillon enregistré sur cet appareil s’efface après 12 mois ou à votre demande.</p>
     </form>
     <div id="q-result"></div>
     <div class="qnav"><button type="button" class="qback" data-nav="-1">← Étape précédente</button><button type="button" class="qback" id="q-reset">Effacer mes réponses</button></div>`;
@@ -274,7 +280,7 @@ async function commander(ev) {
   const email = $('#q-email').value.trim();
   R._email = email; save();
   if (!$('#q-email').checkValidity() || !email) { err.textContent = 'Indiquez une adresse e-mail valide.'; return; }
-  if (!$('#q-adapt').checked || !$('#q-cgv').checked) { err.textContent = 'Cochez les deux cases pour continuer.'; return; }
+  if (!$('#q-cgv').checked || !$('#q-retract').checked || !$('#q-adapt').checked) { err.textContent = 'Cochez les trois cases pour continuer.'; return; }
   for (let i = 0; i < STEPS.length; i++) {
     const missing = STEPS[i].fields.flatMap((f) => (f.t === 'row' ? f.items : [f])).filter((f) => f.req && !String(get(f.p) ?? '').trim());
     if (missing.length) { err.innerHTML = `Information manquante à l’étape ${i + 1} : ${esc(missing.map((m) => m.l).join(', '))}. <button type="button" class="linkbtn" data-go="${i}">Compléter</button>`; return; }
@@ -283,8 +289,8 @@ async function commander(ev) {
   if (!CFG.api) { err.textContent = 'Le paiement en ligne sera ouvert très prochainement. Contactez-nous sur WhatsApp pour commander dès maintenant.'; return; }
   const btn = $('#q-submit'); btn.disabled = true; btn.textContent = 'Redirection vers le paiement…';
   try {
-    const reponses = JSON.parse(JSON.stringify(R)); delete reponses._init; delete reponses._email;
-    const res = await fetch(`${CFG.api}/pms-commande`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ reponses, email, cgv: true, site: $('#q-site').value }) });
+    const reponses = JSON.parse(JSON.stringify(R)); delete reponses._init; delete reponses._email; delete reponses._savedAt;
+    const res = await fetch(`${CFG.api}/pms-commande`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ reponses, email, cgv: true, cgvVersion: CGV_VERSION, renonciation: true, site: $('#q-site').value }) });
     const data = await res.json().catch(() => ({}));
     if (!res.ok || !data.url) throw new Error(data.error || 'Le service de paiement ne répond pas.');
     location.href = data.url;
@@ -301,7 +307,7 @@ async function essai() {
   out.innerHTML = '<div class="dl-status wait">Préparation des documents… <span class="dl-spin"></span><br><small>Comptez quelques secondes ; le PMS fait une centaine de pages.</small></div>';
   try {
     const [{ fabriquer, taille }, modele] = await Promise.all([import('./fabrication.js'), fetch(CFG.modeleUrl).then((r) => { if (!r.ok) throw new Error('Modèle introuvable.'); return r.json(); })]);
-    const reponses = JSON.parse(JSON.stringify(R)); delete reponses._init; delete reponses._email;
+    const reponses = JSON.parse(JSON.stringify(R)); delete reponses._init; delete reponses._email; delete reponses._savedAt;
     const t0 = performance.now();
     const { fichiers, fiches } = await fabriquer({ reponses, modele, cfg: CFG });
     const dl = window.claude && window.claude.use ? await window.claude.use('downloads').catch(() => null) : null;
@@ -374,7 +380,10 @@ root.addEventListener('click', (ev) => {
   else if (b.dataset.add) { const list = get(b.dataset.add) || []; list.push({}); set(b.dataset.add, list); render(); }
   else if (b.dataset.del) { const list = get(b.dataset.del) || []; list.splice(+b.dataset.i, 1); set(b.dataset.del, list); render(); }
   else if (b.dataset.logoDel) { set(b.dataset.logoDel, null); render(); }
-  else if (b.id === 'q-reset') { if (confirm('Effacer toutes vos réponses ?')) { try { localStorage.removeItem(KEY); } catch { /* */ } location.reload(); } }
+  else if (b.id === 'q-reset') {
+    if (b.dataset.armed) { clearTimeout(saveT); try { localStorage.removeItem(KEY); } catch { /* */ } location.reload(); }
+    else { b.dataset.armed = '1'; b.textContent = 'Confirmer l’effacement de toutes les réponses'; b.classList.add('danger'); setTimeout(() => { delete b.dataset.armed; b.textContent = 'Effacer mes réponses'; b.classList.remove('danger'); }, 5000); }
+  }
 });
 root.addEventListener('submit', (ev) => { if (ev.target.id === 'q-order') commander(ev); else ev.preventDefault(); });
 steps.addEventListener('click', (ev) => { const b = ev.target.closest('[data-go]'); if (b) { const n = +b.dataset.go; if (n <= step || validateStep()) go(n); } });

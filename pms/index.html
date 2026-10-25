@@ -386,6 +386,12 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 .recap-note{font-size:.82rem!important;margin-top:.8rem!important}
 .qpay{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;flex-wrap:wrap;margin-top:.6rem;padding:1.3rem 1.5rem;border-radius:10px;background:var(--ciel);border:1px solid var(--ligne)}
 .qprice{font-family:var(--display);font-size:2.2rem;font-weight:500;color:var(--marine);line-height:1}
+.qprice-u{font-size:1.1rem;color:var(--gris)}
+.qprice-ttc{font-size:.95rem;font-weight:600;color:var(--marine);margin:.35rem 0 .2rem}
+.qprice-ttc small{font-weight:400;color:var(--gris)}
+.qnote{font-size:.8rem;color:var(--gris);line-height:1.5}
+.qnote a{color:var(--roi);text-decoration:underline}
+.qback.danger{color:var(--rouge)}
 .qerr{color:var(--rouge);font-size:.9rem;min-height:1.2em}
 .linkbtn{background:none;border:none;color:var(--roi);font-weight:600;text-decoration:underline;cursor:pointer;font-size:inherit;font-family:inherit}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
@@ -444,7 +450,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
     <h1 class="reveal">Votre Plan de Maîtrise Sanitaire,<br><em>prêt en 20 minutes</em>.</h1>
     <p class="sub reveal">Répondez aux questions sur votre établissement : vous recevez un PMS complet, adapté à vos équipements et à vos méthodes, en PDF et en Word, avec les fiches de suivi et les protocoles à afficher en cuisine. La méthode de nos missions de conseil, automatisée.</p>
     <div class="hero-actions reveal"><a href="#questionnaire" class="btn btn-primary">Créer mon PMS <span class="arw">→</span></a><a href="#contenu" class="btn btn-ghost">Ce que contient le PMS</a></div>
-    <div class="pms-meta reveal"><div><b>3</b><span>parties + annexes</span></div><div><b>45</b><span>fiches au maximum</span></div><div><b>PDF + Word</b><span>et protocoles PDF</span></div><div><b>50 €</b><span>HT · par établissement</span></div></div>
+    <div class="pms-meta reveal"><div><b>3</b><span>parties + annexes</span></div><div><b>45</b><span>fiches au maximum</span></div><div><b>PDF + Word</b><span>et protocoles PDF</span></div><div><b>50 € HT</b><span>soit 60 € TTC · par établissement</span></div></div>
   </div>
 </section>
 
@@ -548,7 +554,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
   <span class="wa-tip">Discutons de votre projet</span>
 </a>
 
-<script>window.PMS_CONFIG={"api": "", "prixAffiche": "50 € HT", "prixDetail": "soit 60 € TTC · paiement sécurisé par Stripe · facture envoyée par e-mail"};</script>
+<script>window.PMS_CONFIG={"api": "", "prixHT": 50, "tauxTVA": 20, "cgvVersion": "2026-10-25"};</script>
 <script type="module" src="/pms/assets/questionnaire.js"></script>
 <script>
 const nav=document.getElementById('nav');
