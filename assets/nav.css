@@ -49,3 +49,5 @@ body:not(.m-open) header.nav:not(.scrolled) .brand .mark{color:#fff}
 body:not(.m-open) header.nav:not(.scrolled) .lang-switch{color:#fff;border-color:rgba(255,255,255,.35)}
 body:not(.m-open) header.nav:not(.scrolled) .m-toggle span{background:#fff}
 @media(max-width:560px){header.nav .brand .mark{font-size:1rem;letter-spacing:.12em;white-space:nowrap}}
+footer h5 a.h5-link{display:inline;margin:0;padding:0;color:inherit;font-size:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .25s,color .25s}
+footer h5 a.h5-link:hover{color:#fff;border-bottom-color:currentColor}
