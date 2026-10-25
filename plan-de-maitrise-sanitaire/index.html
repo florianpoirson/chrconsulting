@@ -10,8 +10,8 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:title" content="Générateur de Plan de Maîtrise Sanitaire (PMS) pour restaurant | CHR Consulting">
 <meta property="og:description" content="Créez en ligne le Plan de Maîtrise Sanitaire de votre restaurant : PMS personnalisé en PDF et Word, plan HACCP, fiches de suivi et protocoles à afficher. Par CHR Consulting, conseil en restauration depuis 2012.">
-<meta property="og:url" content="https://www.chrconsulting.fr/pms/">
-<link rel="canonical" href="https://www.chrconsulting.fr/pms/">
+<meta property="og:url" content="https://www.chrconsulting.fr/plan-de-maitrise-sanitaire/">
+<link rel="canonical" href="https://www.chrconsulting.fr/plan-de-maitrise-sanitaire/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -532,7 +532,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
       </div>
       <div class="foot-col">
         <h5>Naviguer</h5>
-        <a href="/#approche">Approche</a><a href="/#expertises">Expertises</a><a href="/ratios/">Diagnostic</a><a href="/lightspeed/">Système de caisse</a><a href="/pms/">Générateur de PMS</a><a href="/#c360">Ouverture 360</a><a href="/#fondateur">Le cabinet</a><a href="/#references">Parcours</a>
+        <a href="/#approche">Approche</a><a href="/#expertises">Expertises</a><a href="/ratios/">Diagnostic</a><a href="/lightspeed/">Système de caisse</a><a href="/plan-de-maitrise-sanitaire/">Plan de maîtrise sanitaire</a><a href="/#c360">Ouverture 360</a><a href="/#fondateur">Le cabinet</a><a href="/#references">Parcours</a>
       </div>
       <div class="foot-col">
         <h5>Contact</h5>
@@ -555,7 +555,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 </a>
 
 <script>window.PMS_CONFIG={"api": "", "prixHT": 50, "tauxTVA": 20, "cgvVersion": "2026-10-25"};</script>
-<script type="module" src="/pms/assets/questionnaire.js"></script>
+<script type="module" src="/plan-de-maitrise-sanitaire/assets/questionnaire.js"></script>
 <script>
 const nav=document.getElementById('nav');
 addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
@@ -586,13 +586,13 @@ const bg=document.getElementById('burger'); if(bg) bg.addEventListener('click',(
   if(!ANALYTICS_ENABLED) return; // rien à consentir : pas de bandeau
 
   var banner=document.getElementById('cookie-banner');
-  var choice=null; try{choice=localStorage.getItem('chr_cookie_consent');}catch(e){}
+  var choice=null; try{choice=localStorage.getItem('chr_cookie_consent');var d=+localStorage.getItem('chr_cookie_consent_date')||0;if(choice&&Date.now()-d>34128000000){localStorage.removeItem('chr_cookie_consent');choice=null;}}catch(e){}
 
   function loadGA(){
     if(!GA_ID||GA_ID.indexOf('XXXX')>-1) return;
     var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(s);
     window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;
-    gtag('js',new Date());gtag('config',GA_ID,{anonymize_ip:true});
+    gtag('js',new Date());gtag('config',GA_ID,{anonymize_ip:true,cookie_expires:34128000});
   }
   function hide(){banner.classList.remove('show');}
 
@@ -601,8 +601,8 @@ const bg=document.getElementById('burger'); if(bg) bg.addEventListener('click',(
 
   // pas encore de choix -> afficher le bandeau
   requestAnimationFrame(function(){banner.classList.add('show');});
-  document.getElementById('cb-accept').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','accepted');}catch(e){}loadGA();hide();});
-  document.getElementById('cb-refuse').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','refused');}catch(e){}hide();});
+  document.getElementById('cb-accept').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','accepted');localStorage.setItem('chr_cookie_consent_date',Date.now());}catch(e){}loadGA();hide();});
+  document.getElementById('cb-refuse').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','refused');localStorage.setItem('chr_cookie_consent_date',Date.now());}catch(e){}hide();});
 })();
 </script>
 

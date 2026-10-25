@@ -372,7 +372,7 @@ Activité : conseil en création et développement de restaurants, bars, hôtels
       </div>
       <div class="foot-col">
         <h5>Naviguer</h5>
-        <a href="/#approche">Approche</a><a href="/#expertises">Expertises</a><a href="/ratios/">Diagnostic</a><a href="/lightspeed/">Système de caisse</a><a href="/#c360">Ouverture 360</a><a href="/#fondateur">Le cabinet</a><a href="/#references">Parcours</a>
+        <a href="/#approche">Approche</a><a href="/#expertises">Expertises</a><a href="/ratios/">Diagnostic</a><a href="/lightspeed/">Système de caisse</a><a href="/plan-de-maitrise-sanitaire/">Plan de maîtrise sanitaire</a><a href="/#c360">Ouverture 360</a><a href="/#fondateur">Le cabinet</a><a href="/#references">Parcours</a>
       </div>
       <div class="foot-col">
         <h5>Contact</h5>
@@ -419,13 +419,13 @@ var bg=document.getElementById('burger'); if(bg)bg.addEventListener('click',func
   if(!ANALYTICS_ENABLED) return; // rien à consentir : pas de bandeau
 
   var banner=document.getElementById('cookie-banner');
-  var choice=null; try{choice=localStorage.getItem('chr_cookie_consent');}catch(e){}
+  var choice=null; try{choice=localStorage.getItem('chr_cookie_consent');var d=+localStorage.getItem('chr_cookie_consent_date')||0;if(choice&&Date.now()-d>34128000000){localStorage.removeItem('chr_cookie_consent');choice=null;}}catch(e){}
 
   function loadGA(){
     if(!GA_ID||GA_ID.indexOf('XXXX')>-1) return;
     var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(s);
     window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;
-    gtag('js',new Date());gtag('config',GA_ID,{anonymize_ip:true});
+    gtag('js',new Date());gtag('config',GA_ID,{anonymize_ip:true,cookie_expires:34128000});
   }
   function hide(){banner.classList.remove('show');}
 
@@ -434,8 +434,8 @@ var bg=document.getElementById('burger'); if(bg)bg.addEventListener('click',func
 
   // pas encore de choix -> afficher le bandeau
   requestAnimationFrame(function(){banner.classList.add('show');});
-  document.getElementById('cb-accept').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','accepted');}catch(e){}loadGA();hide();});
-  document.getElementById('cb-refuse').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','refused');}catch(e){}hide();});
+  document.getElementById('cb-accept').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','accepted');localStorage.setItem('chr_cookie_consent_date',Date.now());}catch(e){}loadGA();hide();});
+  document.getElementById('cb-refuse').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','refused');localStorage.setItem('chr_cookie_consent_date',Date.now());}catch(e){}hide();});
 })();
 </script>
 

@@ -14,13 +14,13 @@ function loadScript(src) {
   });
 }
 const b64 = (buf) => { let s = ''; const b = new Uint8Array(buf); for (let i = 0; i < b.length; i += 0x8000) s += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000)); return btoa(s); };
-export const slug = (s) => String(s || 'etablissement').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 50);
+export const slug = (s) => String(s || 'etablissement').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 50);
 
 let ready = null;
 async function outils(cfg) {
   if (ready) return ready;
   ready = (async () => {
-    const V = cfg.vendor || '/pms/assets/vendor';
+    const V = cfg.vendor || '/plan-de-maitrise-sanitaire/assets/vendor';
     await Promise.all([loadScript(cfg.pdfmakeUrl || `${V}/pdfmake-0.3.11.min.js`), loadScript(cfg.docxUrl || `${V}/docx-9.8.0.min.js`)]);
     const files = ['Manrope-400.ttf', 'Manrope-700.ttf', 'Jost-400.ttf', 'Jost-500.ttf', 'Jost-600.ttf'];
     const fonts = Object.fromEntries(await Promise.all(files.map(async (f) => {

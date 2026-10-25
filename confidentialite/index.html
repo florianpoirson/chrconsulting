@@ -346,8 +346,10 @@ body.splash-on{overflow:hidden}
 <p>Pour le générateur de PMS, elles sont traitées pour notre compte par des prestataires techniques : Supabase (hébergement de la base de données), Stripe (paiement et facturation) et Brevo (envoi des e-mails).</p>
 
 <h2>Cookies et mesure d'audience</h2>
-<p>En l'état, ce site ne dépose <strong>aucun cookie publicitaire ni de traçage</strong>. Seul un stockage technique temporaire (mémorisation de l'animation d'accueil), strictement nécessaire au fonctionnement du site et effacé à la fermeture de votre navigateur, est utilisé. Ce stockage ne nécessite pas de consentement.</p>
-<p>Si une solution de mesure d'audience (par exemple Google Analytics) venait à être ajoutée, elle ne serait activée qu'après recueil de votre consentement via un bandeau dédié, que vous pourrez accepter ou refuser librement.</p>
+<p>Ce site utilise <strong>Google Analytics 4</strong> (Google Ireland Limited) pour mesurer son audience : pages consultées, durée de visite, provenance, type d'appareil et de navigateur. Ces cookies ne sont déposés <strong>qu'après votre accord</strong>, donné dans le bandeau affiché lors de votre première visite ; si vous refusez, aucun cookie de mesure n'est déposé. L'adresse IP est anonymisée. Les cookies de mesure sont conservés 13 mois au plus et votre choix est redemandé au bout de 13 mois. Les données peuvent être transférées aux États-Unis vers Google LLC, dans le cadre du Data Privacy Framework UE–États-Unis.</p>
+<p>Le site utilise aussi un stockage technique dans votre navigateur, strictement nécessaire à son fonctionnement et sans consentement requis : la mémorisation de votre choix sur les cookies, et le brouillon du questionnaire du générateur de PMS (effacé après 12 mois ou à votre demande).</p>
+<p>Vous pouvez retirer ou modifier votre consentement à tout moment : <button type="button" id="cookie-change" class="cb-btn cb-refuse" style="color:var(--marine);border-color:var(--ligne);padding:.35rem .9rem">Modifier mon choix sur les cookies</button></p>
+<script>document.getElementById('cookie-change').addEventListener('click',function(){try{localStorage.removeItem('chr_cookie_consent');localStorage.removeItem('chr_cookie_consent_date');}catch(e){}document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(/^_ga/.test(n)){document.cookie=n+'=;Max-Age=0;path=/;domain=.chrconsulting.fr';document.cookie=n+'=;Max-Age=0;path=/';}});location.reload();});</script>
 
 <h2>Vos droits</h2>
 <p>Conformément au RGPD, vous disposez des droits suivants sur vos données : droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Pour les exercer, écrivez à <a href="mailto:contact@chrconsulting.fr">contact@chrconsulting.fr</a>. Vous disposez également du droit d'introduire une réclamation auprès de la <strong>CNIL</strong> (<a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>).</p>
@@ -370,7 +372,7 @@ body.splash-on{overflow:hidden}
       </div>
       <div class="foot-col">
         <h5>Naviguer</h5>
-        <a href="/#approche">Approche</a><a href="/#expertises">Expertises</a><a href="/ratios/">Diagnostic</a><a href="/lightspeed/">Système de caisse</a><a href="/#c360">Ouverture 360</a><a href="/#fondateur">Le cabinet</a><a href="/#references">Parcours</a>
+        <a href="/#approche">Approche</a><a href="/#expertises">Expertises</a><a href="/ratios/">Diagnostic</a><a href="/lightspeed/">Système de caisse</a><a href="/plan-de-maitrise-sanitaire/">Plan de maîtrise sanitaire</a><a href="/#c360">Ouverture 360</a><a href="/#fondateur">Le cabinet</a><a href="/#references">Parcours</a>
       </div>
       <div class="foot-col">
         <h5>Contact</h5>
@@ -417,13 +419,13 @@ var bg=document.getElementById('burger'); if(bg)bg.addEventListener('click',func
   if(!ANALYTICS_ENABLED) return; // rien à consentir : pas de bandeau
 
   var banner=document.getElementById('cookie-banner');
-  var choice=null; try{choice=localStorage.getItem('chr_cookie_consent');}catch(e){}
+  var choice=null; try{choice=localStorage.getItem('chr_cookie_consent');var d=+localStorage.getItem('chr_cookie_consent_date')||0;if(choice&&Date.now()-d>34128000000){localStorage.removeItem('chr_cookie_consent');choice=null;}}catch(e){}
 
   function loadGA(){
     if(!GA_ID||GA_ID.indexOf('XXXX')>-1) return;
     var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(s);
     window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;
-    gtag('js',new Date());gtag('config',GA_ID,{anonymize_ip:true});
+    gtag('js',new Date());gtag('config',GA_ID,{anonymize_ip:true,cookie_expires:34128000});
   }
   function hide(){banner.classList.remove('show');}
 
@@ -432,8 +434,8 @@ var bg=document.getElementById('burger'); if(bg)bg.addEventListener('click',func
 
   // pas encore de choix -> afficher le bandeau
   requestAnimationFrame(function(){banner.classList.add('show');});
-  document.getElementById('cb-accept').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','accepted');}catch(e){}loadGA();hide();});
-  document.getElementById('cb-refuse').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','refused');}catch(e){}hide();});
+  document.getElementById('cb-accept').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','accepted');localStorage.setItem('chr_cookie_consent_date',Date.now());}catch(e){}loadGA();hide();});
+  document.getElementById('cb-refuse').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','refused');localStorage.setItem('chr_cookie_consent_date',Date.now());}catch(e){}hide();});
 })();
 </script>
 

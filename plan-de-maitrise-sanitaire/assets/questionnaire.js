@@ -262,7 +262,7 @@ function renderRecap() {
     <form class="qform" id="q-order" novalidate>
       <div class="qrow"><div class="qf"><label for="q-email">E-mail de réception des documents <span class="req">*</span></label><input id="q-email" type="email" required value="${esc(email)}" autocomplete="email"></div></div>
       <input type="text" name="site" id="q-site" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
-      <label class="qc"><input type="checkbox" id="q-cgv" required><span>J’accepte les <a href="${CFG.cgvUrl || '/pms/cgv/'}" target="_blank" rel="noopener">conditions générales de vente</a>.</span></label>
+      <label class="qc"><input type="checkbox" id="q-cgv" required><span>J’accepte les <a href="${CFG.cgvUrl || '/plan-de-maitrise-sanitaire/cgv/'}" target="_blank" rel="noopener">conditions générales de vente</a>.</span></label>
       <label class="qc"><input type="checkbox" id="q-retract" required><span>Je demande la mise à disposition immédiate des documents et je renonce à mon droit de rétractation.</span></label>
       <label class="qc"><input type="checkbox" id="q-adapt" required><span>Je comprends que ce PMS est établi à partir de mes déclarations, sans visite des locaux, et qu’il m’appartient de l’adapter, de l’appliquer et de le tenir à jour.</span></label>
       <div class="qpay"><div><div class="qprice">${euros(PRIX.ht)} <span class="qprice-u">HT</span></div><div class="qprice-ttc">${euros(PRIX.ttc)} TTC <small>(dont TVA ${PRIX.tva}\u00a0% : ${euros(PRIX.montantTVA)})</small></div><small>Paiement sécurisé par Stripe · facture envoyée par e-mail</small></div>
