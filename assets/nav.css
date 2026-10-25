@@ -1,0 +1,51 @@
+/* Menu « Outils & solutions » + menu mobile — partagé par toutes les pages */
+.dd{position:relative;display:inline-flex}
+.dd-btn{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:.35em;white-space:nowrap}
+.dd-btn svg{width:.75em;height:.75em;transition:transform .2s}
+.dd-btn:focus-visible{outline:2px solid var(--roi,var(--blue,#0042AE));outline-offset:4px;border-radius:4px}
+header.nav .dd-btn{font-size:.83rem;font-weight:500;color:var(--encre,#12203A);opacity:.78}
+header.nav .dd-btn:hover,header.nav .dd.open .dd-btn{opacity:1;color:var(--roi,#0042AE)}
+header > .nav .dd-btn{font-size:15px;color:var(--ink,#1a2333)}
+header > .nav .dd-btn:hover,header > .nav .dd.open .dd-btn{color:var(--blue,#2f5d9c)}
+.dd.open .dd-btn svg{transform:rotate(180deg)}
+.dd-panel{position:absolute;top:calc(100% + 14px);left:50%;transform:translate(-50%,6px);width:330px;background:#fff;border:1px solid rgba(15,47,99,.12);border-radius:14px;box-shadow:0 24px 50px -24px rgba(15,47,99,.45);padding:8px;opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s;z-index:120}
+.dd-panel::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.dd.open .dd-panel{opacity:1;visibility:visible;transform:translate(-50%,0)}
+@media (hover:hover){.dd:hover .dd-panel{opacity:1;visibility:visible;transform:translate(-50%,0)}.dd:hover .dd-btn svg{transform:rotate(180deg)}}
+.dd .dd-panel a{display:block;padding:11px 14px;border-radius:10px;text-decoration:none;color:#12203A;line-height:1.35;opacity:1}
+.dd .dd-panel a:hover,.dd .dd-panel a:focus-visible{background:#EAF0FA;outline:none}
+.dd-panel a b{display:block;font-weight:600;font-size:14.5px;color:#0F2F63}
+.dd-panel a span{display:block;font-size:12.5px;color:#5B6B84;margin-top:2px;font-weight:400}
+.dd .dd-panel .dd-all{margin-top:9px;position:relative;font-size:13px;font-weight:600;color:#0042AE}
+.dd-panel .dd-all::before{content:"";position:absolute;left:14px;right:14px;top:-5px;height:1px;background:rgba(15,47,99,.1)}
+/* Menu mobile */
+.m-toggle{all:unset;box-sizing:border-box;display:none;cursor:pointer;width:42px;height:42px;border-radius:999px;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.m-toggle span{display:block;width:20px;height:2px;border-radius:2px;background:#0F2F63;transition:transform .25s,opacity .2s}
+.m-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.m-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.m-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.m-toggle:focus-visible{outline:2px solid #0042AE}
+.m-menu{display:none}
+@media (max-width:900px){
+  .m-toggle{display:inline-flex}
+  .nav-links .dd{display:none}
+  .m-menu{display:block;position:fixed;left:0;right:0;top:var(--m-top,68px);bottom:0;background:#fff;overflow-y:auto;padding:12px 20px 32px;border-top:1px solid rgba(15,47,99,.1);transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .2s,transform .2s,visibility .2s;z-index:110}
+  .m-menu.open{opacity:1;visibility:visible;transform:none}
+  .m-menu a{display:block;text-decoration:none;color:#0F2F63;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid rgba(15,47,99,.08)}
+  .m-menu .m-group{margin:6px 0 4px;padding:12px 14px;background:#F4F8FF;border-radius:14px}
+  .m-menu .m-group p{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7890C0;margin:0 0 4px}
+  .m-menu .m-group a{font-size:16px;padding:10px 0;border-bottom:1px solid rgba(15,47,99,.07)}
+  .m-menu .m-group a:last-child{border-bottom:0;color:#0042AE;font-weight:600;font-size:14.5px}
+  .m-menu .m-group a span{display:block;font-size:12.5px;color:#5B6B84;font-weight:400;margin-top:2px}
+  .m-menu .m-cta{margin-top:20px;border:0;text-align:center;background:#0042AE;color:#fff;border-radius:999px;padding:14px}
+  body.m-open{overflow:hidden}
+  body.m-open header.nav{background:#fff;border-bottom-color:rgba(15,47,99,.1)}
+}
+@media (prefers-reduced-motion:reduce){.dd-panel,.m-menu,.m-toggle span,.dd-btn svg{transition:none}}
+/* Lisibilité de l'en-tête transparent sur le hero sombre (avant défilement) */
+body:not(.m-open) header.nav:not(.scrolled) .nav-links>a,body:not(.m-open) header.nav:not(.scrolled) .dd-btn{color:#fff;opacity:.86}
+body:not(.m-open) header.nav:not(.scrolled) .nav-links>a:hover,body:not(.m-open) header.nav:not(.scrolled) .dd-btn:hover,body:not(.m-open) header.nav:not(.scrolled) .dd.open .dd-btn{color:#fff;opacity:1}
+body:not(.m-open) header.nav:not(.scrolled) .brand .mark{color:#fff}
+body:not(.m-open) header.nav:not(.scrolled) .lang-switch{color:#fff;border-color:rgba(255,255,255,.35)}
+body:not(.m-open) header.nav:not(.scrolled) .m-toggle span{background:#fff}
+@media(max-width:560px){header.nav .brand .mark{font-size:1rem;letter-spacing:.12em;white-space:nowrap}}

@@ -1,0 +1,33 @@
+/* Encadrés « Outils & solutions » — accueil et page /outils/ */
+.tools-sec{background:#fff}
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
+.tool{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--ligne,rgba(15,47,99,.12));border-radius:16px;padding:2rem 1.9rem 1.8rem;text-decoration:none;color:inherit;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s,border-color .35s}
+.tool:hover{transform:translateY(-4px);border-color:var(--azur-clair,#9FB2D9);box-shadow:0 30px 60px -40px rgba(15,47,99,.55)}
+.tool:focus-visible{outline:2px solid var(--roi,#0042AE);outline-offset:3px}
+.tool-ico{width:52px;height:52px;border-radius:14px;background:var(--ciel,#EAF0FA);color:var(--roi,#0042AE);display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem}
+.tool-ico svg{width:26px;height:26px}
+.tool-tag{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--azur,#7890C0)}
+.tool h3{font-family:var(--display,'Jost',sans-serif);font-weight:500;font-size:1.55rem;line-height:1.15;color:var(--marine,#0F2F63);margin:.5rem 0 .7rem}
+.tool p{font-size:.92rem;line-height:1.6;color:var(--gris,#5B6B84);margin:0 0 1.6rem}
+.tool ul{list-style:none;padding:0;margin:-.4rem 0 1.6rem;display:grid;gap:.5rem}
+.tool li{font-size:.88rem;color:var(--encre,#12203A);padding-left:1.4rem;position:relative;line-height:1.45}
+.tool li::before{content:"";position:absolute;left:0;top:.45em;width:.55rem;height:.55rem;border-radius:50%;border:2px solid var(--roi,#0042AE)}
+.tool-cta{margin-top:auto;display:inline-flex;align-items:center;gap:.55rem;align-self:flex-start;background:var(--roi,#0042AE);color:#fff;font-weight:600;font-size:.88rem;padding:.8rem 1.35rem;border-radius:999px;transition:background .25s}
+.tool:hover .tool-cta{background:var(--marine,#0F2F63)}
+.tool-cta .arw{transition:transform .3s}
+.tool:hover .tool-cta .arw{transform:translateX(4px)}
+.tool-badge{position:absolute;top:1.4rem;right:1.4rem;font-size:.68rem;font-weight:700;letter-spacing:.08em;color:var(--roi,#0042AE);background:var(--ciel-2,#F4F8FF);border:1px solid var(--ligne,rgba(15,47,99,.12));border-radius:999px;padding:.3rem .65rem}
+.tools-more{margin-top:2.2rem;text-align:center}
+.tools-more a{font-weight:600;font-size:.92rem;color:var(--roi,#0042AE);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+@media(max-width:980px){.tools-grid{grid-template-columns:1fr;max-width:560px;margin-left:auto;margin-right:auto}}
+/* Page /outils/ */
+.tools-hero{background:linear-gradient(165deg,#0F2F63,#143A78 60%,#0F2F63);color:#fff;padding:140px 0 70px}
+.tools-hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.1rem,5vw,3.3rem);line-height:1.1;color:#fff;margin:.9rem 0 1.1rem;max-width:22ch}
+.tools-page{padding:clamp(3rem,6vw,5rem) 0;background:var(--ciel-2,#F4F8FF)}
+.tools-page .tools-grid{margin-top:0}
+.tools-help{background:#fff;padding:clamp(3rem,6vw,4.5rem) 0;text-align:center}
+.tools-help h2{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,3.4vw,2.2rem);color:var(--marine);margin-bottom:.8rem}
+.tools-help p{color:var(--gris);max-width:58ch;margin:0 auto 1.8rem;line-height:1.65}
+.tools-help .acts{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+.tools-help .btn-line{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--ligne);color:var(--marine);font-weight:600;font-size:.9rem;padding:1rem 1.7rem;border-radius:999px;text-decoration:none}
+.tools-help .btn-line:hover{border-color:var(--roi);color:var(--roi)}

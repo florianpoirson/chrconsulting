@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outils &amp; solutions pour restaurants, cafés et hôtels | CHR Consulting</title>
+<meta name="description" content="Générateur de plan de maîtrise sanitaire, diagnostic de ratios gratuit, système de caisse Lightspeed : les outils CHR Consulting pour les cafés, hôtels et restaurants.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.chrconsulting.fr/outils/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Outils &amp; solutions | CHR Consulting">
+<meta property="og:description" content="Générateur de PMS, diagnostic ratios, système de caisse Lightspeed.">
+<meta property="og:url" content="https://www.chrconsulting.fr/outils/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<style>
+:root{
+  --marine:#0F2F63;--marine-2:#143A78;--roi:#0042AE;--azur:#7890C0;--azur-clair:#9FB2D9;
+  --ciel:#EAF0FA;--ciel-2:#F4F8FF;--blanc:#FFFFFF;--encre:#12203A;--gris:#5B6B84;--brume:#A9BAD6;
+  --ligne:rgba(15,47,99,.12);--ligne-marine:rgba(255,255,255,.12);--vert:#1F9D6B;--vert-bg:rgba(31,157,107,.12);--orange:#D98A2B;--orange-bg:rgba(217,138,43,.14);--rouge:#C6472F;--rouge-bg:rgba(198,71,47,.12);
+  --display:'Jost','Century Gothic',var(--sans),sans-serif;--sans:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--blanc);color:var(--encre);font-family:var(--sans);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--azur);display:inline-flex;align-items:center;gap:.9rem}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--azur);opacity:.8}
+.eyebrow.on-dark{color:var(--azur-clair)}
+.eyebrow.on-dark::before{background:var(--azur-clair)}
+h2.section-title{font-family:var(--display);font-weight:400;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.12;letter-spacing:.01em;margin:1.1rem 0 0;color:var(--marine)}
+h2.section-title.on-dark{color:var(--blanc)}
+.lead{font-size:clamp(1.02rem,1.6vw,1.18rem);color:var(--gris);font-weight:300;max-width:60ch}
+.lead.on-dark{color:var(--brume)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+header.nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .4s,border-color .4s,box-shadow .4s;border-bottom:1px solid transparent}
+header.nav.scrolled{background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--ligne);box-shadow:0 6px 24px -18px rgba(15,47,99,.4)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 32px;max-width:1180px;margin:0 auto;transition:padding .4s}
+header.nav.scrolled .nav-inner{padding:13px 32px}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand img{width:38px;height:38px}
+.brand .txt{display:flex;flex-direction:column;line-height:1}
+.brand .mark{font-family:var(--display);font-size:1.18rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--marine)}
+.brand .sub{font-size:.58rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--azur);margin-top:.2rem}
+.nav-links{display:flex;align-items:center;gap:2.3rem}
+.nav-links a{font-size:.83rem;font-weight:500;color:var(--encre);opacity:.78;transition:opacity .25s,color .25s}
+.nav-links a:hover{opacity:1;color:var(--roi)}
+.nav-cta{font-size:.8rem;font-weight:600;background:var(--roi);color:#fff;padding:.62rem 1.35rem;border-radius:999px;transition:background .3s,transform .3s}
+.nav-cta:hover{background:var(--marine);transform:translateY(-1px)}
+.lang-switch{font-size:.78rem;font-weight:700;letter-spacing:.06em;color:var(--marine);border:1px solid var(--ligne);border-radius:999px;padding:.5rem .7rem;transition:background .25s,color .25s,border-color .25s}
+.lang-switch:hover{background:var(--roi);color:#fff;border-color:var(--roi)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.burger span{width:24px;height:2px;background:var(--marine);transition:.3s}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:linear-gradient(165deg,#0F2F63 0%,#143A78 48%,#0F2F63 100%)}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 80% 12%,rgba(120,144,192,.28) 0%,transparent 55%),radial-gradient(90% 70% at 8% 92%,rgba(120,144,192,.14) 0%,transparent 60%)}
+.hero-lines{position:absolute;inset:0;opacity:.6;background-image:linear-gradient(var(--ligne-marine) 1px,transparent 1px);background-size:100% 92px;mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent)}
+.hero-mark{position:absolute;right:-6%;top:50%;transform:translateY(-50%);width:min(560px,52vw);opacity:.10;z-index:0}
+.hero-inner{position:relative;z-index:2;width:100%;padding:120px 0 70px;color:#fff}
+.hero-badge{display:inline-flex;align-items:center;gap:.85rem;border:1px solid rgba(159,178,217,.4);border-radius:100px;padding:.5rem 1.15rem;margin-bottom:2rem;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--azur-clair)}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--azur);box-shadow:0 0 0 4px rgba(120,144,192,.3)}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.7rem,7vw,5.3rem);line-height:1.06;letter-spacing:.005em;max-width:17ch;color:#fff}
+.hero h1 em{font-style:normal;color:var(--azur-clair);font-weight:500}
+.hero .sub{margin-top:1.7rem;max-width:52ch;font-size:clamp(1.05rem,1.8vw,1.26rem);color:#DCE6F7;font-weight:300}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.5rem}
+.btn{display:inline-flex;align-items:center;gap:.7rem;font-size:.9rem;font-weight:600;padding:1rem 1.9rem;border-radius:999px;transition:transform .3s,box-shadow .3s,background .3s,color .3s,border-color .3s}
+.btn-primary{background:#fff;color:var(--marine);box-shadow:0 14px 40px -16px rgba(0,0,0,.5)}
+.btn-primary:hover{transform:translateY(-2px);background:var(--ciel)}
+.btn-ghost{border:1px solid rgba(159,178,217,.45);color:#fff}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.btn .arw{transition:transform .3s}
+.btn:hover .arw{transform:translateX(4px)}
+.btn-primary.dark{background:var(--roi);color:#fff}
+.btn-primary.dark:hover{background:var(--marine)}
+.hero-meta{position:relative;z-index:2;margin-top:4.2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ligne-marine);border:1px solid var(--ligne-marine);border-radius:5px;overflow:hidden}
+.hero-meta .cell{background:rgba(15,47,99,.35);padding:1.5rem 1.4rem}
+.hero-meta .num{font-family:var(--display);font-size:2.2rem;font-weight:500;color:#fff;line-height:1}
+.hero-meta .num span{font-size:1.3rem;color:var(--azur-clair)}
+.hero-meta .lab{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--brume);margin-top:.55rem}
+section{padding:clamp(5rem,10vw,8.5rem) 0}
+.section-head{max-width:64ch}
+.trust{padding:3.4rem 0;background:var(--ciel);border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne)}
+.trust .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.6rem}
+.trust .slogan{font-family:var(--display);font-size:clamp(1.4rem,3.2vw,2.2rem);color:var(--marine);line-height:1.25;font-weight:300;letter-spacing:.01em}
+.trust .slogan b{color:var(--roi);font-weight:500}
+.trust .sig{text-align:right}
+.trust .sig .n{font-family:var(--display);font-size:1.2rem;color:var(--marine);font-weight:500;letter-spacing:.02em}
+.trust .sig .r{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gris);margin-top:.2rem}
+.approche{background:#fff}
+.approche-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:3.5rem}
+.approche-copy p{color:var(--gris);margin-top:1.3rem;font-size:1.05rem}
+.approche-copy p strong{color:var(--encre);font-weight:600}
+.pillars{display:flex;flex-direction:column}
+.pillar{display:flex;gap:1.5rem;padding:1.6rem 0;border-top:1px solid var(--ligne)}
+.pillar:last-child{border-bottom:1px solid var(--ligne)}
+.pillar .idx{font-family:var(--display);font-size:1.2rem;color:var(--azur);min-width:2.2rem;padding-top:.15rem;font-weight:500;letter-spacing:.05em}
+.pillar h4{font-weight:700;font-size:1.02rem;color:var(--marine)}
+.pillar p{font-size:.92rem;color:var(--gris);margin-top:.35rem}
+.impact{background:linear-gradient(165deg,#0F2F63,#143A78 55%,#0F2F63);color:#fff;position:relative;overflow:hidden}
+.impact::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 85% 10%,rgba(120,144,192,.22),transparent 60%)}
+.impact .wrap{position:relative;z-index:2}
+.impact-grid{margin-top:3.5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ligne-marine);border:1px solid var(--ligne-marine);border-radius:8px;overflow:hidden}
+.istat{background:rgba(15,47,99,.4);padding:2.4rem 1.8rem;transition:background .35s}
+.istat:hover{background:rgba(20,58,120,.6)}
+.inum{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,4.5vw,3.4rem);line-height:1;color:#fff;letter-spacing:.01em}
+.inum .val{color:#fff}
+.ilab{font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--azur-clair);margin-top:.9rem}
+.idesc{font-size:.9rem;color:var(--brume);margin-top:.8rem;line-height:1.55}
+.impact-note{margin-top:2rem;font-size:.95rem;color:var(--brume);text-align:center}
+.impact-note a{color:var(--azur-clair);font-weight:500;transition:color .25s}
+.impact-note a:hover{color:#fff;text-decoration:underline}
+.expertises{background:var(--ciel-2)}
+.gallery{background:#fff}
+.gal-grid{margin-top:3.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem}
+.gal-item{margin:0}
+.gal-img{aspect-ratio:4/3;border-radius:8px;overflow:hidden;border:1px solid var(--ligne);box-shadow:0 24px 50px -30px rgba(15,47,99,.45);background:var(--ciel)}
+.gal-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.gal-item:hover .gal-img img{transform:scale(1.04)}
+.gal-item figcaption{margin-top:1.1rem}
+.gal-item figcaption strong{display:block;font-family:var(--display);font-weight:500;font-size:1.2rem;color:var(--marine);letter-spacing:.01em}
+.gal-item figcaption span{display:block;font-size:.9rem;color:var(--gris);margin-top:.3rem;line-height:1.5}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:3.5rem;background:var(--ligne);border:1px solid var(--ligne);border-radius:6px;overflow:hidden}
+.exp{background:#fff;padding:2.3rem 2rem;transition:background .35s;position:relative}
+.exp:hover{background:var(--ciel)}
+.exp .no{font-size:.72rem;font-weight:700;letter-spacing:.12em;color:var(--azur)}
+.exp h3{font-family:var(--display);font-weight:500;font-size:1.5rem;margin:.65rem 0 .5rem;color:var(--marine);line-height:1.15}
+.exp p{font-size:.9rem;color:var(--gris);line-height:1.55}
+.exp::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--roi);transition:width .45s cubic-bezier(.16,1,.3,1)}
+.exp:hover::after{width:100%}
+.c360{background:linear-gradient(165deg,#0F2F63,#143A78 55%,#0F2F63);color:#fff;position:relative;overflow:hidden}
+.c360-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:5rem;align-items:center}
+.c360 .lead{margin-top:1.4rem}
+.c360-list{margin-top:2.4rem;display:flex;flex-direction:column;gap:1.15rem}
+.c360-list .it{display:flex;gap:1.1rem;align-items:flex-start}
+.c360-list .it .k{color:var(--azur-clair);font-weight:700;font-size:1.05rem}
+.c360-list .it b{font-weight:600;color:#fff;font-size:1rem}
+.c360-list .it span{color:var(--brume);font-size:.92rem}
+.c360-visual{position:relative;display:flex;align-items:center;justify-content:center;padding:2.2rem 0}
+.orbit{position:relative;width:min(320px,72vw);aspect-ratio:1;border-radius:50%;border:1px solid rgba(159,178,217,.3);display:flex;align-items:center;justify-content:center}
+.orbit::before{content:"";position:absolute;inset:16%;border-radius:50%;border:1px solid rgba(159,178,217,.16)}
+.orbit .core{width:46%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--azur),var(--roi));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 20px 50px -20px rgba(0,0,0,.6)}
+.orbit .core .y{font-family:var(--display);font-size:2.2rem;font-weight:500;color:#fff;line-height:1}
+.orbit .core .t{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-top:.3rem}
+.orbit .node{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--azur-clair);box-shadow:0 0 0 5px rgba(120,144,192,.25)}
+.orbit .lbl{position:absolute;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;white-space:nowrap;background:rgba(15,47,99,.7);padding:.15rem .5rem;border-radius:2px}
+.founder{background:#fff}
+.founder-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:4.5rem;align-items:center;margin-top:1rem}
+.founder-card{border:1px solid var(--ligne);border-radius:8px;padding:2.6rem;background:linear-gradient(160deg,var(--ciel),#fff);position:relative;box-shadow:0 30px 60px -40px rgba(15,47,99,.4)}
+.founder-card .seal{position:absolute;top:-16px;right:26px;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:var(--roi);padding:.42rem .9rem;border-radius:3px}
+.founder-card .name{font-family:var(--display);font-size:2rem;font-weight:500;letter-spacing:.01em;color:var(--marine)}
+.founder-card .role{font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--azur);margin-top:.4rem}
+.founder-card .bio{color:var(--gris);font-size:.96rem;margin-top:1.5rem;line-height:1.6}
+.founder-stats{margin-top:1.8rem;display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 1rem;border-top:1px solid var(--ligne);padding-top:1.6rem}
+.founder-stats .s .v{font-family:var(--display);font-size:1.7rem;color:var(--roi);line-height:1;font-weight:500}
+.founder-stats .s .l{font-size:.74rem;color:var(--gris);margin-top:.25rem}
+.founder-copy .lead{margin-top:1.3rem}
+.cred{margin-top:2rem;display:flex;flex-direction:column;gap:.9rem}
+.cred .c{display:flex;gap:1rem;font-size:.95rem;color:var(--encre)}
+.cred .c .b{color:var(--azur);flex-shrink:0;font-weight:700}
+.cred .c em{font-style:normal;color:var(--gris)}
+.cred .c strong{font-weight:600}
+.refs{background:var(--ciel-2)}
+.refs-marquee{margin-top:3rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ligne);border:1px solid var(--ligne);border-radius:6px;overflow:hidden}
+.refs-marquee .r{background:#fff;padding:1.7rem 1.4rem;text-align:center}
+.refs-marquee .r .n{font-family:var(--display);font-size:1.1rem;color:var(--marine);font-weight:500}
+.refs-marquee .r .c{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--azur);margin-top:.35rem}
+.refs-note{margin-top:1.6rem;font-size:.85rem;color:var(--gris);font-style:italic}
+.book{background:#fff}
+.book-inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:center}
+.book-cover{aspect-ratio:3/4;max-width:300px;border-radius:6px;background:linear-gradient(150deg,var(--marine-2),var(--marine));display:flex;flex-direction:column;justify-content:space-between;padding:2.2rem 1.8rem;box-shadow:0 40px 80px -34px rgba(15,47,99,.6);position:relative;overflow:hidden}
+.book-cover::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--azur)}
+.book-cover .book-badge{position:absolute;top:16px;right:-34px;transform:rotate(45deg);background:var(--azur);color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.35rem 3rem;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.book-cover .bt{font-family:var(--display);font-size:1.6rem;line-height:1.2;color:#fff;font-weight:500;letter-spacing:.01em}
+.book-cover .ba{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--azur-clair);font-weight:600}
+.book-cover .bl{font-family:var(--display);font-style:normal;color:#DCE6F7;font-size:1rem}
+.cta-final{background:linear-gradient(165deg,#143A78,#0F2F63);color:#fff;text-align:center;position:relative;overflow:hidden}
+.cta-final::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 0%,rgba(120,144,192,.28),transparent 70%)}
+.cta-final .wrap{position:relative;z-index:2}
+.cta-final .eyebrow{justify-content:center}
+.cta-final h2{font-family:var(--display);font-weight:400;font-size:clamp(2.3rem,5.5vw,4rem);line-height:1.05;max-width:20ch;margin:1.2rem auto 0;color:#fff}
+.cta-final .lead{margin:1.5rem auto 0}
+.cta-final .hero-actions{justify-content:center;margin-top:2.5rem}
+.cta-socials{margin-top:2rem;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.7rem;font-size:.85rem;color:var(--brume)}
+.cta-socials a{color:var(--azur-clair);font-weight:500;transition:color .25s}
+.cta-socials a:hover{color:#fff;text-decoration:underline}
+.cta-socials .sep{opacity:.5}
+footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:2.6rem;padding-bottom:2.8rem;border-bottom:1px solid var(--ligne-marine)}
+.foot-brand{display:flex;flex-direction:column;gap:1rem}
+.foot-brand .top{display:flex;align-items:center;gap:.7rem}
+.foot-brand img{width:40px;height:40px}
+.foot-brand .mark{font-family:var(--display);font-size:1.2rem;color:#fff;font-weight:400;letter-spacing:.18em;text-transform:uppercase}
+.foot-brand p{color:var(--brume);font-size:.9rem;max-width:34ch}
+.foot-col h5{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--azur-clair);margin-bottom:1.1rem}
+.foot-col a,.foot-col p{display:block;color:#DCE6F7;font-size:.92rem;margin-bottom:.7rem;transition:color .25s}
+.foot-col a:hover{color:#fff}
+.socials{display:flex;gap:.6rem;margin-top:.4rem}
+.socials a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid var(--ligne-marine);border-radius:6px;color:var(--azur-clair);transition:background .25s,border-color .25s,color .25s,transform .25s}
+.socials a:hover{background:var(--azur);border-color:var(--azur);color:#fff;transform:translateY(-2px)}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:2rem;font-size:.78rem;color:var(--brume)}
+.foot-bottom a:hover{color:#fff}
+@media(max-width:900px){.nav-links{display:none}.nav-cta{display:none}.burger{display:flex}.approche-grid,.c360-inner,.founder-grid,.book-inner{grid-template-columns:1fr;gap:3rem}.exp-grid,.refs-marquee,.hero-meta,.impact-grid,.gal-grid{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1fr;gap:2.4rem}.c360-visual{order:-1}.hero-mark{opacity:.06}}
+@media(max-width:560px){.wrap,.nav-inner{padding-left:22px;padding-right:22px}.exp-grid,.refs-marquee,.hero-meta,.founder-stats,.impact-grid,.gal-grid{grid-template-columns:1fr}.trust .wrap{flex-direction:column;align-items:flex-start}.trust .sig{text-align:left}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.wa-float{animation:none}}
+.wa-float{position:fixed;right:24px;bottom:24px;z-index:90;width:60px;height:60px;border-radius:50%;background:var(--roi);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(0,66,174,.55),0 4px 12px rgba(0,0,0,.25);transition:transform .3s,box-shadow .3s;animation:wa-pulse 2.6s ease-in-out infinite}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 16px 40px -8px rgba(0,66,174,.7),0 6px 16px rgba(0,0,0,.3)}
+.wa-float:hover .wa-tip{opacity:1;transform:translateX(0);pointer-events:auto}
+.wa-tip{position:absolute;right:74px;white-space:nowrap;background:var(--marine);color:#fff;font-size:.82rem;font-weight:500;padding:.6rem .95rem;border-radius:6px;box-shadow:0 8px 24px -10px rgba(0,0,0,.5);opacity:0;transform:translateX(8px);pointer-events:none;transition:opacity .3s,transform .3s}
+.wa-tip::after{content:"";position:absolute;right:-5px;top:50%;transform:translateY(-50%);border-left:6px solid var(--marine);border-top:6px solid transparent;border-bottom:6px solid transparent}
+@keyframes wa-pulse{0%,100%{box-shadow:0 12px 30px -8px rgba(0,66,174,.55),0 0 0 0 rgba(0,66,174,.45)}50%{box-shadow:0 12px 30px -8px rgba(0,66,174,.55),0 0 0 12px rgba(0,66,174,0)}}
+@media(max-width:560px){.wa-float{right:18px;bottom:18px;width:54px;height:54px}.wa-tip{display:none}}
+/* ---- Calculateur de ratios ---- */
+.calc-sec{background:#fff}
+.calc{margin-top:3rem;background:#fff;border:1px solid var(--ligne);border-radius:12px;overflow:hidden;box-shadow:0 30px 70px -45px rgba(15,47,99,.5)}
+.calc-top{padding:2rem 2.2rem 1.6rem;border-bottom:1px solid var(--ligne)}
+.calc-step-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--azur);margin-bottom:1rem}
+.seg-choices{display:flex;flex-wrap:wrap;gap:.6rem}
+.seg{font-family:var(--sans);font-size:.9rem;font-weight:500;color:var(--marine);background:var(--ciel);border:1px solid var(--ligne);border-radius:100px;padding:.6rem 1.15rem;cursor:pointer;transition:all .25s}
+.seg:hover{border-color:var(--azur)}
+.seg.active{background:var(--roi);color:#fff;border-color:var(--roi)}
+.calc-body{display:grid;grid-template-columns:.9fr 1.1fr;gap:0}
+.calc-inputs{padding:2rem 2.2rem;border-right:1px solid var(--ligne)}
+.cfield{margin-bottom:1.3rem}
+.cfield:last-child{margin-bottom:0}
+.cfield label{display:block;font-size:.82rem;font-weight:600;color:var(--marine);margin-bottom:.45rem}
+.cfield .hint{font-weight:400;color:var(--gris);font-size:.76rem}
+.cinput{position:relative;display:flex;align-items:center}
+.cinput input{width:100%;font-family:var(--sans);font-size:1.05rem;font-weight:500;color:var(--encre);border:1px solid var(--ligne);border-radius:6px;padding:.7rem .9rem;padding-right:2.6rem;transition:border-color .2s,box-shadow .2s;background:var(--ciel-2)}
+.cinput input:focus{outline:none;border-color:var(--roi);box-shadow:0 0 0 3px rgba(0,66,174,.12);background:#fff}
+.cinput .unit{position:absolute;right:.9rem;font-size:.9rem;color:var(--gris);font-weight:500;pointer-events:none}
+.calc-results{padding:2rem 2.2rem;background:var(--ciel-2)}
+.results-empty{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--gris);gap:.8rem;min-height:280px;font-size:.92rem;line-height:1.5}
+.results-empty svg{opacity:.35}
+.ratio{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.95rem 1.1rem;border-radius:8px;margin-bottom:.6rem;background:#fff;border:1px solid var(--ligne)}
+.ratio.show{animation:cpop .45s cubic-bezier(.16,1,.3,1) both}
+@keyframes cpop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.ratio .r-name{font-weight:600;font-size:.92rem;color:var(--marine)}
+.ratio .r-name small{display:block;font-weight:400;font-size:.74rem;color:var(--gris);margin-top:.15rem}
+.ratio .r-right{display:flex;align-items:center;gap:.9rem}
+.ratio .r-val{font-family:var(--display);font-size:1.5rem;font-weight:500;color:var(--marine);min-width:3.4rem;text-align:right}
+.cpill{font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.28rem .6rem;border-radius:100px;white-space:nowrap}
+.cpill.vert{color:var(--vert);background:var(--vert-bg)}
+.cpill.orange{color:var(--orange);background:var(--orange-bg)}
+.cpill.rouge{color:var(--rouge);background:var(--rouge-bg)}
+.ratio.vert{border-left:3px solid var(--vert)}
+.ratio.orange{border-left:3px solid var(--orange)}
+.ratio.rouge{border-left:3px solid var(--rouge)}
+.verdict{margin-top:1.2rem;padding:1.1rem 1.2rem;border-radius:8px;font-size:.92rem;line-height:1.5}
+.verdict.vert{background:var(--vert-bg);color:#146A48}
+.verdict.orange{background:var(--orange-bg);color:#8A5410}
+.verdict.rouge{background:var(--rouge-bg);color:#8A2A19}
+.verdict strong{font-weight:700}
+.calc-cta{margin-top:1.3rem;display:flex;flex-wrap:wrap;gap:.7rem;align-items:center}
+.calc-wa{display:inline-flex;align-items:center;gap:.6rem;background:var(--roi);color:#fff;font-weight:600;font-size:.9rem;padding:.8rem 1.3rem;border-radius:999px;transition:transform .25s,box-shadow .25s;text-decoration:none;border:none;cursor:pointer}
+.calc-wa:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(0,66,174,.6)}
+.calc-disc{font-size:.74rem;color:var(--gris);margin-top:1rem;font-style:italic}
+@media(max-width:820px){.calc-body{grid-template-columns:1fr}.calc-inputs{border-right:none;border-bottom:1px solid var(--ligne)}}
+
+/* ---- Écran de garde (splash) ---- */
+@property --sweep{syntax:'<angle>';inherits:false;initial-value:0deg;}
+#splash{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;background:linear-gradient(165deg,#0F2F63 0%,#143A78 60%,#0F2F63 100%);opacity:1;transition:opacity .6s ease}
+#splash.hide{opacity:0;pointer-events:none}
+#splash .s-logo{width:132px;height:132px;border-radius:50%;-webkit-mask:conic-gradient(from -90deg,#000 0deg,#000 var(--sweep,0deg),transparent var(--sweep,0deg));mask:conic-gradient(from -90deg,#000 0deg,#000 var(--sweep,0deg),transparent var(--sweep,0deg))}
+#splash.go .s-logo{animation:s-sweep 1.7s cubic-bezier(.5,0,.2,1) forwards}
+@keyframes s-sweep{0%{--sweep:0deg;opacity:.2;transform:scale(.94)}70%{opacity:1}100%{--sweep:360deg;opacity:1;transform:scale(1)}}
+#splash .s-word{font-family:var(--display);letter-spacing:.34em;text-transform:uppercase;color:#fff;font-size:.72rem;font-weight:400;opacity:0}
+#splash.go .s-word{animation:s-word .7s ease 1.55s forwards}
+@keyframes s-word{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+body.splash-on{overflow:hidden}
+@media(prefers-reduced-motion:reduce){#splash{display:none}}
+/* ---- Pages légales ---- */
+.legal-hero{background:linear-gradient(165deg,#0F2F63,#143A78 60%,#0F2F63);color:#fff;padding:130px 0 60px}
+.legal-hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,5vw,3rem);color:#fff;margin-top:.8rem}
+.legal-body{background:#fff;padding:clamp(3rem,6vw,5rem) 0}
+.legal-body .wrap{max-width:820px}
+.legal-body h2{font-family:var(--display);font-weight:500;font-size:1.5rem;color:var(--marine);margin:2.2rem 0 .8rem}
+.legal-body h2:first-child{margin-top:0}
+.legal-body h3{font-weight:700;font-size:1rem;color:var(--marine);margin:1.4rem 0 .4rem}
+.legal-body p,.legal-body li{color:var(--gris);font-size:.98rem;line-height:1.7}
+.legal-body ul{margin:.6rem 0 .6rem 1.2rem}
+.legal-body li{margin-bottom:.4rem}
+.legal-body strong{color:var(--encre);font-weight:600}
+.legal-body a{color:var(--roi);text-decoration:underline}
+.legal-body .updated{font-size:.82rem;color:var(--azur);font-style:italic;margin-bottom:2rem}
+/* ---- Bandeau cookies ---- */
+#cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:150;background:var(--marine);color:#fff;padding:1.2rem 1.4rem;box-shadow:0 -8px 30px -12px rgba(0,0,0,.4);transform:translateY(100%);transition:transform .4s cubic-bezier(.16,1,.3,1)}
+#cookie-banner.show{transform:translateY(0)}
+.cb-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;justify-content:space-between}
+.cb-text{font-size:.9rem;color:#DCE6F7;line-height:1.5;max-width:60ch;flex:1 1 300px}
+.cb-text a{color:var(--azur-clair);text-decoration:underline}
+.cb-actions{display:flex;gap:.7rem;flex-wrap:wrap}
+.cb-btn{font-family:var(--sans);font-size:.85rem;font-weight:600;padding:.65rem 1.3rem;border-radius:999px;cursor:pointer;border:1px solid transparent;transition:all .25s}
+.cb-accept{background:#fff;color:var(--marine)}
+.cb-accept:hover{background:var(--ciel)}
+.cb-refuse{background:transparent;color:#fff;border-color:rgba(159,178,217,.5)}
+.cb-refuse:hover{border-color:#fff}
+@media(max-width:560px){.cb-inner{flex-direction:column;align-items:flex-start}.cb-actions{width:100%}.cb-btn{flex:1}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.chrconsulting.fr/"}, {"@type": "ListItem", "position": 2, "name": "Outils & solutions", "item": "https://www.chrconsulting.fr/outils/"}]}, {"@type": "ItemList", "name": "Outils & solutions CHR Consulting", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Générateur de PMS", "url": "https://www.chrconsulting.fr/plan-de-maitrise-sanitaire/"}, {"@type": "ListItem", "position": 2, "name": "Diagnostic ratios", "url": "https://www.chrconsulting.fr/ratios/"}, {"@type": "ListItem", "position": 3, "name": "Système de caisse Lightspeed", "url": "https://www.chrconsulting.fr/lightspeed/"}]}]}</script>
+<link rel="stylesheet" href="/assets/nav.css">
+<link rel="stylesheet" href="/assets/outils.css">
+<script src="/assets/nav.js" defer></script>
+</head>
+<body>
+<header class="nav scrolled" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand">
+      <img src="/assets/logo-chr.webp" alt="CHR Consulting">
+      <span class="txt"><span class="mark">CHR Consulting</span><span class="sub">Paris · depuis 2012</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="/#approche">Approche</a><div class="dd"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-outils">Outils &amp; solutions <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dd-panel" id="dd-outils"><a href="/plan-de-maitrise-sanitaire/"><b>Générateur de PMS</b><span>Votre plan de maîtrise sanitaire, prêt en quelques minutes</span></a><a href="/ratios/"><b>Diagnostic ratios</b><span>Vos ratios clés comparés aux repères du secteur</span></a><a href="/lightspeed/"><b>Système de caisse</b><span>Lightspeed, installé et paramétré par un expert</span></a><a class="dd-all" href="/outils/">Tous les outils →</a></div></div><a href="/#c360">Ouverture 360</a><a href="/#rdv-expert">Rendez-vous expert</a><a href="/#fondateur">Le cabinet</a>
+    </nav>
+    <a href="/#contact" class="nav-cta">Contact</a>
+    <a href="/en.html" class="lang-switch">EN</a>
+    <button class="m-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="m-menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="m-menu" id="m-menu" aria-label="Menu"><a href="/#approche">Approche</a><div class="m-group"><p>Outils &amp; solutions</p><a href="/plan-de-maitrise-sanitaire/">Générateur de PMS<span>Votre plan de maîtrise sanitaire, prêt en quelques minutes</span></a><a href="/ratios/">Diagnostic ratios<span>Vos ratios clés comparés aux repères du secteur</span></a><a href="/lightspeed/">Système de caisse<span>Lightspeed, installé et paramétré par un expert</span></a><a href="/outils/">Tous les outils →</a></div><a href="/#c360">Ouverture 360</a><a href="/#rdv-expert">Rendez-vous expert</a><a href="/#fondateur">Le cabinet</a><a class="m-cta" href="/#contact">Contact</a></nav>
+<section class="tools-hero">
+  <div class="wrap">
+    <span class="eyebrow on-dark">Outils &amp; solutions</span>
+    <h1>Des outils pour exploiter mieux, dès aujourd’hui.</h1>
+    <p class="lead on-dark">Conçus à partir de plus de 25 ans d’exploitation en cafés, hôtels et restaurants, ces outils traduisent la méthode CHR Consulting en solutions simples, utilisables tout de suite.</p>
+  </div>
+</section>
+<section class="tools-page">
+  <div class="wrap">
+    <div class="tools-grid">
+      <a class="tool" href="/plan-de-maitrise-sanitaire/"><span class="tool-badge">Nouveau</span>
+        <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 12.5l2.2 2.2 4.8-4.8"/></svg></span>
+        <span class="tool-tag">Hygiène · HACCP</span>
+        <h3>Générateur de PMS</h3>
+        <p>Votre plan de maîtrise sanitaire complet et personnalisé, prêt à présenter lors d’un contrôle.</p>
+        <ul><li>Questionnaire guidé, adapté à votre établissement</li><li>PMS complet livré en PDF et en Word, modifiable</li><li>Protocoles prêts à imprimer et à afficher</li></ul>
+        <span class="tool-cta">Créer mon PMS <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/ratios/">
+        <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><rect x="6" y="11" width="3" height="6" rx=".6"/><rect x="11" y="7" width="3" height="10" rx=".6"/><rect x="16" y="4" width="3" height="13" rx=".6"/></svg></span>
+        <span class="tool-tag">Gestion · Gratuit</span>
+        <h3>Diagnostic ratios</h3>
+        <p>Situez vos ratios clés face aux repères du métier, selon votre type d’établissement.</p>
+        <ul><li>Rapide, traditionnel, gastronomique, café-bar, F&amp;B hôtel</li><li>Coût matières, masse salariale, loyer</li><li>Résultat immédiat, sans inscription</li></ul>
+        <span class="tool-cta">Faire le diagnostic <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/lightspeed/">
+        <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="13" height="10" rx="1.6"/><path d="M9.5 14v3M6 20h7"/><rect x="17.5" y="9" width="4" height="11" rx="1"/><path d="M19.5 17.5h0"/></svg></span>
+        <span class="tool-tag">Caisse · Lightspeed</span>
+        <h3>Système de caisse</h3>
+        <p>Une caisse Lightspeed choisie, installée et paramétrée par un expert de l’exploitation.</p>
+        <ul><li>Configuration adaptée à votre activité</li><li>Installation, paramétrage et formation des équipes</li><li>Une caisse pensée pour le pilotage</li></ul>
+        <span class="tool-cta">Découvrir l’offre <span class="arw">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="tools-help">
+  <div class="wrap">
+    <h2>Besoin d’un regard expert sur votre exploitation ?</h2>
+    <p>Les outils donnent des repères. Pour aller plus loin, audit, ouverture ou redressement, échangeons directement sur votre projet.</p>
+    <div class="acts">
+      <a class="btn btn-primary dark" href="/#rdv-expert">Réserver un entretien expert <span class="arw">→</span></a>
+      <a class="btn-line" href="https://wa.me/33679894512?text=Bonjour%20CHR%20Consulting,%20je%20souhaite%20échanger%20sur%20mon%20projet." target="_blank" rel="noopener">Échanger sur WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="top"><img src="/assets/logo-chr.webp" alt="CHR Consulting"><span class="mark">CHR Consulting</span></div>
+        <p>Cabinet de conseil opérationnel en cafés, hôtels et restaurants. Audit, ouverture, développement et rentabilité. Paris, depuis 2012.</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/company/chr-consulting-sas/" target="_blank" rel="noopener" aria-label="LinkedIn CHR Consulting" title="LinkedIn — CHR Consulting"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+          <a href="https://fr.pinterest.com/chrconsultingfr" target="_blank" rel="noopener" aria-label="Pinterest CHR Consulting" title="Pinterest — CHR Consulting"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.16 9.42 7.62 11.17-.11-.95-.2-2.4.04-3.44.22-.93 1.4-5.95 1.4-5.95s-.36-.72-.36-1.78c0-1.67.97-2.92 2.17-2.92 1.02 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-1 4-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.25 3.78-5.5 0-2.88-2.07-4.89-5.02-4.89-3.42 0-5.43 2.56-5.43 5.21 0 1.03.4 2.14.9 2.74.1.12.11.22.08.34l-.33 1.37c-.05.22-.18.27-.4.16-1.5-.7-2.44-2.9-2.44-4.66 0-3.8 2.76-7.29 7.96-7.29 4.18 0 7.43 2.98 7.43 6.96 0 4.15-2.62 7.49-6.25 7.49-1.22 0-2.37-.63-2.76-1.38l-.75 2.87c-.27 1.04-1 2.35-1.49 3.15C9.57 23.81 10.76 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Naviguer</h5>
+        <a href="/#approche">Approche</a><a href="/#expertises">Expertises</a><a href="/#c360">Ouverture 360</a><a href="/#fondateur">Le cabinet</a><a href="/#references">Parcours</a>
+      </div>
+      <div class="foot-col">
+        <h5>Outils &amp; solutions</h5>
+        <a href="/plan-de-maitrise-sanitaire/">Générateur de PMS</a><a href="/ratios/">Diagnostic ratios</a><a href="/lightspeed/">Système de caisse</a><a href="/outils/">Tous les outils</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <a href="https://wa.me/33679894512?text=Bonjour%20CHR%20Consulting,%20je%20souhaite%20échanger%20sur%20mon%20projet." target="_blank" rel="noopener">Échanger sur WhatsApp</a>
+        <a href="mailto:contact@chrconsulting.fr">contact@chrconsulting.fr</a>
+        <p>Paris · France</p>
+        <a href="https://www.chrconsulting.fr">www.chrconsulting.fr</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2012–2026 CHR Consulting — SAS au capital de 5 000 € · RCS Paris 752 988 634</span>
+      <span class="foot-legal"><a href="/mentions-legales">Mentions légales</a> · <a href="/confidentialite">Confidentialité</a> · <a href="/cgv/">CGV</a></span>
+    </div>
+  </div>
+</footer>
+<a class="wa-float" href="https://wa.me/33679894512?text=Bonjour%20CHR%20Consulting,%20je%20souhaite%20échanger%20sur%20mon%20projet." target="_blank" rel="noopener" aria-label="Contacter CHR Consulting sur WhatsApp">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.5 9.5 0 0 1-4.83-1.32l-.35-.21-3.59.94.96-3.5-.23-.36a9.46 9.46 0 0 1-1.45-5.05c0-5.24 4.27-9.5 9.51-9.5 2.54 0 4.92.99 6.72 2.78a9.44 9.44 0 0 1 2.78 6.73c0 5.24-4.27 9.5-9.5 9.5zm8.09-17.6A11.4 11.4 0 0 0 12.04.5C5.76.5.65 5.61.65 11.89c0 2.09.55 4.13 1.59 5.93L.5 23.5l5.82-1.53a11.35 11.35 0 0 0 5.72 1.46h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.18-5.9-3.33-8.05z"/></svg>
+  <span class="wa-tip">Discutons de votre projet</span>
+</a>
+<script>
+var nav=document.getElementById('nav');
+addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>40||true);});
+
+</script>
+<div id="cookie-banner" role="dialog" aria-label="Consentement aux cookies">
+  <div class="cb-inner">
+    <p class="cb-text">Nous utilisons des cookies de mesure d'audience pour améliorer votre expérience. Vous pouvez les accepter ou les refuser. En savoir plus dans notre <a href="/confidentialite">politique de confidentialité</a>.</p>
+    <div class="cb-actions">
+      <button class="cb-btn cb-refuse" id="cb-refuse">Refuser</button>
+      <button class="cb-btn cb-accept" id="cb-accept">Accepter</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  /* ====== CONFIGURATION ======
+     Passez ANALYTICS_ENABLED à true LE JOUR où vous ajoutez Google Analytics,
+     et renseignez votre identifiant GA4 dans GA_ID (ex: "G-XXXXXXXXXX").
+     Tant que c'est false, aucun cookie n'est déposé et le bandeau ne s'affiche pas. */
+  var ANALYTICS_ENABLED = true;
+  var GA_ID = "G-8KT4TRSK9D";
+  /* ============================ */
+
+  if(!ANALYTICS_ENABLED) return; // rien à consentir : pas de bandeau
+
+  var banner=document.getElementById('cookie-banner');
+  var choice=null; try{choice=localStorage.getItem('chr_cookie_consent');}catch(e){}
+
+  function loadGA(){
+    if(!GA_ID||GA_ID.indexOf('XXXX')>-1) return;
+    var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;
+    gtag('js',new Date());gtag('config',GA_ID,{anonymize_ip:true,cookie_expires:34128000});
+  }
+  function hide(){banner.classList.remove('show');}
+
+  if(choice==='accepted'){ loadGA(); return; }
+  if(choice==='refused'){ return; }
+
+  // pas encore de choix -> afficher le bandeau
+  requestAnimationFrame(function(){banner.classList.add('show');});
+  document.getElementById('cb-accept').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','accepted');}catch(e){}loadGA();hide();});
+  document.getElementById('cb-refuse').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','refused');}catch(e){}hide();});
+})();
+</script>
+
+</body>
+</html>
