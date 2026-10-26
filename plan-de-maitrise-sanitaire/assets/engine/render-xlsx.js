@@ -2,6 +2,7 @@
 // en graphique à remplir à la main (un point par relevé, dans la case de la température lue), au format A4 paysage.
 // Modèle de départ : relevé hebdomadaire CHR Consulting (7 jours × 4 relevés, nom et signature par demi-journée,
 // anomalies et mesures prises) et relevé mensuel (31 jours, pas de 0,2 °C).
+import { LOGO_CHR } from './logo-chr.js';
 
 // Types d'enceintes : plages de températures, consigne, ligne rouge (limite) et zone d'alerte (cases grisées rosées)
 export const TYPES = {
@@ -65,8 +66,14 @@ function miseEnPage(ws, data, titre, derniereColonne, derniereLigne) {
     printArea: `A1:${derniereColonne}${derniereLigne}`,
   };
   const esc = (s) => String(s).replace(/&/g, '&&');
-  ws.headerFooter = { oddFooter: `&L&"Arial"&8${esc(titre)} – Plan de Maîtrise Sanitaire – ${esc(data.nom)}&R&"Arial"&8CHR Consulting · chrconsulting.fr` };
+  ws.headerFooter = { oddFooter: `&L&"Arial"&8${esc(titre)} – Plan de Maîtrise Sanitaire – ${esc(data.nom)}&R&"Arial"&8chrconsulting.fr` };
   ws.views = [{ showGridLines: false }];
+}
+
+// Logo CHR Consulting en bas à droite de chaque feuille (une seule image par classeur)
+function logoChr(wb, ws, col, ligne, hauteurPx = 34) {
+  if (wb._logoChr == null) wb._logoChr = wb.addImage({ base64: LOGO_CHR.dataUrl, extension: 'png' });
+  ws.addImage(wb._logoChr, { tl: { col, row: ligne - 1 + 0.12 }, ext: { width: Math.round((hauteurPx * LOGO_CHR.largeur) / LOGO_CHR.hauteur), height: hauteurPx }, editAs: 'oneCell' });
 }
 
 function logo(wb, ws, data, colDebut, largeurPx) {
@@ -165,10 +172,11 @@ function feuilleSemaine(wb, data, e, nom) {
   }
   for (let rr = rh + 1; rr < r - 3; rr++) ws.getCell(`A${rr}`).border = { left: bord('medium', COUL.marine), top: fin, bottom: fin, right: bord('medium', COUL.marine) };
   r++;
-  ws.mergeCells(`A${r}:${der}${r}`);
+  ws.mergeCells(`A${r}:${col(24)}${r}`);
   cell(ws, `A${r}`, `Mode d’emploi : à chaque relevé, faire un point dans la case de la température lue, puis relier les points. Zone rosée et trait rouge : température anormale (consigne ${T.consigne}) → vérifier la température à cœur des produits, transférer si besoin dans une autre enceinte, noter l’anomalie et la mesure prise, prévenir le responsable. Heures de relevé modifiables (ligne « T °C / heure »).`,
     { font: police(7.5, { color: { argb: COUL.gris } }), alignment: { wrapText: true, vertical: 'top' } });
-  ws.getRow(r).height = 22;
+  ws.getRow(r).height = 30;
+  logoChr(wb, ws, 26.6, r);
   miseEnPage(ws, data, `Relevé hebdomadaire des températures – ${e.nom}`, der, r);
   return ws;
 }
@@ -235,10 +243,11 @@ function feuilleMois(wb, data, e, nom) {
     for (const ref of [`A${r}`, `${col(1)}${r}`, `${col(26)}${r}`]) ws.getCell(ref).border = { top: fin, bottom: fin, left: fin, right: fin };
     ws.getRow(r).height = 17; r++;
   }
-  ws.mergeCells(`A${r}:${der}${r}`);
+  ws.mergeCells(`A${r}:${col(26)}${r}`);
   cell(ws, `A${r}`, `Mode d’emploi : relevé matin et soir, dans la colonne du jour – le matin d’un point, le soir d’une croix, dans la case de la température lue. Zone rosée et trait rouge : température anormale (consigne ${T.consigne}) → mesure corrective notée ci-dessus.`,
     { font: police(7.5, { color: { argb: COUL.gris } }), alignment: { wrapText: true, vertical: 'top' } });
-  ws.getRow(r).height = 22;
+  ws.getRow(r).height = 30;
+  logoChr(wb, ws, 29.4, r);
   miseEnPage(ws, data, `Relevé mensuel des températures – ${e.nom}`, der, r);
   return ws;
 }
@@ -279,6 +288,9 @@ function feuilleSommaire(wb, data, enceintes, feuilles) {
     ['B', 'C', 'D', 'E'].forEach((c) => { ws.getCell(`${c}${r}`).border = { bottom: fin }; });
     ws.getRow(r).height = 18; r++;
   });
+  r++;
+  ws.getRow(r).height = 34;
+  logoChr(wb, ws, 4.5, r, 38);
   ws.pageSetup = { paperSize: 9, orientation: 'portrait', fitToPage: true, fitToWidth: 1, fitToHeight: 0, margins: { left: 0.5, right: 0.5, top: 0.6, bottom: 0.6, header: 0.3, footer: 0.3 } };
   ws.views = [{ showGridLines: false }];
 }
