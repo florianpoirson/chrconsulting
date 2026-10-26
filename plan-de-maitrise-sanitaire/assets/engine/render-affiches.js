@@ -3,6 +3,7 @@
 // un pictogramme, les chiffres clés (@chiffre du modèle), des puces illustrées et les étapes numérotées en vignettes.
 import { PICTOS } from './pictos.js';
 import { COLORS as C, DISCLAIMER, signNode } from './render-pdf.js';
+import { LOGO_CHR } from './logo-chr.js';
 
 export const THEMES = {
   reception: { nom: 'Réception et stockage', c: '#0042AE', fonce: '#0F2F63', clair: '#E8EFFB' },
@@ -15,7 +16,7 @@ export const THEMES = {
 const ORDRE_THEMES = Object.keys(THEMES);
 
 const W = 527;              // largeur utile (A4, marges de 34 pt)
-const H_UTILE = 766;        // hauteur utile (marges haute 30, basse 46)
+const H_UTILE = 754;        // hauteur utile (marges haute 30, basse 58)
 
 // ---------- pictogrammes ----------
 const inner = (n) => PICTOS[n] || PICTOS['circle-check'];
@@ -131,6 +132,7 @@ const colonnesEtapes = (items) => {
   const moy = items.reduce((a, it) => a + plain(it.runs).length, 0) / Math.max(1, items.length);
   if (items.length <= 3) return items.length;
   if (items.length === 4) return moy < 70 ? 4 : 2;
+  if (items.length >= 7 && moy < 70) return 4;
   return moy < 120 ? 3 : 2;
 };
 function largeursColonnes(b) {
@@ -141,7 +143,16 @@ function largeursColonnes(b) {
 const taillePoliceTableau = (b, fs) => Math.max(6.5, Math.min(fs - 1, b.font ? b.font + (fs - 9) * 0.8 : fs - 1, b.ncol > 4 ? fs - 2 : 99));
 
 // ---------- éléments de l'affiche ----------
-function bandeau(titre, meta, num, th) {
+// Logo de l'établissement (fourni au questionnaire) : en haut à droite, sur une pastille blanche
+const logoValide = (l) => (typeof l === 'string' && /^data:image\/(png|jpeg);base64,/.test(l) ? l : null);
+function cartoucheLogo(logo, cote) {
+  return { width: cote, stack: [
+    { canvas: [{ type: 'rect', x: 0, y: 0, w: cote, h: cote, r: 10, color: '#FFFFFF' }] },
+    { image: logo, fit: [cote - 12, cote - 12], alignment: 'center', margin: [0, -cote + 6, 0, 0] },
+  ] };
+}
+
+function bandeau(titre, meta, num, th, logo) {
   const h = 92;
   return [
     { canvas: [{ type: 'rect', x: 0, y: 0, w: W, h, r: 14, color: th.c }], pageBreak: 'before' },
@@ -150,8 +161,9 @@ function bandeau(titre, meta, num, th) {
         { ...pastille(meta.picto, th.c, '#FFFFFF', 62, true), width: 62 },
         { width: '*', stack: [
           { text: `${th.nom.toUpperCase()}  ·  PROTOCOLE N° ${num}`, font: 'Jost', fontSize: 8.5, color: '#FFFFFF', characterSpacing: 1.4, opacity: 0.85, margin: [0, 0, 0, 3] },
-          { text: titre, font: 'Jost', fontSize: titre.length > 42 ? 18 : 22, color: '#FFFFFF', lineHeight: 1.05 },
+          { text: titre, font: 'Jost', fontSize: titre.length > (logo ? 34 : 42) ? 18 : 22, color: '#FFFFFF', lineHeight: 1.05 },
         ] },
+        ...(logo ? [cartoucheLogo(logo, 62)] : []),
       ],
       columnGap: 16, margin: [16, -h + 15, 16, 0], id: `bandeau-${num}`,
     },
@@ -229,13 +241,13 @@ function etapes(b, th, fs) {
       return {
         stack: [
           { columns: [
-            { text: String(it.n), font: 'Jost', bold: true, fontSize: fs * 2.1, color: th.c, width: 'auto', lineHeight: 1 },
+            { text: String(it.n), font: 'Jost', bold: true, fontSize: fs * 1.9, color: th.c, width: 'auto', lineHeight: 1 },
             { width: '*', text: '' },
             { ...picto(p, interdit ? C.rouge : th.c, Math.round(fs * 2)), width: Math.round(fs * 2) },
           ], margin: [0, 0, 0, 4] },
           txt(it.runs, { fontSize: fs, color: C.encre }),
         ],
-        fillColor: th.clair, margin: [10, 9, 10, 10],
+        fillColor: th.clair, margin: [10, 8, 10, 9],
       };
     });
     while (row.length < cols) row.push({ text: '' });
@@ -320,7 +332,7 @@ function corps(blocks, th, fs) {
 
 // Une affiche : bandeau, chiffres clés, contenu ; taille du texte ajustée pour tenir sur une page si possible
 export const TAILLES = [14, 13, 12, 11.5, 11, 10.5, 10, 9.5, 9, 8.5, 8, 7.5];
-export function affiche(p, num, taille) {
+export function affiche(p, num, taille, logo = null) {
   const meta = p.blocks.find((b) => b.t === 'affiche') || { picto: 'clipboard-list', theme: 'reception' };
   const th = THEMES[meta.theme] || THEMES.reception;
   const chiffres = p.blocks.filter((b) => b.t === 'chiffre');
@@ -339,7 +351,7 @@ export function affiche(p, num, taille) {
     if (Array.isArray(dernier.margin)) dernier.margin = [dernier.margin[0], dernier.margin[1], dernier.margin[2], 0];
     else dernier.margin = [0, 0, 0, 0];
   }
-  return { nodes: [...bandeau(titre, meta, num, th), { stack: contenu, id: `affiche-${num}` }], theme: meta.theme, picto: meta.picto, titre, fs };
+  return { nodes: [...bandeau(titre, meta, num, th, logo), { stack: contenu, id: `affiche-${num}` }], theme: meta.theme, picto: meta.picto, titre, fs };
 }
 
 function couverture(data, entrees) {
@@ -394,18 +406,21 @@ function couverture(data, entrees) {
 
 // opts.tailles : taille de texte imposée par affiche (sinon estimée) ; opts.positions : Map rempli pendant la mise en page
 export function buildAffichesDefinition(protos, data, opts = {}) {
-  const affiches = protos.map((p, i) => affiche(p, i + 1, opts.tailles?.[i]));
+  const logo = logoValide(data.etab?.logo);
+  const affiches = protos.map((p, i) => affiche(p, i + 1, opts.tailles?.[i], logo));
   const entrees = affiches.map((a, i) => ({ num: i + 1, titre: protos[i].title, theme: a.theme, picto: a.picto }));
   const content = [...couverture(data, entrees), ...affiches.flatMap((a) => a.nodes)];
   return {
-    pageSize: 'A4', pageMargins: [34, 30, 34, 46],
+    pageSize: 'A4', pageMargins: [34, 30, 34, 58],
     info: { title: `Protocoles illustrés – ${data.nom}`, author: data.nom, creator: 'CHR Consulting – générateur de PMS', producer: 'CHR Consulting' },
     defaultStyle: { font: 'Manrope', fontSize: 10, color: C.encre, lineHeight: 1.3 },
     footer: (page, pages) => { if (opts.positions) opts.positions.set('pages', pages); return {
+      // Logo CHR Consulting en bas à droite de chaque page
       columns: [
-        { text: [{ text: data.nom, bold: true, color: C.marine }, { text: `  ·  Protocoles illustrés  ·  version du ${data.date_version}`, color: C.gris }], fontSize: 7 },
-        { text: [{ text: 'CHR Consulting · chrconsulting.fr     ', color: C.azur }, { text: `${page} / ${pages}`, bold: true, color: C.marine }], fontSize: 7, alignment: 'right' },
-      ], margin: [34, 18, 34, 0],
+        { width: '*', text: [{ text: data.nom, bold: true, color: C.marine }, { text: `  ·  Protocoles illustrés  ·  version du ${data.date_version}`, color: C.gris }], fontSize: 7, margin: [0, 13, 0, 0] },
+        { width: 'auto', text: `${page} / ${pages}`, bold: true, color: C.marine, fontSize: 7, margin: [0, 13, 14, 0] },
+        { width: 70, image: LOGO_CHR.dataUrl, fit: [70, 31] },
+      ], margin: [34, 8, 34, 0],
     }; },
     content,
     pageBreakBefore: (node) => {
@@ -420,7 +435,7 @@ export function buildAffichesDefinition(protos, data, opts = {}) {
 // de chaque affiche (la surface du texte varie comme le carré de la taille) : réduite si elle déborde sur la page suivante,
 // agrandie si elle laisse beaucoup de place. La dernière fabrication n'utilise que des tailles qui ont tenu.
 // generer(definition) → Promise du fichier (Blob ou Buffer).
-const BAS = 842 - 46;          // bas de la zone utile (A4, marge basse 46)
+const BAS = 842 - 58;          // bas de la zone utile (A4, marge basse 58)
 const PLEINE = BAS - 30;       // hauteur utile d'une page
 const cran = (cible) => TAILLES.find((t) => t <= cible) ?? TAILLES[TAILLES.length - 1];
 export async function fabriquerAffiches(protos, data, generer, maxPasses = 5) {

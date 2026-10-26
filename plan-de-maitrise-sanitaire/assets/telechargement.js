@@ -1,4 +1,4 @@
-// Page de téléchargement : vérifie la commande, puis fabrique dans le navigateur le PMS (PDF, Word), les protocoles (PDF, version texte et version illustrée) et les relevés de températures (Excel).
+// Page de téléchargement : vérifie la commande, puis fabrique dans le navigateur le PMS (PDF, Word), les protocoles illustrés (PDF) et les relevés de températures (Excel).
 import { fabriquer, taille } from './fabrication.js';
 
 const CFG = window.PMS_CONFIG || {};

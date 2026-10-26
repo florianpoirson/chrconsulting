@@ -1,5 +1,5 @@
 // Fabrication des documents dans le navigateur, à partir des réponses et du modèle :
-// PMS (PDF et Word), protocoles (PDF), protocoles illustrés (PDF, affiches), relevés de températures (Excel).
+// PMS (PDF et Word), protocoles illustrés (PDF, une affiche par protocole), relevés de températures (Excel).
 // Utilisé par la page de téléchargement (après paiement) et par la version d'essai.
 import { assemble, protocols } from './engine/assemble.js';
 import { derive } from './engine/derive.js';
@@ -40,7 +40,7 @@ async function outils(cfg) {
 
 // → { fichiers: [{ name, blob, label, fmt, desc }], fiches, nom } ; etape(n, total, libellé) signale l'avancement
 export async function fabriquer({ reponses, modele, date, cfg = {}, etape = () => {} }) {
-  const total = 5;
+  const total = 4;
   etape(0, total, 'Chargement des outils de mise en page');
   const fonts = await outils(cfg);
   const data = derive(reponses, date || new Date());
@@ -53,12 +53,10 @@ export async function fabriquer({ reponses, modele, date, cfg = {}, etape = () =
   const docx = window.docx;
   const doc = buildDocx(docx, asm, data, { fonts: { manrope: new Uint8Array(fonts['Manrope-400.ttf']), manropeBold: new Uint8Array(fonts['Manrope-700.ttf']), jost: new Uint8Array(fonts['Jost-500.ttf']), jostBold: new Uint8Array(fonts['Jost-600.ttf']) } });
   fichiers.push({ name: `PMS-${base}.docx`, blob: await docx.Packer.toBlob(doc), label: 'Plan de Maîtrise Sanitaire', fmt: 'Word', desc: 'Version modifiable, pour faire évoluer votre PMS.' });
-  etape(3, total, 'Protocoles');
+  etape(3, total, 'Protocoles illustrés');
   const protos = protocols(asm);
-  fichiers.push({ name: `Protocoles-${base}.pdf`, blob: await window.pdfMake.createPdf(buildPdfDefinition(asm, data, { mode: 'protocoles', protocols: protos })).getBlob(), label: 'Protocoles', fmt: 'PDF', desc: 'Les procédures, en version texte.' });
-  etape(4, total, 'Protocoles illustrés');
-  fichiers.push({ name: `Protocoles-illustres-${base}.pdf`, blob: await fabriquerAffiches(protos, data, (def) => window.pdfMake.createPdf(def).getBlob()), label: 'Protocoles illustrés', fmt: 'PDF', desc: 'Une affiche par protocole, à imprimer et à afficher en cuisine.' });
-  etape(5, total, 'Relevés de températures');
+  fichiers.push({ name: `Protocoles-${base}.pdf`, blob: await fabriquerAffiches(protos, data, (def) => window.pdfMake.createPdf(def).getBlob()), label: 'Protocoles illustrés', fmt: 'PDF', desc: 'Une affiche par protocole, à imprimer et à afficher en cuisine.' });
+  etape(4, total, 'Relevés de températures');
   const tableur = await buildReleves(window.ExcelJS, data).xlsx.writeBuffer();
   fichiers.push({ name: `Releves-temperatures-${base}.xlsx`, blob: new Blob([tableur], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }), label: 'Relevés de températures', fmt: 'Excel', desc: 'Une feuille par semaine et par mois pour chaque enceinte froide, prête à imprimer (A4 paysage).' });
   return { fichiers, fiches: asm.fiches.length, nom: data.nom };
