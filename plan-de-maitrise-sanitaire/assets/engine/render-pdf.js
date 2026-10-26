@@ -44,7 +44,7 @@ function tableNode(b, ctx) {
   };
 }
 
-function signNode() {
+export function signNode() {
   // Panneau « NE PAS UTILISER – PRODUIT NON CONFORME » (triangle rouge)
   return {
     stack: [

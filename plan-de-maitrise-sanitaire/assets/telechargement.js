@@ -1,4 +1,4 @@
-// Page de téléchargement : vérifie la commande, puis fabrique dans le navigateur le PMS (PDF, Word) et les protocoles (PDF).
+// Page de téléchargement : vérifie la commande, puis fabrique dans le navigateur le PMS (PDF, Word), les protocoles (PDF, version texte et version illustrée) et les relevés de températures (Excel).
 import { fabriquer, taille } from './fabrication.js';
 
 const CFG = window.PMS_CONFIG || {};
@@ -29,7 +29,8 @@ async function main() {
     const d = await fetchCommande();
     $('#dl-nom').textContent = d.etablissement;
     status('Préparation de vos documents… <span class="dl-spin"></span>', 'wait');
-    const { fichiers, fiches } = await fabriquer({ reponses: d.reponses, modele: d.modele, date: d.payee_le ? new Date(d.payee_le) : new Date(), cfg: CFG });
+    const { fichiers, fiches } = await fabriquer({ reponses: d.reponses, modele: d.modele, date: d.payee_le ? new Date(d.payee_le) : new Date(), cfg: CFG,
+      etape: (n, total, lib) => status(`Préparation de vos documents… <span class="dl-spin"></span><br><small>${lib} (${Math.min(n + 1, total)} / ${total})</small>`, 'wait') });
     filesEl.innerHTML = fichiers.map((f, i) => `<div class="dl-file"><div><span class="dl-fmt">${f.fmt}</span><h3>${f.label}</h3><p>${f.desc} ${taille(f.blob)}</p></div><a class="calc-wa" data-i="${i}" href="#" download="${f.name}">Télécharger</a></div>`).join('');
     fichiers.forEach((f, i) => { filesEl.querySelector(`[data-i="${i}"]`).href = URL.createObjectURL(f.blob); });
     status(`<strong>Vos documents sont prêts.</strong> ${fiches} fiches de suivi incluses. Le lien reçu par e-mail permet de les télécharger à nouveau pendant 12 mois.`, 'ok');

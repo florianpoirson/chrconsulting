@@ -5,7 +5,7 @@ import { ZONES, STOCKAGE, EQUIPEMENTS } from './engine/derive.js';
 const CFG = window.PMS_CONFIG || {};
 const KEY = 'chr_pms_brouillon_v1';
 const DOUZE_MOIS = 365 * 24 * 3600 * 1000;
-const CGV_VERSION = CFG.cgvVersion || '2026-10-25';
+const CGV_VERSION = CFG.cgvVersion || '2026-10-26';
 const euros = (n) => `${Number(n).toFixed(2).replace('.', ',')}\u00a0€`;
 export const PRIX = (() => { const ht = Number(CFG.prixHT ?? 50), tva = Number(CFG.tauxTVA ?? 20); const t = Math.round(ht * tva) / 100; return { ht, tva, montantTVA: t, ttc: ht + t }; })();
 const $ = (s, el = document) => el.querySelector(s);

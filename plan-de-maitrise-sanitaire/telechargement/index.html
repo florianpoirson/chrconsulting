@@ -308,6 +308,8 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 .pms-meta span{display:block;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--brume);margin-top:.5rem}
 .livrables{background:#fff}
 .liv-grid{margin-top:3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.liv-grid.c4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1100px){.liv-grid.c4{grid-template-columns:repeat(2,1fr)}}
 .liv{border:1px solid var(--ligne);border-radius:10px;padding:1.8rem 1.7rem;background:linear-gradient(160deg,var(--ciel-2),#fff)}
 .liv .fmt{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--roi);border-radius:3px;padding:.25rem .55rem}
 .liv h3{font-family:var(--display);font-weight:500;font-size:1.4rem;color:var(--marine);margin:.9rem 0 .5rem}
@@ -424,7 +426,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 .cgv p,.cgv li{color:var(--gris);font-size:.96rem;max-width:78ch;margin-top:.5rem}
 .cgv li{margin-left:1.2rem}
 @media(max-width:900px){.liv-grid,.et-grid,.sommaire{grid-template-columns:repeat(2,1fr)}.pms-meta{grid-template-columns:repeat(2,1fr)}.recap{grid-template-columns:1fr}.qchecks.c3{grid-template-columns:repeat(2,minmax(0,1fr))}.qtop{top:56px}}
-@media(max-width:560px){.liv-grid,.et-grid,.sommaire{grid-template-columns:1fr}#q-root{padding:1.5rem 1.1rem}.qchecks.c2,.qchecks.c3{grid-template-columns:1fr}.qstock{grid-template-columns:minmax(0,1fr) 4rem}.qstock .qrh:nth-child(n+3),.qstock input[aria-label=Capacité],.qstock input[aria-label=Usage]{display:none}.qcats{grid-template-columns:1fr}.qrows{grid-template-columns:1fr 2rem}.qrows .qrh{display:none}.qrows input{grid-column:1}.qrows .qdel{grid-column:2}#q-save{display:none}}
+@media(max-width:560px){.liv-grid,.liv-grid.c4,.et-grid,.sommaire{grid-template-columns:1fr}#q-root{padding:1.5rem 1.1rem}.qchecks.c2,.qchecks.c3{grid-template-columns:1fr}.qstock{grid-template-columns:minmax(0,1fr) 4rem}.qstock .qrh:nth-child(n+3),.qstock input[aria-label=Capacité],.qstock input[aria-label=Usage]{display:none}.qcats{grid-template-columns:1fr}.qrows{grid-template-columns:1fr 2rem}.qrows .qrh{display:none}.qrows input{grid-column:1}.qrows .qdel{grid-column:2}#q-save{display:none}}
 
 .qcode{border:1px solid var(--ligne);border-radius:10px;padding:.8rem 1.1rem;background:#fff}
 .qcode summary{cursor:pointer;font-size:.9rem;font-weight:600;color:var(--roi)}
@@ -467,7 +469,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
       <ul>
         <li>Relisez le PMS et complétez les champs en pointillés.</li>
         <li>Imprimez les fiches de suivi dont vous avez besoin et tenez-les à jour : ce sont elles que vérifie un contrôle.</li>
-        <li>Affichez les protocoles dans la cuisine et présentez le PMS à votre équipe (liste du personnel à signer).</li>
+        <li>Affichez les protocoles illustrés dans la cuisine, et les relevés de températures près de chaque enceinte froide et présentez le PMS à votre équipe (liste du personnel à signer).</li>
         <li>Mettez le document à jour à chaque changement de matériel, de carte ou d’organisation.</li>
       </ul>
       <p style="margin-top:1rem"><a class="calc-wa" href="https://wa.me/33679894512?text=Bonjour%20CHR%20Consulting,%20je%20souhaite%20un%20accompagnement%20sur%20mon%20Plan%20de%20Ma%C3%AEtrise%20Sanitaire." target="_blank" rel="noopener">Besoin d’un audit sur place ?</a></p>
@@ -510,7 +512,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
   <span class="wa-tip">Discutons de votre projet</span>
 </a>
 
-<script>window.PMS_CONFIG={"api": "", "prixHT": 50, "tauxTVA": 20, "cgvVersion": "2026-10-25"};</script>
+<script>window.PMS_CONFIG={"api": "", "prixHT": 50, "tauxTVA": 20, "cgvVersion": "2026-10-26"};</script>
 <script type="module" src="/plan-de-maitrise-sanitaire/assets/telechargement.js"></script>
 <script>
 const nav=document.getElementById('nav');

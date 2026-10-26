@@ -308,6 +308,8 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 .pms-meta span{display:block;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--brume);margin-top:.5rem}
 .livrables{background:#fff}
 .liv-grid{margin-top:3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.liv-grid.c4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1100px){.liv-grid.c4{grid-template-columns:repeat(2,1fr)}}
 .liv{border:1px solid var(--ligne);border-radius:10px;padding:1.8rem 1.7rem;background:linear-gradient(160deg,var(--ciel-2),#fff)}
 .liv .fmt{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--roi);border-radius:3px;padding:.25rem .55rem}
 .liv h3{font-family:var(--display);font-weight:500;font-size:1.4rem;color:var(--marine);margin:.9rem 0 .5rem}
@@ -424,7 +426,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 .cgv p,.cgv li{color:var(--gris);font-size:.96rem;max-width:78ch;margin-top:.5rem}
 .cgv li{margin-left:1.2rem}
 @media(max-width:900px){.liv-grid,.et-grid,.sommaire{grid-template-columns:repeat(2,1fr)}.pms-meta{grid-template-columns:repeat(2,1fr)}.recap{grid-template-columns:1fr}.qchecks.c3{grid-template-columns:repeat(2,minmax(0,1fr))}.qtop{top:56px}}
-@media(max-width:560px){.liv-grid,.et-grid,.sommaire{grid-template-columns:1fr}#q-root{padding:1.5rem 1.1rem}.qchecks.c2,.qchecks.c3{grid-template-columns:1fr}.qstock{grid-template-columns:minmax(0,1fr) 4rem}.qstock .qrh:nth-child(n+3),.qstock input[aria-label=Capacité],.qstock input[aria-label=Usage]{display:none}.qcats{grid-template-columns:1fr}.qrows{grid-template-columns:1fr 2rem}.qrows .qrh{display:none}.qrows input{grid-column:1}.qrows .qdel{grid-column:2}#q-save{display:none}}
+@media(max-width:560px){.liv-grid,.liv-grid.c4,.et-grid,.sommaire{grid-template-columns:1fr}#q-root{padding:1.5rem 1.1rem}.qchecks.c2,.qchecks.c3{grid-template-columns:1fr}.qstock{grid-template-columns:minmax(0,1fr) 4rem}.qstock .qrh:nth-child(n+3),.qstock input[aria-label=Capacité],.qstock input[aria-label=Usage]{display:none}.qcats{grid-template-columns:1fr}.qrows{grid-template-columns:1fr 2rem}.qrows .qrh{display:none}.qrows input{grid-column:1}.qrows .qdel{grid-column:2}#q-save{display:none}}
 
 .qcode{border:1px solid var(--ligne);border-radius:10px;padding:.8rem 1.1rem;background:#fff}
 .qcode summary{cursor:pointer;font-size:.9rem;font-weight:600;color:var(--roi)}
@@ -455,13 +457,13 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
   <div class="wrap">
     <span class="eyebrow on-dark reveal">Générateur de PMS</span>
     <h1 class="reveal">Conditions générales<br><em>de vente</em>.</h1>
-    <p class="sub reveal">Version du 25 octobre 2026.</p>
+    <p class="sub reveal">Version du 26 octobre 2026.</p>
   </div>
 </section>
 <section class="cgv">
   <div class="wrap">
     <h2>1. Objet</h2>
-    <p>Les présentes conditions régissent la vente, sur le site chrconsulting.fr, du « Générateur de Plan de Maîtrise Sanitaire » : la fourniture de documents numériques (Plan de Maîtrise Sanitaire au format PDF et Word, recueil de protocoles au format PDF) établis automatiquement à partir des réponses saisies par le client dans le questionnaire en ligne. Toute commande vaut acceptation sans réserve des présentes conditions.</p>
+    <p>Les présentes conditions régissent la vente, sur le site chrconsulting.fr, du « Générateur de Plan de Maîtrise Sanitaire » : la fourniture de documents numériques (Plan de Maîtrise Sanitaire au format PDF et Word, recueil de protocoles au format PDF en version texte et en version illustrée, relevés de températures au format Excel) établis automatiquement à partir des réponses saisies par le client dans le questionnaire en ligne. Toute commande vaut acceptation sans réserve des présentes conditions.</p>
 
     <h2>2. Vendeur</h2>
     <p>CHR Consulting, société par actions simplifiée au capital de 5 000 €, immatriculée au RCS de Paris sous le numéro 752 988 634, dont le siège est situé 1-3 rue d’Enghien, 75010 Paris. Contact : contact@chrconsulting.fr.</p>
@@ -536,7 +538,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
   <span class="wa-tip">Discutons de votre projet</span>
 </a>
 
-<script>window.PMS_CONFIG={"api": "", "prixHT": 50, "tauxTVA": 20, "cgvVersion": "2026-10-25"};</script>
+<script>window.PMS_CONFIG={"api": "", "prixHT": 50, "tauxTVA": 20, "cgvVersion": "2026-10-26"};</script>
 
 <script>
 const nav=document.getElementById('nav');

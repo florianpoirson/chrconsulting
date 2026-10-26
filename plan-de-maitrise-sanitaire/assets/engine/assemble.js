@@ -138,6 +138,8 @@ export function assemble(tree, data) {
         case 'space': blocks.push({ t: 'space', n: n.n }); break;
         case 'sign': blocks.push({ t: 'sign', text: typo(n.text) }); break;
         case 'field': blocks.push({ t: 'field', runs: runs(n.text, sc, refs) }); break;
+        case 'affiche': blocks.push({ t: 'affiche', picto: n.picto, theme: n.theme }); break;
+        case 'chiffre': blocks.push({ t: 'chiffre', picto: n.picto, big: runs(n.big, sc, refs).map((r) => r.text).join(''), small: runs(n.small, sc, refs).map((r) => r.text).join('') }); break;
         default: throw new Error(`bloc inconnu ${n.t}`);
       }
     });
