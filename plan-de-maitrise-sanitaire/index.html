@@ -434,6 +434,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 .qcode input{text-transform:uppercase;letter-spacing:.08em;max-width:16rem}
 .qcode .qhelp{display:block;margin-top:.35rem;color:var(--gris);font-size:.82rem}
 .qc[hidden]{display:none}
+.q-tarif{display:flex;align-items:center;gap:1.6rem;margin:2rem 0 1.4rem;padding:1.2rem 1.5rem;background:var(--ciel-2);border:1px solid var(--ligne);border-left:4px solid var(--roi);border-radius:12px}.q-tarif-prix{flex:none;text-align:center;min-width:8.5rem}.q-tarif-prix b{display:block;font-family:var(--display);font-weight:500;font-size:1.9rem;color:var(--marine);line-height:1}.q-tarif-prix span{display:block;font-size:.72rem;color:var(--gris);margin-top:.35rem}.q-tarif p{margin:0;font-size:.95rem;line-height:1.6;color:var(--encre)}@media(max-width:640px){.q-tarif{flex-direction:column;align-items:flex-start;gap:.8rem}.q-tarif-prix{text-align:left}}
 </style>
 <link rel="stylesheet" href="/assets/nav.css">
 <script src="/assets/nav.js" defer></script>
@@ -461,7 +462,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
     <span class="eyebrow on-dark reveal">Outil en ligne · Hygiène</span>
     <h1 class="reveal">Votre Plan de Maîtrise Sanitaire,<br><em>prêt en 20 minutes</em>.</h1>
     <p class="sub reveal">Répondez aux questions sur votre établissement : vous recevez un PMS complet, adapté à vos équipements et à vos méthodes, en PDF et en Word, avec les fiches de suivi, des protocoles illustrés à afficher en cuisine et des relevés de températures sous Excel. La méthode de nos missions de conseil, automatisée.</p>
-    <div class="hero-actions reveal"><a href="#questionnaire" class="btn btn-primary">Créer mon PMS <span class="arw">→</span></a><a href="#contenu" class="btn btn-ghost">Ce que contient le PMS</a></div>
+    <div class="hero-actions reveal"><a href="#questionnaire" class="btn btn-primary">Créer mon PMS · 50 € HT <span class="arw">→</span></a><a href="#contenu" class="btn btn-ghost">Ce que contient le PMS</a></div>
     <div class="pms-meta reveal"><div><b>3</b><span>parties + annexes</span></div><div><b>45</b><span>fiches au maximum</span></div><div><b>PDF · Word · Excel</b><span>et protocoles illustrés</span></div><div><b>50 € HT</b><span>soit 60 € TTC · par établissement</span></div></div>
   </div>
 </section>
@@ -494,7 +495,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
     <div class="et-grid reveal">
       <div class="et"><div class="n">01</div><h3>Vous répondez</h3><p>Sept étapes sur votre établissement, vos locaux, vos produits et vos méthodes. Vos réponses sont gardées sur votre appareil.</p></div>
       <div class="et"><div class="n">02</div><h3>Vous vérifiez</h3><p>Le récapitulatif liste les procédures et les fiches que contiendra votre PMS.</p></div>
-      <div class="et"><div class="n">03</div><h3>Vous payez en ligne</h3><p>Paiement sécurisé par Stripe, facture automatique.</p></div>
+      <div class="et"><div class="n">03</div><h3>Vous payez en ligne</h3><p>50 € HT, soit 60 € TTC par établissement. Paiement sécurisé par Stripe, facture automatique.</p></div>
       <div class="et"><div class="n">04</div><h3>Vous téléchargez</h3><p>Vos documents sont générés immédiatement ; le lien vous est aussi envoyé par e-mail.</p></div>
     </div>
   </div>
@@ -507,6 +508,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
       <h2 class="section-title">Décrivez votre établissement.</h2>
       <p class="lead" style="margin-top:1.2rem">Comptez une vingtaine de minutes. Les champs marqués d’un astérisque sont obligatoires ; un champ laissé vide apparaîtra en pointillés, à compléter à la main.</p>
     </div>
+    <div class="q-tarif reveal" role="note"><div class="q-tarif-prix"><b>50 € HT</b><span>soit 60 € TTC · par établissement</span></div><p><strong>Le générateur de PMS est un service payant.</strong> Vous remplissez le questionnaire et vérifiez le récapitulatif sans engagement ; le paiement n’intervient qu’à la fin, juste avant la génération de vos documents.</p></div>
     <div class="qbox">
       <div class="qtop"><div class="qprog"><div id="q-bar"></div></div><div style="position:relative"><nav id="q-steps" aria-label="Étapes du questionnaire"></nav><span id="q-save" aria-live="polite"></span></div></div>
       <div id="q-root"><noscript>Le questionnaire nécessite JavaScript.</noscript></div>
