@@ -1,0 +1,7 @@
+Bibliothèques embarquées (aucun appel à un service externe) :
+- pdfmake 0.3.11 (licence MIT) : fabrication des PDF dans le navigateur.
+- docx 9.8.0 (licence MIT), minifié avec esbuild : fabrication du fichier Word.
+- ExcelJS 4.4.0 (licence MIT) : fabrication des relevés de températures (Excel).
+- Pictogrammes Lucide (licence ISC, voir LUCIDE-LICENSE.txt), intégrés au moteur (engine/pictos.js).
+- Polices Manrope et Jost (SIL Open Font License, voir fonts/OFL.txt), sous-ensembles latin et latin étendu,
+  complétées de l’espace fine insécable et d’une case à cocher.

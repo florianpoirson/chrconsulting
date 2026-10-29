@@ -537,7 +537,7 @@ footer a:hover{color:#fff}
     </div>
     <div class="foot-bottom">
       <span>© 2012–2026 CHR Consulting — SAS au capital de 5 000 € · RCS Paris 752 988 634</span>
-      <span><a href="/mentions-legales/">Legal notice</a> · <a href="/confidentialite/">Privacy</a> · <a href="/cgv/">Terms of sale (FR)</a></span>
+      <span><a href="/mentions-legales/">Legal notice</a> · <a href="/confidentialite/">Privacy</a> · <a href="/plan-de-maitrise-sanitaire/cgv/">Terms of sale (FR)</a></span>
     </div>
     <p style="margin-top:14px;font-size:12.5px;opacity:.6">Lightspeed is a trademark of Lightspeed Commerce Inc., used under the Lightspeed partner programme. CHR Consulting is an independent provider. Product images: Lightspeed.</p>
   </div>
@@ -556,8 +556,8 @@ footer a:hover{color:#fff}
 <script>
 (function(){
   var KEY='chr_cookie_consent', GA='G-8KT4TRSK9D';
-  function get(){try{return localStorage.getItem(KEY)}catch(e){return null}}
-  function set(v){try{localStorage.setItem(KEY,v)}catch(e){}}
+  function get(){try{var v=localStorage.getItem(KEY),d=+localStorage.getItem(KEY+'_date')||0;if(v&&Date.now()-d>34128000000){localStorage.removeItem(KEY);return null}return v}catch(e){return null}}
+  function set(v){try{localStorage.setItem(KEY,v);localStorage.setItem(KEY+'_date',Date.now())}catch(e){}}
   function loadGA(){
     var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA;document.head.appendChild(s);
     window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;

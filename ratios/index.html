@@ -463,7 +463,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
     </div>
     <div class="foot-bottom">
       <span>© 2012–2026 CHR Consulting — SAS au capital de 5 000 € · RCS Paris 752 988 634</span>
-      <span class="foot-legal"><a href="/mentions-legales">Mentions légales</a> · <a href="/confidentialite">Confidentialité</a> · <a href="/cgv/">CGV</a></span>
+      <span class="foot-legal"><a href="/mentions-legales">Mentions légales</a> · <a href="/confidentialite">Confidentialité</a> · <a href="/plan-de-maitrise-sanitaire/cgv/">CGV</a></span>
     </div>
   </div>
 </footer>
@@ -558,7 +558,7 @@ addEventListener('load',()=>document.querySelectorAll('.ratios-hero .reveal').fo
   if(!ANALYTICS_ENABLED) return; // rien à consentir : pas de bandeau
 
   var banner=document.getElementById('cookie-banner');
-  var choice=null; try{choice=localStorage.getItem('chr_cookie_consent');}catch(e){}
+  var choice=null; try{choice=localStorage.getItem('chr_cookie_consent');var d=+localStorage.getItem('chr_cookie_consent_date')||0;if(choice&&Date.now()-d>34128000000){localStorage.removeItem('chr_cookie_consent');choice=null;}}catch(e){}
 
   function loadGA(){
     if(!GA_ID||GA_ID.indexOf('XXXX')>-1) return;
@@ -573,8 +573,8 @@ addEventListener('load',()=>document.querySelectorAll('.ratios-hero .reveal').fo
 
   // pas encore de choix -> afficher le bandeau
   requestAnimationFrame(function(){banner.classList.add('show');});
-  document.getElementById('cb-accept').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','accepted');}catch(e){}loadGA();hide();});
-  document.getElementById('cb-refuse').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','refused');}catch(e){}hide();});
+  document.getElementById('cb-accept').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','accepted');localStorage.setItem('chr_cookie_consent_date',Date.now());}catch(e){}loadGA();hide();});
+  document.getElementById('cb-refuse').addEventListener('click',function(){try{localStorage.setItem('chr_cookie_consent','refused');localStorage.setItem('chr_cookie_consent_date',Date.now());}catch(e){}hide();});
 })();
 </script>
 
