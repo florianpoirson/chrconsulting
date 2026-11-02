@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://www.chrconsulting.fr/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/"/>
@@ -14,7 +14,7 @@
 
   <url>
     <loc>https://www.chrconsulting.fr/en.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/"/>
@@ -24,7 +24,7 @@
 
   <url>
     <loc>https://www.chrconsulting.fr/ratios/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/ratios/"/>
@@ -34,7 +34,7 @@
 
   <url>
     <loc>https://www.chrconsulting.fr/ratios/en.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/ratios/"/>
@@ -44,7 +44,7 @@
 
   <url>
     <loc>https://www.chrconsulting.fr/outils/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/outils/"/>
@@ -54,7 +54,7 @@
 
   <url>
     <loc>https://www.chrconsulting.fr/outils/en.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/outils/"/>
@@ -64,7 +64,7 @@
 
   <url>
     <loc>https://www.chrconsulting.fr/lightspeed/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/lightspeed/"/>
@@ -74,7 +74,7 @@
 
   <url>
     <loc>https://www.chrconsulting.fr/lightspeed/en.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/lightspeed/"/>
@@ -84,21 +84,21 @@
 
   <url>
     <loc>https://www.chrconsulting.fr/mentions-legales/</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://www.chrconsulting.fr/confidentialite/</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://www.chrconsulting.fr/plan-de-maitrise-sanitaire/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

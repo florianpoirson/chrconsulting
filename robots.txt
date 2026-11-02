@@ -1,4 +1,25 @@
+# chrconsulting.fr — tous les robots sont les bienvenus, y compris les moteurs de recherche et assistants IA.
 User-agent: *
 Allow: /
+Disallow: /plan-de-maitrise-sanitaire/telechargement/
+
+# Moteurs de recherche et assistants IA (accès explicitement autorisé)
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Google-Extended
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: MistralAI-User
+User-agent: DuckAssistBot
+Allow: /
+Disallow: /plan-de-maitrise-sanitaire/telechargement/
 
 Sitemap: https://www.chrconsulting.fr/sitemap.xml
