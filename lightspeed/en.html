@@ -200,6 +200,13 @@ section{padding:96px 0}
 /* Lightspeed brand: monochrome logo only, 2px bar for co-branding (no "x") */
 .partner-tag .cobar{width:2px;height:26px;background:var(--navy);flex:none;margin:0 2px}
 .partner-tag .ls-hero{height:22px}
+/* Ecosystem */
+.eco{margin-top:40px;display:grid;grid-template-columns:auto 1fr;gap:10px 28px;align-items:center;background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:24px 28px}
+.eco-t{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:500}
+.eco ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.eco li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14.5px;color:var(--navy)}
+.eco-d{grid-column:1/-1;color:var(--muted);font-size:15.5px}
+@media (max-width:760px){.eco{grid-template-columns:1fr;padding:20px}}
 /* Lightspeed stats */
 .ls-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px;padding-top:32px;border-top:1px solid var(--line)}
 .ls-stats b{display:block;font-size:clamp(26px,3vw,34px);font-weight:300;color:var(--navy);line-height:1.1}
@@ -390,7 +397,7 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <p class="eyebrow">The tool</p>
     <h2>What Lightspeed brings <em>to service</em></h2>
-    <p class="lead">A POS built for restaurants, configured around how you actually work.</p>
+    <p class="lead">A POS and payments solution built for restaurants, connected to your other tools, and configured around how you actually work.</p>
 
     <div class="gear">
       <figure><img src="lightspeed-commande-ipad.webp" width="900" height="675" loading="lazy" alt="Order taking on an iPad with a Lightspeed payment terminal at the table"><figcaption><b>Front of house</b>Orders on iPad, payment without leaving the table.</figcaption></figure>
@@ -401,10 +408,15 @@ footer a:hover{color:#fff}
     <div class="features">
       <div class="feature"><p class="num">01</p><h4>Fast order taking</h4><p>Touchscreen POS and tableside ordering to speed up service and cut errors.</p></div>
       <div class="feature"><p class="num">02</p><h4>Front-to-kitchen link</h4><p>Tickets sent to the kitchen and bar, on printer or screen, for controlled firing.</p></div>
-      <div class="feature"><p class="num">03</p><h4>Real-time sales</h4><p>Revenue, covers and sales by item available at any time, remotely and across several venues.</p></div>
+      <div class="feature"><p class="num">03</p><h4>Advanced analytics</h4><p>Clear dashboards on sales, menu performance and staff performance, available remotely and across several venues.</p></div>
       <div class="feature"><p class="num">04</p><h4>Payment control</h4><p>Discounts, voids and comps tracked by user, secure end-of-day closing.</p></div>
       <div class="feature"><p class="num">05</p><h4>Stock and items</h4><p>Item and stock tracking to reconcile what is sold with what is used.</p></div>
       <div class="feature"><p class="num">06</p><h4>Integrated payments</h4><p>With Lightspeed Payments, card payments are linked to the POS to simplify reconciliation.</p></div>
+    </div>
+    <div class="eco">
+      <p class="eco-t">Connected to your ecosystem</p>
+      <ul><li>Reservations</li><li>Accounting</li><li>Hotel PMS</li><li>Integrated payments</li></ul>
+      <p class="eco-d">Lightspeed links the POS to your reservation, accounting and hotel management software: less double entry, consistent figures from one tool to the next.</p>
     </div>
     <div class="ls-stats">
       <div><b>100+</b><span>countries</span></div>

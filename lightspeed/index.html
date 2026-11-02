@@ -199,6 +199,13 @@ section{padding:96px 0}
 /* Lightspeed brand: monochrome logo only, 2px bar for co-branding (no "x") */
 .partner-tag .cobar{width:2px;height:26px;background:var(--navy);flex:none;margin:0 2px}
 .partner-tag .ls-hero{height:22px}
+/* Ecosystem */
+.eco{margin-top:40px;display:grid;grid-template-columns:auto 1fr;gap:10px 28px;align-items:center;background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:24px 28px}
+.eco-t{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:500}
+.eco ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.eco li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14.5px;color:var(--navy)}
+.eco-d{grid-column:1/-1;color:var(--muted);font-size:15.5px}
+@media (max-width:760px){.eco{grid-template-columns:1fr;padding:20px}}
 /* Lightspeed stats */
 .ls-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px;padding-top:32px;border-top:1px solid var(--line)}
 .ls-stats b{display:block;font-size:clamp(26px,3vw,34px);font-weight:300;color:var(--navy);line-height:1.1}
@@ -389,7 +396,7 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <p class="eyebrow">L’outil</p>
     <h2>Ce que Lightspeed apporte <em>au service</em></h2>
-    <p class="lead">Une solution de caisse conçue pour la restauration, que nous configurons selon votre organisation réelle.</p>
+    <p class="lead">Une solution de caisse et de paiement conçue pour la restauration, connectée à vos autres outils, que nous configurons selon votre organisation réelle.</p>
 
     <div class="gear">
       <figure><img src="lightspeed-commande-ipad.webp" width="900" height="675" loading="lazy" alt="Prise de commande sur iPad et terminal de paiement Lightspeed à table"><figcaption><b>En salle</b>Commande sur iPad, encaissement sans quitter la table.</figcaption></figure>
@@ -400,10 +407,15 @@ footer a:hover{color:#fff}
     <div class="features">
       <div class="feature"><p class="num">01</p><h4>Prise de commande rapide</h4><p>Caisse tactile et prise de commande à table pour fluidifier le service et réduire les erreurs.</p></div>
       <div class="feature"><p class="num">02</p><h4>Liaison salle-cuisine</h4><p>Envoi des bons en cuisine et au bar, sur imprimante ou écran, pour un envoi maîtrisé.</p></div>
-      <div class="feature"><p class="num">03</p><h4>Ventes en temps réel</h4><p>Chiffre d’affaires, couverts et ventes par produit consultables à tout moment, à distance et sur plusieurs établissements.</p></div>
+      <div class="feature"><p class="num">03</p><h4>Analyses avancées</h4><p>Des tableaux de bord clairs sur les ventes, la performance de la carte et celle du personnel, consultables à distance et sur plusieurs établissements.</p></div>
       <div class="feature"><p class="num">04</p><h4>Contrôle des encaissements</h4><p>Traçabilité des remises, annulations et offerts par utilisateur, clôtures de caisse sécurisées.</p></div>
       <div class="feature"><p class="num">05</p><h4>Stocks et articles</h4><p>Suivi des articles et des stocks pour rapprocher ce qui est vendu de ce qui est consommé.</p></div>
       <div class="feature"><p class="num">06</p><h4>Paiement intégré</h4><p>Avec Lightspeed Payments, l’encaissement par carte est relié à la caisse pour simplifier les rapprochements.</p></div>
+    </div>
+    <div class="eco">
+      <p class="eco-t">Connectée à votre écosystème</p>
+      <ul><li>Réservation</li><li>Comptabilité</li><li>PMS hôtelier</li><li>Paiement intégré</li></ul>
+      <p class="eco-d">Lightspeed relie la caisse à vos logiciels de réservation, de comptabilité et de gestion hôtelière : moins de ressaisies, des chiffres cohérents d’un outil à l’autre.</p>
     </div>
     <div class="ls-stats">
       <div><b>100+</b><span>pays</span></div>
