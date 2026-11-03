@@ -493,7 +493,7 @@ addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>40|
    Collez ici l'adresse du formulaire Brevo (Contacts > Formulaires > Partager > « URL du formulaire »
    ou attribut action="https://….sibforms.com/serve/…" du code d'intégration HTML).
    Tant que c'est vide, le formulaire est masqué et remplacé par les boutons e-mail / WhatsApp. */
-window.MAG_CONFIG = { brevoFormAction: "" };
+window.MAG_CONFIG = { brevoFormAction: "https://2de74084.sibforms.com/serve/MUIFAN9ZCyTnKf02y25_hb5IKMkDII9oIq14ALqPAtdfx_gXaiEqWZlnxQh__u5_1Jc0tTHtWp34hNmfTiC32GvcKl3rEElrkV6MIcn5Yjg5HWMRYRPLORSbED_F2i1eg76_kRTmOVcxh9JP11RwMxUJcYizQMsoLvnyw3rnMkKtCYhJ90IMNi5wLhrku8rPfBKbX8bQ8wEYhzpUDA==" };
 /* ====================================== */
 (function(){
   function track(name, params){ if (typeof window.gtag === 'function') window.gtag('event', name, params || {}); }
@@ -501,6 +501,15 @@ window.MAG_CONFIG = { brevoFormAction: "" };
     a.addEventListener('click', function(){ track('magazine_download', { issue: a.getAttribute('data-issue') }); });
   });
   var cfg = window.MAG_CONFIG || {}, form = document.getElementById('mag-form'), alt = document.getElementById('mag-alt');
+  try {
+    if (new URLSearchParams(location.search).get('inscription') === 'confirmee') {
+      var box = document.getElementById('inscription');
+      box.innerHTML = '<h3>Inscription confirmée, merci !</h3><p>Vous recevrez le magazine CHR Consulting chaque trimestre. Un e-mail de bienvenue avec le N° 01 est en route.</p><div class="alt"><a href="/magazine/chr-consulting-magazine-n01.pdf" download data-issue="n01">Télécharger le N° 01 <span class="arw">→</span></a><a class="line" href="https://app.chrconsulting.fr/decouvrir">Essayer l’outil de pilotage</a></div>';
+      track('magazine_signup_confirmed');
+      setTimeout(function(){ box.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 300);
+      return;
+    }
+  } catch (e) {}
   if (!cfg.brevoFormAction || !form) return;
   form.hidden = false; alt.hidden = true;
   var msg = form.querySelector('.msg'), btn = form.querySelector('button');
