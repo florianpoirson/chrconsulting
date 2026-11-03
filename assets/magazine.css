@@ -1,0 +1,55 @@
+/* Page /magazine/ */
+.mag-hero{background:linear-gradient(165deg,#0F2F63,#143A78 60%,#0F2F63);color:#fff;padding:140px 0 70px}
+.mag-hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.1rem,5vw,3.3rem);line-height:1.1;color:#fff;margin:.9rem 0 1.1rem;max-width:22ch}
+.mag-hero .rubs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem}
+.mag-hero .rubs span{font-size:.74rem;font-weight:600;letter-spacing:.06em;color:#DCE6F7;border:1px solid rgba(159,178,217,.4);border-radius:999px;padding:.4rem .85rem}
+
+.mag-latest{background:var(--ciel-2,#F4F8FF);padding:clamp(3rem,6vw,5rem) 0}
+.issue{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;background:#fff;border:1px solid var(--ligne);border-radius:16px;padding:clamp(1.6rem,4vw,3rem);box-shadow:0 30px 70px -50px rgba(15,47,99,.5)}
+.issue-cover{display:block;border-radius:6px;overflow:hidden;box-shadow:0 30px 60px -28px rgba(15,47,99,.6);transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.issue-cover:hover{transform:translateY(-4px) rotate(-.4deg)}
+.issue-cover img{width:100%;height:auto;aspect-ratio:210/297;object-fit:cover}
+.issue .num{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--azur)}
+.issue h2{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.12;color:var(--marine);margin:.6rem 0 .9rem}
+.issue .desc{color:var(--gris);max-width:56ch}
+.issue ol{list-style:none;margin:1.6rem 0 2rem;padding:0;border-top:1px solid var(--ligne)}
+.issue li{display:grid;grid-template-columns:2.6rem 1fr;gap:.6rem;padding:.75rem 0;border-bottom:1px solid var(--ligne);font-size:.94rem;color:var(--encre)}
+.issue li b{font-family:var(--display);font-weight:500;color:var(--azur);font-size:1.05rem}
+.issue li span{color:var(--gris)}
+.issue .acts{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+.issue .meta{font-size:.8rem;color:var(--gris)}
+
+.mag-next{background:#fff;padding:clamp(3.5rem,7vw,6rem) 0}
+.next-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.next-grid h2{font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,3.8vw,2.7rem);line-height:1.12;color:var(--marine);margin:1rem 0 1rem}
+.next-grid .lead{margin-bottom:1.6rem}
+.next-topics{display:flex;flex-direction:column}
+.next-topics .t{display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;padding:1rem 0;border-top:1px solid var(--ligne)}
+.next-topics .t:last-child{border-bottom:1px solid var(--ligne)}
+.next-topics .k{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--azur);padding-top:.2rem}
+.next-topics .v{font-size:.95rem;color:var(--encre)}
+.signup{background:linear-gradient(165deg,#0F2F63,#143A78 60%,#0F2F63);color:#fff;border-radius:16px;padding:clamp(1.8rem,4vw,2.6rem);box-shadow:0 30px 70px -40px rgba(15,47,99,.7)}
+.signup h3{font-family:var(--display);font-weight:400;font-size:1.6rem;line-height:1.2}
+.signup p{color:#DCE6F7;font-size:.95rem;margin-top:.6rem}
+.signup form{margin-top:1.6rem;display:flex;flex-direction:column;gap:.9rem}
+.signup label.f{font-size:.8rem;font-weight:600;color:var(--azur-clair)}
+.signup input[type=email]{width:100%;font-family:var(--sans);font-size:1rem;color:var(--encre);background:#fff;border:1px solid transparent;border-radius:10px;padding:.9rem 1rem;margin-top:.35rem}
+.signup input[type=email]:focus{outline:none;box-shadow:0 0 0 3px rgba(159,178,217,.55)}
+.signup .consent{display:flex;gap:.7rem;align-items:flex-start;font-size:.8rem;color:#C9D6EE;line-height:1.45}
+.signup .consent input{margin-top:.2rem;width:16px;height:16px;flex:none;accent-color:#9FB2D9}
+.signup .consent a{color:#fff;text-decoration:underline}
+.signup button{all:unset;box-sizing:border-box;cursor:pointer;text-align:center;background:#fff;color:var(--marine);font-weight:600;font-size:.92rem;padding:1rem 1.6rem;border-radius:999px;transition:background .25s,transform .25s}
+.signup button:hover{background:var(--ciel);transform:translateY(-1px)}
+.signup button[disabled]{opacity:.6;cursor:wait}
+.signup .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.signup .msg{display:none;margin-top:1rem;padding:.9rem 1rem;border-radius:10px;font-size:.9rem;line-height:1.45}
+.signup .msg.ok{display:block;background:rgba(31,157,107,.18);color:#D7F5E8}
+.signup .msg.err{display:block;background:rgba(198,71,47,.2);color:#FBE0DA}
+.signup .alt{display:flex;flex-direction:column;gap:.7rem;margin-top:1.6rem}
+.signup .alt a{display:inline-flex;justify-content:center;align-items:center;gap:.6rem;background:#fff;color:var(--marine);font-weight:600;font-size:.92rem;padding:1rem 1.6rem;border-radius:999px}
+.signup .alt a.line{background:transparent;color:#fff;border:1px solid rgba(159,178,217,.5)}
+.signup .alt a:hover{transform:translateY(-1px)}
+
+@media(max-width:900px){.issue,.next-grid{grid-template-columns:1fr}.issue-cover{max-width:320px}}
+@media(max-width:560px){.next-topics .t{grid-template-columns:1fr;gap:.2rem}}
+.signup form[hidden],.signup .alt[hidden]{display:none}

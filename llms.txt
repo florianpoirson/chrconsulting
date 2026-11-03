@@ -24,6 +24,10 @@ Informations clés :
 - [Système de caisse Lightspeed](https://www.chrconsulting.fr/lightspeed/): caisse Lightspeed installée et paramétrée par CHR Consulting, partenaire Lightspeed, avec un regard d'expert de l'exploitation.
 - [Tous les outils](https://www.chrconsulting.fr/outils/)
 
+## Magazine
+
+- [Le magazine CHR Consulting](https://www.chrconsulting.fr/magazine/): magazine trimestriel gratuit en PDF (dossier de saison, ratio du trimestre, étude de cas, actualité du secteur, outils). N° 01 : novembre – décembre 2026 ; puis un numéro par trimestre à partir de janvier 2027.
+
 ## Repères de ratios (restauration)
 
 - Food cost : généralement 28 % à 34 % du chiffre d'affaires HT selon le format.
