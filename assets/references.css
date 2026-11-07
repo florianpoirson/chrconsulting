@@ -1,0 +1,12 @@
+/* Page Références */
+.ref-intro{max-width:62ch;margin:0 auto;text-align:center;color:var(--gris);font-size:1.02rem;line-height:1.75}
+.ref-intro strong{color:var(--marine);font-weight:600}
+.ref-groups{display:grid;gap:3.4rem;margin-top:3.6rem}
+.ref-group h2{display:flex;align-items:baseline;gap:1rem;font-family:var(--display);font-weight:400;font-size:1.05rem;letter-spacing:.24em;text-transform:uppercase;color:var(--marine);padding-bottom:1rem;border-bottom:1px solid var(--ligne)}
+.ref-group h2 small{font-family:var(--sans);font-size:.72rem;letter-spacing:.14em;color:var(--azur);font-weight:600}
+.ref-list{list-style:none;margin-top:1.5rem;columns:3 230px;column-gap:2.6rem}
+.ref-list li{break-inside:avoid;padding:.55rem 0;border-bottom:1px solid rgba(15,47,99,.06);display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+.ref-list b{font-family:var(--display);font-weight:400;font-size:1.12rem;color:var(--encre);letter-spacing:.01em}
+.ref-list span{font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--azur);white-space:nowrap}
+.ref-note{margin:3.4rem auto 0;max-width:64ch;text-align:center;font-size:.86rem;color:var(--gris);line-height:1.7;padding-top:2rem;border-top:1px solid var(--ligne)}
+@media(max-width:600px){.ref-list{columns:2;column-gap:1.4rem}.ref-list li{display:block;padding:.5rem 0}.ref-list b{font-size:1rem;display:block}.ref-list span{display:block;font-size:.66rem;margin-top:.15rem}.ref-group h2{flex-wrap:wrap;gap:.4rem .8rem}}
