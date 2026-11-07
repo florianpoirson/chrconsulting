@@ -32,3 +32,13 @@
 .tools-help .acts{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
 .tools-help .btn-line{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--ligne);color:var(--marine);font-weight:600;font-size:.9rem;padding:1rem 1.7rem;border-radius:999px;text-decoration:none}
 .tools-help .btn-line:hover{border-color:var(--roi);color:var(--roi)}
+/* Bloc « Ils nous ont fait confiance » (section Parcours de l'accueil) */
+.refs-block{margin-top:3rem;padding:2rem 2.2rem;border:1px solid var(--ligne,rgba(15,47,99,.12));border-radius:14px;background:var(--ciel-2,#F4F8FF)}
+.refs-block h3{font-family:var(--sans,'Manrope',sans-serif);font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--azur,#7890C0);margin:0 0 1rem}
+.refs-block ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.35rem 0;font-size:.88rem;line-height:1.6}
+.refs-block li{color:var(--gris,#5B6B84)}
+.refs-block li:not(:last-child)::after{content:"·";margin:0 .6rem;color:var(--brume,#A9BAD6)}
+.refs-block a{color:var(--encre,#12203A);text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.refs-block a:hover,.refs-block a:focus-visible{color:var(--roi,#0042AE);border-bottom-color:currentColor;outline:none}
+.refs-block p{margin:1.1rem 0 0;font-size:.78rem;color:var(--gris,#5B6B84)}
+@media(max-width:560px){.refs-block{padding:1.5rem 1.3rem}.refs-block ul{font-size:.84rem}}
