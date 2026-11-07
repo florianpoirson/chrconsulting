@@ -32,23 +32,22 @@
 .tools-help .acts{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
 .tools-help .btn-line{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--ligne);color:var(--marine);font-weight:600;font-size:.9rem;padding:1rem 1.7rem;border-radius:999px;text-decoration:none}
 .tools-help .btn-line:hover{border-color:var(--roi);color:var(--roi)}
-/* Bloc dépliant « Ils nous ont fait confiance » (section Parcours de l'accueil) */
-.refs-block{margin-top:3rem;border:1px solid var(--ligne,rgba(15,47,99,.12));border-radius:14px;background:var(--ciel-2,#F4F8FF);transition:background .25s,border-color .25s}
-.refs-block[open]{background:#fff;border-color:var(--azur-clair,#9FB2D9)}
-.refs-block summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:1rem;padding:1.25rem 1.6rem;border-radius:14px}
-.refs-block summary::-webkit-details-marker{display:none}
-.refs-block summary:hover .t,.refs-block[open] summary .t{color:var(--roi,#0042AE)}
-.refs-block summary:focus-visible{outline:2px solid var(--roi,#0042AE);outline-offset:2px}
-.refs-block summary .t{font-family:var(--sans,'Manrope',sans-serif);font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--marine,#0F2F63);transition:color .2s}
-.refs-block summary .c{font-size:.78rem;color:var(--gris,#5B6B84);margin-left:auto}
-.refs-block summary svg{width:14px;height:14px;color:var(--roi,#0042AE);flex:none;transition:transform .25s}
-.refs-block[open] summary svg{transform:rotate(180deg)}
-.refs-body{padding:0 1.6rem 1.5rem;border-top:1px solid var(--ligne,rgba(15,47,99,.12));padding-top:1.2rem;margin:0 0}
-.refs-block ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.35rem 0;font-size:.88rem;line-height:1.6}
-.refs-block li{color:var(--gris,#5B6B84)}
-.refs-block li:not(:last-child)::after{content:"·";margin:0 .6rem;color:var(--brume,#A9BAD6)}
-.refs-block a{color:var(--encre,#12203A);text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
-.refs-block a:hover,.refs-block a:focus-visible{color:var(--roi,#0042AE);border-bottom-color:currentColor;outline:none}
-.refs-block .refs-body p{margin:1.1rem 0 0;font-size:.78rem;color:var(--gris,#5B6B84)}
-@media(max-width:560px){.refs-block summary{padding:1.1rem 1.2rem;flex-wrap:wrap}.refs-block summary .c{order:3;width:100%;margin-left:0}.refs-body{padding:1rem 1.2rem 1.3rem}.refs-block ul{font-size:.84rem}}
-@media (prefers-reduced-motion:reduce){.refs-block,.refs-block summary svg{transition:none}}
+/* Bloc « Références » : une liste déroulante par catégorie (section Parcours de l'accueil) */
+.refs-block{margin-top:3rem}
+.refs-block h3{font-family:var(--sans,'Manrope',sans-serif);font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--azur,#7890C0);margin:0 0 .9rem}
+.refs-cat{border-top:1px solid var(--ligne,rgba(15,47,99,.12))}
+.refs-cat:last-of-type{border-bottom:1px solid var(--ligne,rgba(15,47,99,.12))}
+.refs-cat summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem .2rem}
+.refs-cat summary::-webkit-details-marker{display:none}
+.refs-cat summary .t{font-family:var(--display,'Jost',sans-serif);font-size:1.05rem;font-weight:400;color:var(--marine,#0F2F63);transition:color .2s}
+.refs-cat summary:hover .t,.refs-cat[open] summary .t{color:var(--roi,#0042AE)}
+.refs-cat summary:focus-visible{outline:2px solid var(--roi,#0042AE);outline-offset:2px;border-radius:4px}
+.refs-cat summary svg{width:13px;height:13px;color:var(--azur,#7890C0);flex:none;transition:transform .25s}
+.refs-cat[open] summary svg{transform:rotate(180deg);color:var(--roi,#0042AE)}
+.refs-cat ul{list-style:none;margin:0;padding:0 .2rem 1.2rem;display:flex;flex-wrap:wrap;gap:.35rem 0;font-size:.88rem;line-height:1.6}
+.refs-cat li{color:var(--gris,#5B6B84)}
+.refs-cat li:not(:last-child)::after{content:"·";margin:0 .6rem;color:var(--brume,#A9BAD6)}
+.refs-cat a{color:var(--encre,#12203A);text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.refs-cat a:hover,.refs-cat a:focus-visible{color:var(--roi,#0042AE);border-bottom-color:currentColor;outline:none}
+.refs-block>p{margin:1rem 0 0;font-size:.78rem;color:var(--gris,#5B6B84)}
+@media (prefers-reduced-motion:reduce){.refs-cat summary svg{transition:none}}
