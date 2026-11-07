@@ -110,4 +110,24 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.chrconsulting.fr/references/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/references/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chrconsulting.fr/references/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chrconsulting.fr/references/"/>
+  </url>
+
+  <url>
+    <loc>https://www.chrconsulting.fr/references/en.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/references/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chrconsulting.fr/references/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chrconsulting.fr/references/"/>
+  </url>
+
 </urlset>

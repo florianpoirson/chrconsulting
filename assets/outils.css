@@ -53,3 +53,4 @@
 .refs-block>p{margin:1rem 0 0;font-size:.78rem;color:var(--gris,#5B6B84)}
 @media (prefers-reduced-motion:reduce){.refs-cat summary svg{transition:none}}
 @media(max-width:560px){.refs-cat summary{padding:1rem 1.15rem}.refs-cat ul{padding:1rem 1.15rem 1.15rem;font-size:.84rem}}
+.refs-page .refs-block{margin-top:0}
