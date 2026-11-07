@@ -32,3 +32,24 @@
 .tools-help .acts{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
 .tools-help .btn-line{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--ligne);color:var(--marine);font-weight:600;font-size:.9rem;padding:1rem 1.7rem;border-radius:999px;text-decoration:none}
 .tools-help .btn-line:hover{border-color:var(--roi);color:var(--roi)}
+/* Bloc « Références » : une liste déroulante par catégorie (section Parcours de l'accueil) */
+.refs-block{margin-top:3rem}
+.refs-block h3{font-family:var(--sans,'Manrope',sans-serif);font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--azur,#7890C0);margin:0 0 .9rem}
+.refs-block .refs-cats{display:grid;gap:.7rem}
+.refs-cat{border:1px solid var(--ligne,rgba(15,47,99,.12));border-radius:14px;background:var(--ciel-2,#F4F8FF);transition:background .25s,border-color .25s}
+.refs-cat[open]{background:#fff;border-color:var(--azur-clair,#9FB2D9)}
+.refs-cat summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.05rem 1.5rem;border-radius:14px}
+.refs-cat summary::-webkit-details-marker{display:none}
+.refs-cat summary .t{font-family:var(--display,'Jost',sans-serif);font-size:1.05rem;font-weight:400;color:var(--marine,#0F2F63);transition:color .2s}
+.refs-cat summary:hover .t,.refs-cat[open] summary .t{color:var(--roi,#0042AE)}
+.refs-cat summary:focus-visible{outline:2px solid var(--roi,#0042AE);outline-offset:2px}
+.refs-cat summary svg{width:13px;height:13px;color:var(--azur,#7890C0);flex:none;transition:transform .25s}
+.refs-cat[open] summary svg{transform:rotate(180deg);color:var(--roi,#0042AE)}
+.refs-cat ul{list-style:none;margin:0;padding:1.1rem 1.5rem 1.3rem;border-top:1px solid var(--ligne,rgba(15,47,99,.12));display:flex;flex-wrap:wrap;gap:.35rem 0;font-size:.88rem;line-height:1.6}
+.refs-cat li{color:var(--gris,#5B6B84)}
+.refs-cat li:not(:last-child)::after{content:"·";margin:0 .6rem;color:var(--brume,#A9BAD6)}
+.refs-cat a{color:var(--encre,#12203A);text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.refs-cat a:hover,.refs-cat a:focus-visible{color:var(--roi,#0042AE);border-bottom-color:currentColor;outline:none}
+.refs-block>p{margin:1rem 0 0;font-size:.78rem;color:var(--gris,#5B6B84)}
+@media (prefers-reduced-motion:reduce){.refs-cat summary svg{transition:none}}
+@media(max-width:560px){.refs-cat summary{padding:1rem 1.15rem}.refs-cat ul{padding:1rem 1.15rem 1.15rem;font-size:.84rem}}
