@@ -302,6 +302,8 @@ body.splash-on{overflow:hidden}
 .cb-refuse{background:transparent;color:#fff;border-color:rgba(159,178,217,.5)}
 .cb-refuse:hover{border-color:#fff}
 @media(max-width:560px){.cb-inner{flex-direction:column;align-items:flex-start}.cb-actions{width:100%}.cb-btn{flex:1}}
+#inscription{scroll-margin-top:100px}
+.signup .book-note{font-size:.85rem;margin-top:.8rem;padding-left:.8rem;border-left:2px solid var(--azur-clair,#9FB2D9)}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.chrconsulting.fr/"}, {"@type": "ListItem", "position": 2, "name": "Le magazine", "item": "https://www.chrconsulting.fr/magazine/"}]}, {"@type": "Periodical", "name": "Le magazine CHR Consulting", "inLanguage": "fr", "publisher": {"@type": "Organization", "name": "CHR Consulting", "url": "https://www.chrconsulting.fr/"}, "url": "https://www.chrconsulting.fr/magazine/", "hasPart": [{"@type": "PublicationIssue", "issueNumber": "1", "datePublished": "2026-11", "name": "N° 01 · Novembre – Décembre 2026", "url": "https://www.chrconsulting.fr/magazine/chr-consulting-magazine-n01.pdf"}]}]}</script>
 <link rel="stylesheet" href="/assets/nav.css">
@@ -375,6 +377,7 @@ body.splash-on{overflow:hidden}
       <aside class="signup" id="inscription">
         <h3>Recevez le N° 02 dès sa sortie</h3>
         <p>Le magazine arrive dans votre boîte e-mail chaque trimestre. Gratuit, désinscription en un clic.</p>
+        <p class="book-note">Les abonnés sont aussi prévenus en avant-première de la parution du livre de Florian Poirson, «&#8239;Piloter un restaurant par les ratios&#8239;».</p>
         <form id="mag-form" novalidate hidden>
           <div><label class="f" for="mag-email">Votre adresse e-mail</label>
           <input type="email" id="mag-email" name="EMAIL" autocomplete="email" required placeholder="prenom@etablissement.fr"></div>
@@ -523,7 +526,7 @@ window.MAG_CONFIG = { brevoFormAction: "https://2de74084.sibforms.com/serve/MUIF
     fetch(cfg.brevoFormAction, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(form)) })
       .then(function(){
         msg.className = 'msg ok';
-        msg.textContent = 'Merci ! Confirmez votre inscription dans l’e-mail que vous allez recevoir. Le N° 02 vous sera envoyé dès sa sortie.';
+        msg.textContent = 'Merci ! Confirmez votre inscription dans l’e-mail que vous allez recevoir. Le N° 02 vous sera envoyé dès sa sortie, et vous serez prévenu de la parution du livre.';
         form.reset(); track('magazine_signup');
       })
       .catch(function(){ msg.className = 'msg err'; msg.textContent = 'L’inscription n’a pas abouti. Réessayez ou écrivez-nous à contact@chrconsulting.fr.'; })
