@@ -56,7 +56,7 @@
    "name": "What is food cost in a restaurant?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Food cost is the ratio between the cost of raw materials (food and beverages) and revenue excluding VAT. It usually ranges from 28% to 34% depending on the type of venue, and is one of the first profitability levers of a restaurant."
+    "text": "Food cost is the ratio between the cost of raw materials (food and beverages) and revenue excluding VAT. It usually ranges from 28% to 32% for food alone depending on the type of venue, and is one of the first profitability levers of a restaurant."
    }
   },
   {
@@ -64,7 +64,7 @@
    "name": "What is prime cost?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Prime cost adds cost of goods and payroll, as a share of revenue. It is the key indicator in foodservice: it should stay below 65% to 70% of revenue to protect profitability."
+    "text": "Prime cost adds cost of goods and payroll, as a share of revenue. It is the key indicator in foodservice: the benchmark in France is 58% to 65% of revenue, with an alert above 68%, to protect profitability."
    }
   },
   {
@@ -72,7 +72,7 @@
    "name": "What is a good payroll ratio for a restaurant?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Payroll (wages and employer charges) ideally represents 30% to 38% of revenue depending on the format. Above that, profitability deteriorates and the organisation needs rethinking."
+    "text": "Payroll (wages and employer charges) represents 32% to 42% of revenue in France depending on the format. Above that, profitability deteriorates and the organisation needs rethinking."
    }
   },
   {
@@ -367,7 +367,12 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 .cb-accept:hover{background:var(--ciel)}
 .cb-refuse{background:transparent;color:#fff;border-color:rgba(159,178,217,.5)}
 .cb-refuse:hover{border-color:#fff}
-@media(max-width:560px){.cb-inner{flex-direction:column;align-items:flex-start}.cb-actions{width:100%}.cb-btn{flex:1}}</style>
+@media(max-width:560px){.cb-inner{flex-direction:column;align-items:flex-start}.cb-actions{width:100%}.cb-btn{flex:1}}.xl-box{margin-top:2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;background:#fff;border:1px solid var(--ligne);border-radius:14px;padding:2rem 2.2rem}
+.xl-box h3{font-family:var(--display);font-weight:500;font-size:1.5rem;color:var(--marine);margin:.6rem 0 .5rem}
+.xl-box p{color:var(--gris);font-size:.95rem;line-height:1.6;max-width:62ch}
+.xl-box .btn{flex:none}
+@media(max-width:860px){.xl-box{flex-direction:column;align-items:flex-start}}
+</style>
 <link rel="stylesheet" href="/assets/nav.css">
 <script src="/assets/nav.js" defer></script>
 </head>
@@ -443,32 +448,40 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
     <div class="ped-grid reveal">
       <article class="ped">
         <h3>Food cost</h3>
-        <p><strong>Food cost</strong> compares the cost of raw materials (food and beverages) with revenue excluding VAT. It is a restaurant’s first margin item. Depending on the format, it usually sits between <strong>28% and 34%</strong>. A drifting food cost often points to issues with recipe costing, purchasing or waste.</p>
+        <p><strong>Food cost</strong> compares the cost of raw materials (food and beverages) with revenue excluding VAT. It is a restaurant’s first margin item. Depending on the format, it usually sits between <strong>28% and 32%</strong> for food alone (alert above 34%). A drifting food cost often points to issues with recipe costing, purchasing or waste.</p>
       </article>
       <article class="ped">
         <h3>Payroll</h3>
-        <p><strong>Payroll</strong> (wages and employer charges) as a share of revenue reflects the weight of your teams. It most often ranges between <strong>30% and 38%</strong>. Too high, it erodes profitability; too low, it can weaken service and quality.</p>
+        <p><strong>Payroll</strong> (wages and employer charges) as a share of revenue reflects the weight of your teams. In France it most often ranges between <strong>32% and 42%</strong> (alert above 45%). Too high, it erodes profitability; too low, it can weaken service and quality.</p>
       </article>
       <article class="ped">
         <h3>Prime cost</h3>
-        <p><strong>Prime cost</strong> adds food cost and payroll. It is the <strong>key indicator</strong> in foodservice, combining the two largest variable cost items. Below <strong>65%-70%</strong> of revenue, the structure is healthy; above that, profitability becomes hard to reach.</p>
+        <p><strong>Prime cost</strong> adds food cost and payroll. It is the <strong>key indicator</strong> in foodservice, combining the two largest variable cost items. Between <strong>58% and 65%</strong> of revenue, the structure is healthy; above 68%, profitability becomes hard to reach.</p>
       </article>
       <article class="ped">
         <h3>Rent / revenue</h3>
-        <p><strong>Rent</strong> (including rental charges) as a share of revenue measures the weight of the premises. The usual target is <strong>below 10%</strong>. Excessive rent can sink a venue that is otherwise well run.</p>
+        <p><strong>Rent</strong> (including rental charges) as a share of revenue measures the weight of the premises. The usual target is <strong>8% to 12%</strong>, with an alert above 15%. Excessive rent can sink a venue that is otherwise well run.</p>
       </article>
       <article class="ped">
         <h3>Gross margin</h3>
-        <p><strong>Gross margin</strong> — revenue minus cost of goods — shows what is left to cover all other costs. The higher it is, the more room the venue has. It is the mirror image of food cost.</p>
+        <p><strong>Gross margin</strong> — revenue minus cost of goods — shows what is left to cover all other costs. Benchmark: <strong>68% to 75%</strong>, alert below 65%. It is the mirror image of food cost.</p>
       </article>
       <article class="ped">
         <h3>Operating profit</h3>
-        <p><strong>Operating profit</strong> as a share of revenue is the final verdict: the real profitability of the business once all operating costs are deducted. It determines whether the model is sustainable.</p>
+        <p><strong>Operating profit</strong> as a share of revenue is the final verdict: the real profitability of the business once all operating costs are deducted. The target is <strong>12% to 20%</strong> of revenue; below 8%, the model is fragile.</p>
       </article>
     </div>
 
     <div class="ped-note reveal">
       <p><strong>Beware of averages.</strong> These thresholds are benchmarks. The right ratios depend on the <strong>format</strong> (fast casual, bistro, fine dining, café, hotel F&amp;B), the <strong>location</strong> and the <strong>positioning</strong>. A 34% food cost can be excellent in fine dining and alarming in fast casual. That is the whole point of our support: reading your figures in context.</p>
+    </div>
+    <div class="xl-box reveal" id="excel-template">
+      <div>
+        <span class="eyebrow">Free</span>
+        <h3>Excel template to calculate your ratios</h3>
+        <p>Enter your monthly figures: cost of goods, payroll, prime cost, occupancy, overheads, gross margin and operating profit are calculated automatically, with a 12-month tracker. Template in French.</p>
+      </div>
+      <a class="btn btn-primary dark" href="/ratios/modele-ratios-restaurant-chr-consulting.xlsx" download>Download the Excel template <span class="arw">↓</span></a>
     </div>
   </div>
 </section>

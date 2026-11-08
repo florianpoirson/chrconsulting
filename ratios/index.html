@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Calculateur de ratios restaurant — food cost, prime cost, masse salariale | CHR Consulting</title>
-<meta name="description" content="Calculez gratuitement les ratios de votre restaurant : food cost, prime cost, masse salariale, loyer, marge brute. Comparez-les aux standards du métier selon votre type d'établissement. Un outil CHR Consulting, cabinet de conseil en hôtellerie-restauration à Paris depuis 2012.">
+<title>Ratios restauration : calcul du food cost, COS, prime cost — outil gratuit | CHR Consulting</title>
+<meta name="description" content="Calculez gratuitement vos ratios de restaurant : food cost (COS), masse salariale, prime cost, loyer, marge. Formules, exemples, repères par type d'établissement et modèle Excel offert.">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:title" content="Calculateur de ratios restaurant — food cost, prime cost, masse salariale">
-<meta property="og:description" content="Vos ratios sont-ils dans le vert ? Testez gratuitement le food cost, le prime cost et la masse salariale de votre établissement face aux standards du métier.">
+<meta property="og:title" content="Ratios restauration : calcul du food cost, COS, prime cost — outil gratuit">
+<meta property="og:description" content="Calculez gratuitement vos ratios de restaurant : food cost (COS), masse salariale, prime cost, loyer, marge. Formules, exemples, repères par type d'établissement et modèle Excel offert.">
 <meta property="og:url" content="https://www.chrconsulting.fr/ratios/">
 <meta property="og:image" content="https://www.chrconsulting.fr/assets/chr-consulting-og.jpg">
 <meta property="og:image:width" content="1200">
@@ -48,14 +48,74 @@
 </script>
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {"@type":"Question","name":"Qu'est-ce que le food cost en restauration ?","acceptedAnswer":{"@type":"Answer","text":"Le food cost est le rapport entre le coût des matières premières (denrées et boissons) et le chiffre d'affaires hors taxes. Il se situe généralement entre 28 % et 34 % selon le type d'établissement. C'est l'un des premiers leviers de rentabilité d'un restaurant."}},
-    {"@type":"Question","name":"Qu'est-ce que le prime cost ?","acceptedAnswer":{"@type":"Answer","text":"Le prime cost additionne le coût matières et la masse salariale, rapportés au chiffre d'affaires. C'est l'indicateur roi de la restauration : il doit rester sous 65 % à 70 % du CA pour préserver la rentabilité."}},
-    {"@type":"Question","name":"Quel est le bon ratio de masse salariale pour un restaurant ?","acceptedAnswer":{"@type":"Answer","text":"La masse salariale (salaires et charges) représente idéalement 30 % à 38 % du chiffre d'affaires selon le format. Au-delà, la rentabilité se dégrade et une réorganisation devient nécessaire."}},
-    {"@type":"Question","name":"Comment calculer la rentabilité d'un restaurant ?","acceptedAnswer":{"@type":"Answer","text":"La rentabilité s'apprécie via plusieurs ratios : food cost, masse salariale, prime cost, loyer, marge brute et résultat d'exploitation, chacun rapporté au chiffre d'affaires. Notre calculateur les évalue instantanément selon votre type d'établissement."}}
-  ]
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Comment calculer un ratio en restauration ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "On divise le poste de coûts par le chiffre d'affaires HT de la même période, puis on multiplie par 100. Exemple : 28 000 € de matières consommées pour 100 000 € de CA donnent un ratio matières de 28 %."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Qu'est-ce que le food cost en restauration ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Le food cost, ou ratio matières, est le rapport entre le coût des matières consommées et le chiffre d'affaires hors taxes. Il se situe généralement entre 28 % et 32 % pour la cuisine seule (alerte au-delà de 34 %), selon le type d'établissement."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Comment calculer le COS d'un restaurant ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Le COS (cost of sales) se calcule sur la consommation réelle : stock initial + achats − stock final, divisé par le chiffre d'affaires HT. Il ne se calcule jamais sur les seuls achats, et doit intégrer les repas du personnel et les offerts."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Qu'est-ce que le prime cost ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Le prime cost additionne le coût matières et la masse salariale, rapportés au chiffre d'affaires. Repère en France : 58 % à 65 % du CA, avec une alerte au-delà de 68 %."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Quel est le bon ratio de masse salariale pour un restaurant ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "La masse salariale chargée représente en France 32 % à 42 % du chiffre d'affaires selon le format : environ 32 à 36 % en café-brasserie, 34 à 38 % en bistronomique et 38 à 45 % en gastronomique."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Quelles sont les charges fixes d'un restaurant ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Loyer et charges locatives, assurances, taxes, abonnements et contrats (maintenance, logiciels, part fixe de l'énergie), honoraires, crédits et locations financières. Repères : coûts d'occupation 8 à 12 % du CA, frais généraux 8 à 12 %."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Quel coefficient appliquer pour fixer un prix de vente ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Prix de vente = coût matière × coefficient. Repères : 3,5 à 4 en restauration rapide, 3 à 3,3 en bistronomique, 2,5 à 2,8 en gastronomique."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Comment calculer la rentabilité d'un restaurant ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "La rentabilité se lit avec plusieurs ratios rapportés au chiffre d'affaires : matières, masse salariale, prime cost, coûts d'occupation, frais généraux, marge brute et résultat brut d'exploitation (RBE), visé entre 12 % et 20 % du CA. Le calculateur et le modèle Excel gratuits de CHR Consulting les évaluent instantanément."
+   }
+  }
+ ]
 }
 </script>
 <style>
@@ -339,7 +399,23 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 .cb-accept:hover{background:var(--ciel)}
 .cb-refuse{background:transparent;color:#fff;border-color:rgba(159,178,217,.5)}
 .cb-refuse:hover{border-color:#fff}
-@media(max-width:560px){.cb-inner{flex-direction:column;align-items:flex-start}.cb-actions{width:100%}.cb-btn{flex:1}}</style>
+@media(max-width:560px){.cb-inner{flex-direction:column;align-items:flex-start}.cb-actions{width:100%}.cb-btn{flex:1}}.guide{background:#fff}
+.guide-grid{margin-top:3rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+.g-card{border:1px solid var(--ligne);border-radius:12px;padding:1.9rem 1.8rem;background:#fff}
+.g-card h3{font-family:var(--display);font-weight:500;font-size:1.35rem;color:var(--marine);margin-bottom:.7rem;line-height:1.25}
+.g-card p{font-size:.94rem;color:var(--gris);line-height:1.65;margin-top:.6rem}
+.g-card p strong{color:var(--encre);font-weight:600}
+.g-card .formula{background:var(--ciel-2);border-left:3px solid var(--roi);border-radius:6px;padding:.8rem 1rem;color:var(--marine);font-weight:600;font-size:.92rem}
+.g-card .ex{color:var(--encre)}
+.g-list{list-style:none;margin:.8rem 0 0;padding:0}
+.g-list li{display:flex;justify-content:space-between;padding:.45rem 0;border-bottom:1px solid var(--ligne);font-size:.93rem;color:var(--encre)}
+.g-list b{color:var(--roi)}
+.xl-box{margin-top:2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;background:var(--ciel);border-radius:14px;padding:2rem 2.2rem}
+.xl-box h3{font-family:var(--display);font-weight:500;font-size:1.5rem;color:var(--marine);margin:.6rem 0 .5rem}
+.xl-box p{color:var(--gris);font-size:.95rem;line-height:1.6;max-width:62ch}
+.xl-box .btn{flex:none}
+@media(max-width:860px){.guide-grid{grid-template-columns:1fr}.xl-box{flex-direction:column;align-items:flex-start}}
+</style>
 <link rel="stylesheet" href="/assets/nav.css">
 <script src="/assets/nav.js" defer></script>
 </head>
@@ -415,32 +491,92 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
     <div class="ped-grid reveal">
       <article class="ped">
         <h3>Food cost</h3>
-        <p>Le <strong>food cost</strong> rapporte le coût des matières premières (denrées et boissons) au chiffre d'affaires HT. C'est le premier poste de marge d'un restaurant. Selon le format, il se situe généralement entre <strong>28 % et 34 %</strong>. Un food cost qui dérape signale souvent un problème de fiches techniques, d'achats ou de gaspillage.</p>
+        <p>Le <strong>food cost</strong> rapporte le coût des matières premières (denrées et boissons) au chiffre d'affaires HT. C'est le premier poste de marge d'un restaurant. Selon le format, il se situe généralement entre <strong>28 % et 32 %</strong> pour la cuisine seule (alerte au-delà de 34 %), et entre 25 % et 32 % pour l'ensemble matières et boissons. Un food cost qui dérape signale souvent un problème de fiches techniques, d'achats ou de gaspillage.</p>
       </article>
       <article class="ped">
         <h3>Masse salariale</h3>
-        <p>La <strong>masse salariale</strong> (salaires et charges) rapportée au CA reflète le poids de vos équipes. Elle oscille le plus souvent entre <strong>30 % et 38 %</strong>. Trop élevée, elle grève la rentabilité&#8239;; trop basse, elle peut fragiliser le service et la qualité.</p>
+        <p>La <strong>masse salariale</strong> (salaires et charges) rapportée au CA reflète le poids de vos équipes. En France, elle oscille le plus souvent entre <strong>32 % et 42 %</strong> (alerte au-delà de 45 %), selon le format et le niveau de service. Trop élevée, elle grève la rentabilité&#8239;; trop basse, elle peut fragiliser le service et la qualité.</p>
       </article>
       <article class="ped">
         <h3>Prime cost</h3>
-        <p>Le <strong>prime cost</strong> additionne food cost et masse salariale. C'est l'<strong>indicateur roi</strong> de la restauration&#8239;: il concentre les deux plus gros postes de coûts variables. En dessous de <strong>65 %-70 %</strong> du CA, la structure est saine&#8239;; au-delà, la rentabilité devient difficile à atteindre.</p>
+        <p>Le <strong>prime cost</strong> additionne food cost et masse salariale. C'est l'<strong>indicateur roi</strong> de la restauration&#8239;: il concentre les deux plus gros postes de coûts variables. Entre <strong>58 % et 65 %</strong> du CA, la structure est saine&#8239;; au-delà de 68 %, la rentabilité devient difficile à atteindre.</p>
       </article>
       <article class="ped">
         <h3>Loyer / CA</h3>
-        <p>Le <strong>loyer</strong> (charges locatives comprises) rapporté au CA mesure le poids de l'immobilier. On vise généralement <strong>moins de 10 %</strong>. Un loyer trop lourd peut condamner un établissement pourtant bien géré par ailleurs.</p>
+        <p>Le <strong>loyer</strong> (charges locatives comprises) rapporté au CA mesure le poids de l'immobilier. On vise généralement <strong>8 % à 12 %</strong>, avec une alerte au-delà de 15 %. Un loyer trop lourd peut condamner un établissement pourtant bien géré par ailleurs.</p>
       </article>
       <article class="ped">
         <h3>Marge brute</h3>
-        <p>La <strong>marge brute</strong> — chiffre d'affaires diminué du coût matières — indique ce qu'il reste pour couvrir toutes les autres charges. Plus elle est élevée, plus l'établissement a de latitude. Elle est le miroir du food cost.</p>
+        <p>La <strong>marge brute</strong> — chiffre d'affaires diminué du coût matières — indique ce qu'il reste pour couvrir toutes les autres charges. Repère&#8239;: <strong>68 % à 75 %</strong>, avec une alerte sous 65 %. Elle est le miroir du food cost.</p>
       </article>
       <article class="ped">
         <h3>Résultat d'exploitation</h3>
-        <p>Le <strong>résultat d'exploitation</strong> rapporté au CA est le juge de paix&#8239;: c'est la rentabilité réelle de l'activité, une fois toutes les charges d'exploitation déduites. C'est lui qui détermine la viabilité durable du modèle.</p>
+        <p>Le <strong>résultat d'exploitation</strong> rapporté au CA est le juge de paix&#8239;: c'est la rentabilité réelle de l'activité, une fois toutes les charges d'exploitation déduites. Le résultat brut d'exploitation (RBE) visé se situe entre <strong>12 % et 20 %</strong> du CA&#8239;; sous 8 %, le modèle est fragile.</p>
       </article>
     </div>
 
     <div class="ped-note reveal">
       <p><strong>Attention aux moyennes.</strong> Ces seuils sont des repères. Les bons ratios dépendent du <strong>format</strong> (snacking, bistrot, gastronomique, café, F&amp;B d'hôtel), de l'<strong>emplacement</strong> et du <strong>positionnement</strong>. Un food cost de 34 % peut être excellent en gastronomie et alarmant en snacking. C'est tout l'objet de notre accompagnement&#8239;: lire vos chiffres dans leur contexte.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE DE CALCUL (SEO) -->
+<section class="guide" id="calculer">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Méthode</span>
+      <h2 class="section-title">Comment calculer les ratios de votre restaurant.</h2>
+      <p class="lead" style="margin-top:1.2rem">Les formules, un exemple chiffré et les pièges à éviter, tirés de la méthode CHR Consulting.</p>
+    </div>
+    <div class="guide-grid reveal">
+      <article class="g-card" id="calcul-ratio">
+        <h3>Comment calculer un ratio en restauration&#8239;?</h3>
+        <p>Un ratio rapporte un poste de coûts au <strong>chiffre d'affaires HT de la même période</strong>, puis se multiplie par 100. Deux règles&#8239;: toujours le même périmètre de CA, et des montants hors taxes.</p>
+        <p class="formula">Ratio = poste de coûts ÷ CA HT × 100</p>
+        <p>Comparez sur 3 mois glissants plutôt qu'un mois isolé&#8239;: vous lissez les effets de saison et d'événements.</p>
+      </article>
+      <article class="g-card" id="calcul-cos">
+        <h3>Calcul du COS (coût matière)</h3>
+        <p>Le <strong>COS</strong> (cost of sales), ou ratio matières, se calcule sur la <strong>consommation réelle</strong>, jamais sur les seuls achats&#8239;: il faut un inventaire en début et en fin de période.</p>
+        <p class="formula">Consommation = stock initial + achats − stock final<br>COS = consommation ÷ CA HT × 100</p>
+        <p class="ex">Exemple&#8239;: 12 000 € + 26 000 € − 10 000 € = 28 000 € consommés, pour 100 000 € de CA&#8239;: COS = 28 %.</p>
+        <p>Réintégrez les repas du personnel et les offerts, sinon le ratio est faussé.</p>
+      </article>
+      <article class="g-card" id="masse-salariale">
+        <h3>Ratio masse salariale / chiffre d'affaires</h3>
+        <p>La masse salariale comprend les salaires bruts <strong>et les charges</strong>. Complétez-la par un indicateur de productivité.</p>
+        <p class="formula">Ratio personnel = masse salariale chargée ÷ CA HT × 100<br>Productivité = heures travaillées ÷ (CA ÷ 1 000)</p>
+        <p class="ex">Exemple&#8239;: 28 000 € de masse salariale pour 80 000 € de CA&#8239;: 35 %. Repère de productivité&#8239;: 12 à 16 heures pour 1 000 € de CA.</p>
+        <p>Repères par format&#8239;: café-brasserie 32 à 36 %, bistronomique 34 à 38 %, gastronomique 38 à 45 %.</p>
+      </article>
+      <article class="g-card" id="charges-fixes">
+        <h3>Les charges fixes d'un restaurant</h3>
+        <p>Elles ne dépendent pas du nombre de clients&#8239;: loyer et charges locatives, assurances, taxes, abonnements et contrats (maintenance, logiciels, part fixe de l'énergie), honoraires, crédits et locations financières.</p>
+        <p>Repères&#8239;: coûts d'occupation <strong>8 à 12 %</strong> du CA, frais généraux <strong>8 à 12 %</strong>, énergie et fluides 3 à 5 %.</p>
+        <p class="formula">Seuil de rentabilité = charges fixes ÷ taux de marge sur coûts variables</p>
+        <p>Raisonnez en % du CA&#8239;: un loyer «&#8239;raisonnable&#8239;» devient lourd dès que le chiffre d'affaires baisse.</p>
+      </article>
+      <article class="g-card" id="coefficient">
+        <h3>Coefficient et prix de vente</h3>
+        <p>Le coefficient multiplicateur relie le coût matière d'un plat à son prix de vente.</p>
+        <p class="formula">Prix de vente = coût matière × coefficient<br>Coût maximum = prix visé × ratio matière cible</p>
+        <p>Repères&#8239;: restauration rapide 3,5 à 4 (ratio 25 à 28 %), bistronomique 3 à 3,3 (30 à 33 %), gastronomique 2,5 à 2,8 (35 à 40 %).</p>
+      </article>
+      <article class="g-card" id="exemple">
+        <h3>Exemple de compte d'exploitation</h3>
+        <p>Pour 100 000 € de chiffre d'affaires mensuel, un restaurant urbain type se répartit ainsi&#8239;:</p>
+        <ul class="g-list"><li><span>Matières &amp; boissons</span><b>28 %</b></li><li><span>Masse salariale chargée</span><b>38 %</b></li><li><span>Frais généraux</span><b>10 %</b></li><li><span>Coûts d'occupation</span><b>10 %</b></li><li><span>RBE</span><b>14 %</b></li></ul>
+        <p>Chaque point gagné sur les matières tombe intégralement dans le résultat.</p>
+      </article>
+    </div>
+    <div class="xl-box reveal" id="modele-excel">
+      <div>
+        <span class="eyebrow">Gratuit</span>
+        <h3>Modèle Excel de calcul des ratios</h3>
+        <p>Saisissez vos chiffres du mois&#8239;: COS, masse salariale, prime cost, coûts d'occupation, frais généraux, marge brute et RBE se calculent automatiquement, avec la lecture «&#8239;dans la cible / à surveiller / alerte&#8239;» et un suivi sur 12 mois.</p>
+      </div>
+      <a class="btn btn-primary dark" href="/ratios/modele-ratios-restaurant-chr-consulting.xlsx" download>Télécharger le modèle Excel <span class="arw">↓</span></a>
     </div>
   </div>
 </section>
@@ -476,7 +612,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
       </div>
       <div class="foot-col">
         <h5>Naviguer</h5>
-        <a href="/#approche">Approche</a><a href="/#expertises">Expertises</a><a href="/#c360">Ouverture 360</a><a href="/#fondateur">Le cabinet</a><a href="/#references">Parcours</a><a href="/references/">Références</a>
+        <a href="/#approche">Approche</a><a href="/#expertises">Expertises</a><a href="/#c360">Ouverture 360</a><a href="/#fondateur">Le cabinet</a><a href="/#references">Parcours</a><a href="/references/">Références</a><a href="/foncieres/">Foncières &amp; investisseurs</a>
       </div>
       <div class="foot-col">
         <h5><a class="h5-link" href="/outils/">Outils &amp; solutions</a></h5>

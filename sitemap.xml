@@ -24,7 +24,7 @@
 
   <url>
     <loc>https://www.chrconsulting.fr/ratios/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/ratios/"/>
@@ -110,6 +110,12 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.chrconsulting.fr/foncieres/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://www.chrconsulting.fr/references/</loc>
     <lastmod>2026-11-07</lastmod>

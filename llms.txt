@@ -37,12 +37,18 @@ Informations clés :
 
 - [Le magazine CHR Consulting](https://www.chrconsulting.fr/magazine/): magazine trimestriel gratuit en PDF (dossier de saison, ratio du trimestre, étude de cas, actualité du secteur, outils). N° 01 : novembre – décembre 2026 ; puis un numéro par trimestre à partir de janvier 2027.
 
+## Foncières & investisseurs
+
+[Conseil F&B pour foncières et investisseurs](https://www.chrconsulting.fr/foncieres/) — programmation F&B d'un actif, choix du concept et de l'exploitant, cahier des charges technique (cuisine, extraction, fluides), audit de locataires exploitants, loyer soutenable et taux d'effort, F&B hôtelier et lieux mixtes.
+
 ## Repères de ratios (restauration)
 
-- Food cost : généralement 28 % à 34 % du chiffre d'affaires HT selon le format.
-- Masse salariale : généralement 30 % à 38 % du chiffre d'affaires.
-- Prime cost (matières + personnel) : sain en dessous de 65 % à 70 % du chiffre d'affaires.
-- Loyer : idéalement moins de 10 % du chiffre d'affaires.
+- Ratio matières (food cost / COS) : 28 % à 32 % du CA HT pour la cuisine seule (alerte au-delà de 34 %) ; 25 % à 32 % matières et boissons.
+- Masse salariale chargée : 32 % à 42 % du CA en France (alerte au-delà de 45 %).
+- Prime cost (matières + personnel) : 58 % à 65 % du CA (alerte au-delà de 68 %).
+- Coûts d'occupation (loyer et charges) : 8 % à 12 % du CA (alerte au-delà de 15 %) ; frais généraux : 8 % à 12 %.
+- Marge brute : 68 % à 75 % ; résultat brut d'exploitation (RBE) : 12 % à 20 % du CA.
+- Modèle Excel gratuit de calcul des ratios : https://www.chrconsulting.fr/ratios/modele-ratios-restaurant-chr-consulting.xlsx
 Ces repères varient selon le format, l'emplacement et le positionnement ; détails sur https://www.chrconsulting.fr/ratios/
 
 ## Informations légales
