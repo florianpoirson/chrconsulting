@@ -237,7 +237,19 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 .cb-accept:hover{background:var(--ciel)}
 .cb-refuse{background:transparent;color:#fff;border-color:rgba(159,178,217,.5)}
 .cb-refuse:hover{border-color:#fff}
-@media(max-width:560px){.cb-inner{flex-direction:column;align-items:flex-start}.cb-actions{width:100%}.cb-btn{flex:1}}</style>
+@media(max-width:560px){.cb-inner{flex-direction:column;align-items:flex-start}.cb-actions{width:100%}.cb-btn{flex:1}}.faq-sec{background:var(--ciel-2,#F4F8FF);padding:clamp(3.5rem,7vw,5.5rem) 0}
+.faq-list{margin-top:2.4rem;display:grid;gap:.7rem;max-width:880px}
+.faq-list details{border:1px solid var(--ligne);border-radius:14px;background:#fff;transition:border-color .25s}
+.faq-list details[open]{border-color:var(--azur-clair)}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.05rem 1.5rem;font-family:var(--display);font-size:1.08rem;color:var(--marine)}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary:hover,.faq-list details[open] summary{color:var(--roi)}
+.faq-list summary svg{width:13px;height:13px;flex:none;color:var(--azur);transition:transform .25s}
+.faq-list details[open] summary svg{transform:rotate(180deg)}
+.faq-list details p{padding:0 1.5rem 1.25rem;color:var(--gris);font-size:.95rem;line-height:1.7}
+.faq-list details p a{color:var(--roi);font-weight:600;white-space:nowrap}
+@media(max-width:560px){.faq-list summary{padding:1rem 1.15rem}.faq-list details p{padding:0 1.15rem 1.1rem}}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -490,6 +502,60 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
         "@id": "https://www.chrconsulting.fr/#organization"
       },
       "inLanguage": "en-US"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.chrconsulting.fr/en.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How can I get support to open a restaurant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CHR Consulting supports café, restaurant and hotel openings end to end with its Ouverture 360 offer: concept and feasibility, pre-opening, opening, then stabilisation with ratio tracking over the first weeks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a restaurant consultant cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Consulting is tailored, scoped after a first conversation. For quick advice, the Expert session (1 hour by video with Florian Poirson) costs €150 incl. VAT. Online solutions have public prices: free ratio calculator, food safety plan generator at €50 excl. VAT, management software at €150 excl. VAT per month and per venue with a 7-day free trial."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "My restaurant is not profitable enough: where do I start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With an audit: P&L and ratios (cost of goods, payroll, prime cost, rent), purchasing, organisation and menu, followed by a prioritised action plan. The free ratio calculator gives a first diagnosis in minutes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you design professional kitchens?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: sizing for the menu and volumes, layout and forward flow, workstation ergonomics, equipment selection, utilities and extraction, specifications and follow-up until handover."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you advise property companies and investors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes: F&B programming of an asset, choice of concept and operator, technical specifications, audit of operating tenants and sustainable rent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does CHR Consulting work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The firm is based in Paris and works across France and in Morocco, on site or remotely, in French and English."
+          }
+        }
+      ]
     }
   ]
 }
@@ -813,6 +879,15 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
   </div>
 </section>
 
+<section class="faq-sec" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title">Your questions, answered.</h2>
+    </div>
+    <div class="faq-list reveal"><details><summary>How can I get support to open a restaurant?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>CHR Consulting supports café, restaurant and hotel openings end to end with its Ouverture 360 offer: concept and feasibility, pre-opening, opening, then stabilisation with ratio tracking over the first weeks.</p></details><details><summary>How much does a restaurant consultant cost?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Consulting is tailored, scoped after a first conversation. For quick advice, the Expert session (1 hour by video with Florian Poirson) costs €150 incl. VAT. Online solutions have public prices: free ratio calculator, food safety plan generator at €50 excl. VAT, management software at €150 excl. VAT per month and per venue with a 7-day free trial.</p></details><details><summary>My restaurant is not profitable enough: where do I start?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>With an audit: P&L and ratios (cost of goods, payroll, prime cost, rent), purchasing, organisation and menu, followed by a prioritised action plan. The free ratio calculator gives a first diagnosis in minutes.</p></details><details><summary>Do you design professional kitchens?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Yes: sizing for the menu and volumes, layout and forward flow, workstation ergonomics, equipment selection, utilities and extraction, specifications and follow-up until handover.</p></details><details><summary>Do you advise property companies and investors?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Yes: F&B programming of an asset, choice of concept and operator, technical specifications, audit of operating tenants and sustainable rent.</p></details><details><summary>Where does CHR Consulting work?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>The firm is based in Paris and works across France and in Morocco, on site or remotely, in French and English.</p></details></div>
+  </div>
+</section>
 <section class="cta-final" id="contact">
   <div class="wrap">
     <span class="eyebrow on-dark">Let’s talk about your project</span>
@@ -950,6 +1025,7 @@ document.querySelectorAll('[data-count]').forEach(el=>countIO.observe(el));
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
   Cal("init", "entretien-expert", {origin:"https://cal.com"});
   Cal.ns["entretien-expert"]("ui", {"theme":"light","styles":{"branding":{"brandColor":"#0042AE"}},"layout":"month_view"});
+  Cal.ns["entretien-expert"]("on",{action:"bookingSuccessful",callback:function(){if(typeof window.gtag==="function")window.gtag("event","rdv_expert_reserve",{value:150,currency:"EUR"});}});
 </script>
 </body>
 </html>
