@@ -557,7 +557,7 @@ addEventListener('load',()=>document.querySelectorAll('.ratios-hero .reveal').fo
     if(!GA_ID||GA_ID.indexOf('XXXX')>-1) return;
     var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(s);
     window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;
-    gtag('js',new Date());gtag('config',GA_ID,{anonymize_ip:true,cookie_expires:34128000});
+    gtag('js',new Date());gtag('config',GA_ID,{anonymize_ip:true,cookie_expires:34128000,page_location:location.origin+location.pathname,page_referrer:''});
   }
   function hide(){banner.classList.remove('show');}
 

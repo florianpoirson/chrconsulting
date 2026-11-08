@@ -32,6 +32,6 @@
   var q=new URLSearchParams(location.search).get('commande');
   if(q&&/\/plan-de-maitrise-sanitaire\/telechargement\//.test(location.pathname)){
     var k='chr_ga_pms_'+q,done=false;try{done=!!localStorage.getItem(k);localStorage.setItem(k,'1');}catch(x){}
-    if(!done)ev('purchase',{transaction_id:q,value:50,currency:'EUR',items:[{item_name:'Plan de maîtrise sanitaire',price:50,quantity:1}]});
+    if(!done)ev('purchase',{page_location:location.origin+location.pathname,transaction_id:q,value:50,currency:'EUR',items:[{item_name:'Plan de maîtrise sanitaire',price:50,quantity:1}]});
   }
 })();
