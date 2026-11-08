@@ -237,11 +237,16 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 .cb-accept:hover{background:var(--ciel)}
 .cb-refuse{background:transparent;color:#fff;border-color:rgba(159,178,217,.5)}
 .cb-refuse:hover{border-color:#fff}
-@media(max-width:560px){.cb-inner{flex-direction:column;align-items:flex-start}.cb-actions{width:100%}.cb-btn{flex:1}}.faq-sec{background:var(--ciel-2,#F4F8FF);padding:clamp(3.5rem,7vw,5.5rem) 0}
-.faq-list{margin-top:2.4rem;display:grid;gap:.7rem;max-width:880px}
+@media(max-width:560px){.cb-inner{flex-direction:column;align-items:flex-start}.cb-actions{width:100%}.cb-btn{flex:1}}.faq-sec{background:#fff;padding:1.2rem 0;border-top:1px solid var(--ligne)}
+.faq-all>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:600;letter-spacing:.04em;color:var(--gris);padding:.4rem 0}
+.faq-all>summary::-webkit-details-marker{display:none}
+.faq-all>summary:hover{color:var(--roi)}
+.faq-all>summary svg{width:11px;height:11px;transition:transform .25s}
+.faq-all[open]>summary svg{transform:rotate(180deg)}
+.faq-list{margin:1rem 0 1.5rem;display:grid;gap:.7rem;max-width:880px}
 .faq-list details{border:1px solid var(--ligne);border-radius:14px;background:#fff;transition:border-color .25s}
 .faq-list details[open]{border-color:var(--azur-clair)}
-.faq-list summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.05rem 1.5rem;font-family:var(--display);font-size:1.08rem;color:var(--marine)}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 1.2rem;font-family:var(--display);font-size:.98rem;color:var(--marine)}
 .faq-list summary::-webkit-details-marker{display:none}
 .faq-list summary:hover,.faq-list details[open] summary{color:var(--roi)}
 .faq-list summary svg{width:13px;height:13px;flex:none;color:var(--azur);transition:transform .25s}
@@ -879,15 +884,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
   </div>
 </section>
 
-<section class="faq-sec" id="faq">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">FAQ</span>
-      <h2 class="section-title">Your questions, answered.</h2>
-    </div>
-    <div class="faq-list reveal"><details><summary>How can I get support to open a restaurant?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>CHR Consulting supports café, restaurant and hotel openings end to end with its Ouverture 360 offer: concept and feasibility, pre-opening, opening, then stabilisation with ratio tracking over the first weeks.</p></details><details><summary>How much does a restaurant consultant cost?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Consulting is tailored, scoped after a first conversation. For quick advice, the Expert session (1 hour by video with Florian Poirson) costs €150 incl. VAT. Online solutions have public prices: free ratio calculator, food safety plan generator at €50 excl. VAT, management software at €150 excl. VAT per month and per venue with a 7-day free trial.</p></details><details><summary>My restaurant is not profitable enough: where do I start?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>With an audit: P&L and ratios (cost of goods, payroll, prime cost, rent), purchasing, organisation and menu, followed by a prioritised action plan. The free ratio calculator gives a first diagnosis in minutes.</p></details><details><summary>Do you design professional kitchens?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Yes: sizing for the menu and volumes, layout and forward flow, workstation ergonomics, equipment selection, utilities and extraction, specifications and follow-up until handover.</p></details><details><summary>Do you advise property companies and investors?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Yes: F&B programming of an asset, choice of concept and operator, technical specifications, audit of operating tenants and sustainable rent.</p></details><details><summary>Where does CHR Consulting work?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>The firm is based in Paris and works across France and in Morocco, on site or remotely, in French and English.</p></details></div>
-  </div>
-</section>
+
 <section class="cta-final" id="contact">
   <div class="wrap">
     <span class="eyebrow on-dark">Let’s talk about your project</span>
@@ -912,6 +909,11 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
       <span class="sep">·</span>
       <a href="https://fr.pinterest.com/chrconsultingfr" target="_blank" rel="noopener" title="Pinterest — CHR Consulting">Pinterest</a>
     </div>
+  </div>
+</section>
+<section class="faq-sec" id="faq">
+  <div class="wrap">
+    <details class="faq-all"><summary>Frequently asked questions<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="faq-list"><details><summary>How can I get support to open a restaurant?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>CHR Consulting supports café, restaurant and hotel openings end to end with its Ouverture 360 offer: concept and feasibility, pre-opening, opening, then stabilisation with ratio tracking over the first weeks.</p></details><details><summary>How much does a restaurant consultant cost?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Consulting is tailored, scoped after a first conversation. For quick advice, the Expert session (1 hour by video with Florian Poirson) costs €150 incl. VAT. Online solutions have public prices: free ratio calculator, food safety plan generator at €50 excl. VAT, management software at €150 excl. VAT per month and per venue with a 7-day free trial.</p></details><details><summary>My restaurant is not profitable enough: where do I start?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>With an audit: P&L and ratios (cost of goods, payroll, prime cost, rent), purchasing, organisation and menu, followed by a prioritised action plan. The free ratio calculator gives a first diagnosis in minutes.</p></details><details><summary>Do you design professional kitchens?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Yes: sizing for the menu and volumes, layout and forward flow, workstation ergonomics, equipment selection, utilities and extraction, specifications and follow-up until handover.</p></details><details><summary>Do you advise property companies and investors?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Yes: F&B programming of an asset, choice of concept and operator, technical specifications, audit of operating tenants and sustainable rent.</p></details><details><summary>Where does CHR Consulting work?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>The firm is based in Paris and works across France and in Morocco, on site or remotely, in French and English.</p></details></div></details>
   </div>
 </section>
 
