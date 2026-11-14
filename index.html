@@ -266,6 +266,17 @@ body.splash-on{overflow:hidden}
 .faq-list details p a{color:var(--roi);font-weight:600;white-space:nowrap}
 @media(max-width:560px){.faq-list summary{padding:1rem 1.15rem}.faq-list details p{padding:0 1.15rem 1.1rem}}
 .exp h3 a.exp-link{color:inherit;text-decoration:none;border-bottom:1px solid var(--azur-clair);transition:color .2s,border-color .2s}.exp h3 a.exp-link:hover{color:var(--roi);border-bottom-color:var(--roi)}
+section.tools-strip{padding:0}
+.tools-strip{background:var(--ciel-2,#F4F8FF);border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne)}
+.tools-strip .wrap{display:flex;align-items:center;gap:1.4rem 2rem;flex-wrap:wrap;padding-block:1.6rem}
+.ts-label{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--azur)}
+.ts-links{display:flex;flex-wrap:wrap;gap:.5rem}
+.ts-links a{display:inline-block;padding:.5rem .95rem;border:1px solid var(--ligne);border-radius:999px;background:#fff;color:var(--marine);font-size:.88rem;font-weight:500;text-decoration:none;transition:border-color .2s,color .2s}
+.ts-links a:hover{border-color:var(--roi);color:var(--roi)}
+.ts-all{margin-left:auto;color:var(--roi);font-weight:600;font-size:.9rem;text-decoration:none;white-space:nowrap}
+.book-link{margin-top:1.6rem}.book-link a{color:var(--roi);font-weight:600;text-decoration:none;border-bottom:1px solid var(--azur-clair)}.book-link a:hover{border-bottom-color:var(--roi)}
+.cta-alt{margin-top:1.4rem;font-size:.9rem;color:#C9D6EE}.cta-alt a{color:#fff}
+@media(max-width:700px){.ts-all{margin-left:0}}
 </style>
 <script type="application/ld+json">
 {
@@ -658,7 +669,7 @@ body.splash-on{overflow:hidden}
     <p class="sub reveal">Nous accompagnons investisseurs, porteurs de projet et exploitants dans l'audit, l'ouverture, le développement et la performance de leurs cafés, hôtels et restaurants — en France et à l'international.</p>
     <div class="hero-actions reveal">
       <a href="#contact" class="btn btn-primary">Discuter de votre projet <span class="arw">→</span></a>
-      <a href="#expertises" class="btn btn-ghost">Nos expertises</a>
+      <a href="#rdv-expert" class="btn btn-ghost">Rendez-vous expert · 150&nbsp;€</a>
     </div>
     <div class="hero-meta reveal">
       <div class="cell"><div class="num" data-count="14" data-suffix=" ans">14 ans</div><div class="lab">De cabinet indépendant</div></div>
@@ -863,8 +874,8 @@ body.splash-on{overflow:hidden}
       <div class="reveal">
         <span class="eyebrow">Ressource · Bientôt disponible</span>
         <h2 class="section-title">La méthode, mise par écrit.</h2>
-        <p class="lead" style="margin-top:1.3rem">Un guide pratique de gestion F&amp;B qui condense la méthode du cabinet : lire son établissement par ses ratios, maîtriser ses coûts et décider sur des chiffres — pas sur des impressions.</p>
-        <div class="hero-actions"><a href="/magazine/#inscription" class="btn btn-primary dark">Être informé de la sortie <span class="arw">→</span></a></div>
+        <p class="lead" style="margin-top:1.3rem">Un guide pratique de gestion F&amp;B qui condense la méthode du cabinet : lire son établissement par ses ratios, maîtriser ses coûts et décider sur des chiffres — pas sur des impressions. </p>
+        <p class="book-link"><a href="/magazine/#inscription">Être informé de la sortie <span class="arw">→</span></a></p>
       </div>
     </div>
   </div>
@@ -904,44 +915,11 @@ body.splash-on{overflow:hidden}
     </div>
   </div>
 </section>
-<section class="tools-sec" id="outils"><span id="calculateur" aria-hidden="true"></span>
+<section class="tools-strip" id="outils"><span id="calculateur" aria-hidden="true"></span>
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Outils &amp; solutions</span>
-      <h2 class="section-title">Des outils opérationnels, issus du terrain.</h2>
-      <p class="lead" style="margin-top:1.2rem">Des solutions pour gagner du temps, sécuriser l’exploitation et piloter votre performance. La méthode CHR Consulting, à portée de main.</p>
-    </div>
-    <div class="tools-grid reveal">
-      <a class="tool" href="https://app.chrconsulting.fr/decouvrir"><span class="tool-badge">7 jours d’essai</span>
-        <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17a8 8 0 1 1 16 0"/><path d="M12 17l4-5"/><path d="M8 20h8"/></svg></span>
-        <span class="tool-tag">Pilotage · 150 € HT/mois</span>
-        <h3>Outil de pilotage</h3>
-        <p>Prime Cost, food cost, masse salariale, achats, fiches techniques et équipe : un seul outil pour savoir chaque jour où vous en êtes.</p>
-        <span class="tool-cta">Découvrir l’outil <span class="arw">→</span></span>
-      </a>
-      <a class="tool" href="/ratios/">
-        <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><rect x="6" y="11" width="3" height="6" rx=".6"/><rect x="11" y="7" width="3" height="10" rx=".6"/><rect x="16" y="4" width="3" height="13" rx=".6"/></svg></span>
-        <span class="tool-tag">Gestion · Gratuit</span>
-        <h3>Diagnostic ratios</h3>
-        <p>Coût matières, masse salariale, loyer, marge : situez vos ratios face aux standards du métier en deux minutes.</p>
-        <span class="tool-cta">Faire le diagnostic <span class="arw">→</span></span>
-      </a>
-      <a class="tool" href="/plan-de-maitrise-sanitaire/"><span class="tool-badge">Nouveau</span>
-        <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 12.5l2.2 2.2 4.8-4.8"/></svg></span>
-        <span class="tool-tag">Hygiène · HACCP · 50 € HT</span>
-        <h3>Générateur de PMS</h3>
-        <p>Votre plan de maîtrise sanitaire complet et personnalisé, avec ses protocoles, prêt à présenter lors d’un contrôle.</p>
-        <span class="tool-cta">Créer mon PMS <span class="arw">→</span></span>
-      </a>
-      <a class="tool" href="/lightspeed/">
-        <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="13" height="10" rx="1.6"/><path d="M9.5 14v3M6 20h7"/><rect x="17.5" y="9" width="4" height="11" rx="1"/><path d="M19.5 17.5h0"/></svg></span>
-        <span class="tool-tag">Caisse · Lightspeed</span>
-        <h3>Système de caisse</h3>
-        <p>Une caisse Lightspeed installée et paramétrée par un expert de l’exploitation, au service de votre performance.</p>
-        <span class="tool-cta">Découvrir l’offre <span class="arw">→</span></span>
-      </a>
-    </div>
-    <div class="tools-more reveal"><a href="/outils/">Voir tous les outils et solutions</a></div>
+    <span class="ts-label">Outils en ligne</span>
+    <nav class="ts-links" aria-label="Outils en ligne"><a href="https://app.chrconsulting.fr/decouvrir">Outil de pilotage</a><a href="/ratios/">Diagnostic ratios</a><a href="/plan-de-maitrise-sanitaire/">Générateur de PMS</a><a href="/lightspeed/">Système de caisse</a></nav>
+    <a class="ts-all" href="/outils/">Tous les outils <span class="arw">→</span></a>
   </div>
 </section>
 
@@ -952,7 +930,7 @@ body.splash-on{overflow:hidden}
     <h2>Votre prochaine ouverture mérite un opérationnel.</h2>
     <p class="lead on-dark">Un projet de création, un établissement à redresser, une ouverture à sécuriser ? Échangeons — le premier rendez-vous est sans engagement.</p>
     <div class="hero-actions">
-      <a href="https://wa.me/33679894512?text=Bonjour%20CHR%20Consulting,%20je%20souhaite%20échanger%20sur%20mon%20projet." class="btn btn-primary" target="_blank" rel="noopener">Échanger sur WhatsApp <span class="arw">→</span></a>
+      <a href="https://wa.me/33679894512?text=Bonjour%20CHR%20Consulting,%20je%20souhaite%20échanger%20sur%20mon%20projet." class="btn btn-primary" target="_blank" rel="noopener">Discuter de votre projet <span class="arw">→</span></a>
       <button
         data-cal-namespace="entretien-expert"
         data-cal-link="chrconsultingparis/entretien-expert"
@@ -960,10 +938,10 @@ body.splash-on{overflow:hidden}
         class="btn btn-ghost"
         style="border:1px solid rgba(159,178,217,.45);color:#fff;background:transparent;cursor:pointer;font-family:inherit"
       >
-        Réserver un entretien expert <span class="arw">→</span>
+        Rendez-vous expert · 150&nbsp;€ <span class="arw">→</span>
       </button>
-      <a href="mailto:contact@chrconsulting.fr?subject=Demande%20de%20présentation%20—%20CHR%20Consulting" class="btn btn-ghost">Écrire un email</a>
     </div>
+    <p class="cta-alt">Vous préférez l’e-mail&nbsp;? <a href="mailto:contact@chrconsulting.fr?subject=Demande%20de%20présentation%20—%20CHR%20Consulting">contact@chrconsulting.fr</a></p>
     <div class="cta-socials">
       <span>Suivre CHR Consulting&nbsp;:</span>
       <a href="https://www.linkedin.com/company/chr-consulting-sas/" target="_blank" rel="noopener" title="LinkedIn — CHR Consulting">LinkedIn</a>
