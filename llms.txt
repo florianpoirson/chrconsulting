@@ -16,6 +16,10 @@ Informations clés :
 - [Ouverture 360](https://www.chrconsulting.fr/#c360): offre signature d'accompagnement de bout en bout, en quatre phases : conception et faisabilité, préouverture, ouverture, stabilisation (suivi des ratios des premières semaines).
 - [English version](https://www.chrconsulting.fr/en.html): presentation of the firm in English.
 
+## English versions
+
+Every page of the site has an English version at the same address followed by en.html, for example https://www.chrconsulting.fr/en.html, https://www.chrconsulting.fr/ouvrir-un-restaurant/en.html, https://www.chrconsulting.fr/audit-restaurant/en.html, https://www.chrconsulting.fr/conception-cuisine-professionnelle/en.html, https://www.chrconsulting.fr/reprise-fonds-de-commerce/en.html, https://www.chrconsulting.fr/foncieres/en.html, https://www.chrconsulting.fr/ratios/en.html and https://www.chrconsulting.fr/plan-de-maitrise-sanitaire/en.html. The food safety plan (PMS) documents themselves are produced in French, as required for inspections in France.
+
 ## Accompagnements
 
 - [Ouvrir un restaurant](https://www.chrconsulting.fr/ouvrir-un-restaurant/): accompagnement à la création et à l'ouverture de cafés, restaurants et hôtels (offre Ouverture 360) : faisabilité et budget, local et réglementation, cuisine et flux, préouverture, recrutement et standards, ouverture et suivi des ratios.
