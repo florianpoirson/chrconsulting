@@ -253,4 +253,40 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.chrconsulting.fr/confidentialite/en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chrconsulting.fr/confidentialite/"/>
   </url>
+  <url>
+    <loc>https://www.chrconsulting.fr/expertises/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/expertises/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chrconsulting.fr/expertises/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chrconsulting.fr/expertises/"/>
+  </url>
+  <url>
+    <loc>https://www.chrconsulting.fr/expertises/en.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/expertises/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chrconsulting.fr/expertises/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chrconsulting.fr/expertises/"/>
+  </url>
+  <url>
+    <loc>https://www.chrconsulting.fr/cabinet/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/cabinet/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chrconsulting.fr/cabinet/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chrconsulting.fr/cabinet/"/>
+  </url>
+  <url>
+    <loc>https://www.chrconsulting.fr/cabinet/en.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.chrconsulting.fr/cabinet/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chrconsulting.fr/cabinet/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chrconsulting.fr/cabinet/"/>
+  </url>
 </urlset>

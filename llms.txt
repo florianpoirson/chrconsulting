@@ -22,6 +22,8 @@ Every page of the site has an English version at the same address followed by en
 
 ## Accompagnements
 
+- [Expertises](https://www.chrconsulting.fr/expertises/): les douze domaines d'intervention du cabinet (audit, réglementation, création et ouverture, rentabilité, achats, recrutement, conception de cuisine, image, pilotage, développement, reprise, formation).
+- [Le cabinet](https://www.chrconsulting.fr/cabinet/): Florian Poirson, fondateur, plus de 25 ans de direction et d'ouverture d'établissements ; réseau de consultants indépendants partout en France et à l'étranger.
 - [Ouvrir un restaurant](https://www.chrconsulting.fr/ouvrir-un-restaurant/): accompagnement à la création et à l'ouverture de cafés, restaurants et hôtels (offre Ouverture 360) : faisabilité et budget, local et réglementation, cuisine et flux, préouverture, recrutement et standards, ouverture et suivi des ratios.
 - [Audit de restaurant](https://www.chrconsulting.fr/audit-restaurant/): diagnostic de rentabilité (compte d'exploitation, ratios, prime cost), achats et food cost, masse salariale et organisation, carte et prix, expérience client, plan d'actions priorisé.
 - [Conception de cuisine professionnelle](https://www.chrconsulting.fr/conception-cuisine-professionnelle/): dimensionnement, implantation et marche en avant, ergonomie, équipements, fluides et extraction, suivi jusqu'à la réception.

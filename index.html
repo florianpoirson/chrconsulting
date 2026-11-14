@@ -300,6 +300,11 @@ section.proof+section{padding-top:clamp(3.5rem,6vw,5rem)}
 .proof-press a:hover{opacity:1;color:var(--roi)}
 @media(max-width:900px){.proof-grid{grid-template-columns:1fr;gap:2.2rem}}
 @media(max-width:480px){.proof-stats{grid-template-columns:1fr}}
+.proof-intro{display:grid;grid-template-columns:150px 1fr;gap:1.8rem;align-items:start}
+.proof-photo{margin:0;border-radius:14px;overflow:hidden;box-shadow:0 18px 40px -24px rgba(15,47,99,.45)}
+.proof-photo img{display:block;width:100%;height:auto}
+.proof-grid{align-items:start!important}
+@media(max-width:560px){.proof-intro{grid-template-columns:1fr}.proof-photo{max-width:220px}}
 </style>
 <script type="application/ld+json">
 {
@@ -446,7 +451,7 @@ section.proof+section{padding-top:clamp(3.5rem,6vw,5rem)}
           "itemOffered": {
             "@type": "Service",
             "name": "Fonds de commerce & valorisation",
-              "url": "https://www.chrconsulting.fr/reprise-fonds-de-commerce/"
+            "url": "https://www.chrconsulting.fr/reprise-fonds-de-commerce/"
           }
         },
         {
@@ -567,7 +572,8 @@ section.proof+section{padding-top:clamp(3.5rem,6vw,5rem)}
         "Food cost",
         "Prime cost",
         "Masse salariale"
-      ]
+      ],
+      "image": "https://www.chrconsulting.fr/assets/florian-poirson.webp"
     },
     {
       "@type": "WebSite",
@@ -782,11 +788,14 @@ section.proof+section{padding-top:clamp(3.5rem,6vw,5rem)}
 <section class="proof" id="confiance">
   <div class="wrap">
     <div class="proof-grid">
-      <div class="reveal">
+      <div class="proof-intro reveal">
+        <figure class="proof-photo"><img src="/assets/florian-poirson.webp" alt="Florian Poirson, fondateur de CHR Consulting" width="800" height="1000" loading="lazy"></figure>
+        <div>
         <span class="eyebrow">Pourquoi nous faire confiance</span>
         <h2 class="section-title">Un cabinet dirigé par un opérationnel.</h2>
         <p class="lead" style="margin-top:1.2rem">Florian Poirson a dirigé et ouvert des établissements pendant plus de vingt-cinq ans, en France et au Maroc, avant de fonder CHR Consulting en 2012. Il s'appuie sur un réseau de consultants indépendants, partout en France et à l'étranger.</p>
         <p class="proof-links"><a href="/cabinet/">Le cabinet et son fondateur <span class="arw">→</span></a><a href="/references/">Nos références <span class="arw">→</span></a></p>
+      </div>
       </div>
       <div class="proof-stats reveal">
         <div><b>40+</b><span>projets accompagnés : cafés, restaurants, hôtels, cuisines centrales</span></div>
