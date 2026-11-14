@@ -255,6 +255,17 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
 .faq-list details p a{color:var(--roi);font-weight:600;white-space:nowrap}
 @media(max-width:560px){.faq-list summary{padding:1rem 1.15rem}.faq-list details p{padding:0 1.15rem 1.1rem}}
 .exp h3 a.exp-link{color:inherit;text-decoration:none;border-bottom:1px solid var(--azur-clair);transition:color .2s,border-color .2s}.exp h3 a.exp-link:hover{color:var(--roi);border-bottom-color:var(--roi)}
+section.tools-strip{padding:0}
+.tools-strip{background:var(--ciel-2,#F4F8FF);border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne)}
+.tools-strip .wrap{display:flex;align-items:center;gap:1.4rem 2rem;flex-wrap:wrap;padding-block:1.6rem}
+.ts-label{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--azur)}
+.ts-links{display:flex;flex-wrap:wrap;gap:.5rem}
+.ts-links a{display:inline-block;padding:.5rem .95rem;border:1px solid var(--ligne);border-radius:999px;background:#fff;color:var(--marine);font-size:.88rem;font-weight:500;text-decoration:none;transition:border-color .2s,color .2s}
+.ts-links a:hover{border-color:var(--roi);color:var(--roi)}
+.ts-all{margin-left:auto;color:var(--roi);font-weight:600;font-size:.9rem;text-decoration:none;white-space:nowrap}
+.book-link{margin-top:1.6rem}.book-link a{color:var(--roi);font-weight:600;text-decoration:none;border-bottom:1px solid var(--azur-clair)}.book-link a:hover{border-bottom-color:var(--roi)}
+.cta-alt{margin-top:1.4rem;font-size:.9rem;color:#C9D6EE}.cta-alt a{color:#fff}
+@media(max-width:700px){.ts-all{margin-left:0}}
 </style>
 <script type="application/ld+json">
 {
@@ -601,7 +612,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
     <p class="sub reveal">We support investors, project owners and operators in the audit, opening, development and performance of their cafés, hotels and restaurants — in France and internationally.</p>
     <div class="hero-actions reveal">
       <a href="#contact" class="btn btn-primary">Discuss your project <span class="arw">→</span></a>
-      <a href="#expertises" class="btn btn-ghost">Our expertise</a>
+      <a href="#rdv-expert" class="btn btn-ghost">Expert session · €150</a>
     </div>
     <div class="hero-meta reveal">
       <div class="cell"><div class="num" data-count="14" data-suffix=" years">14 years</div><div class="lab">As an independent firm</div></div>
@@ -807,7 +818,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
         <span class="eyebrow">Resource · Coming soon</span>
         <h2 class="section-title">The method, in writing.</h2>
         <p class="lead" style="margin-top:1.3rem">A practical F&amp;B management guide that distils the firm’s method: reading your venue through its ratios, controlling costs and deciding on numbers — not impressions.</p>
-        <div class="hero-actions"><a href="/magazine/en.html#inscription" class="btn btn-primary dark">Get notified at release <span class="arw">→</span></a></div>
+        <p class="book-link"><a href="/magazine/en.html#inscription">Get notified at release <span class="arw">→</span></a></p>
       </div>
     </div>
   </div>
@@ -848,44 +859,11 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
   </div>
 </section>
 
-<section class="tools-sec" id="outils"><span id="calculateur" aria-hidden="true"></span>
+<section class="tools-strip" id="outils"><span id="calculateur" aria-hidden="true"></span>
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Tools &amp; solutions</span>
-      <h2 class="section-title">Operational tools, born in the field.</h2>
-      <p class="lead" style="margin-top:1.2rem">Solutions to save time, secure your operations and drive your performance. The CHR Consulting method, at your fingertips.</p>
-    </div>
-    <div class="tools-grid reveal">
-      <a class="tool" href="https://app.chrconsulting.fr/decouvrir"><span class="tool-badge">FR</span>
-        <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17a8 8 0 1 1 16 0"/><path d="M12 17l4-5"/><path d="M8 20h8"/></svg></span>
-        <span class="tool-tag">Management · €150 excl. VAT/month</span>
-        <h3>Management software</h3>
-        <p>Prime cost, food cost, payroll, purchasing, recipes and team: one tool that tells you every day where you stand. Software in French.</p>
-        <span class="tool-cta">Discover the software <span class="arw">→</span></span>
-      </a>
-      <a class="tool" href="/ratios/en.html">
-        <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><rect x="6" y="11" width="3" height="6" rx=".6"/><rect x="11" y="7" width="3" height="10" rx=".6"/><rect x="16" y="4" width="3" height="13" rx=".6"/></svg></span>
-        <span class="tool-tag">Management · Free</span>
-        <h3>Ratio diagnosis</h3>
-        <p>Food cost, payroll, rent, margin: see how your ratios compare with industry standards in two minutes.</p>
-        <span class="tool-cta">Run the diagnosis <span class="arw">→</span></span>
-      </a>
-      <a class="tool" href="/plan-de-maitrise-sanitaire/en.html"><span class="tool-badge">FR</span>
-        <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 12.5l2.2 2.2 4.8-4.8"/></svg></span>
-        <span class="tool-tag">Food safety · €50 excl. VAT</span>
-        <h3>Food safety plan generator</h3>
-        <p>A complete, tailored food safety plan (PMS) with its protocols, ready to show during an inspection. Tool in French.</p>
-        <span class="tool-cta">Create my plan <span class="arw">→</span></span>
-      </a>
-      <a class="tool" href="/lightspeed/en.html">
-        <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="13" height="10" rx="1.6"/><path d="M9.5 14v3M6 20h7"/><rect x="17.5" y="9" width="4" height="11" rx="1"/><path d="M19.5 17.5h0"/></svg></span>
-        <span class="tool-tag">POS · Lightspeed</span>
-        <h3>POS system</h3>
-        <p>A Lightspeed POS installed and configured by an operations expert, built to drive your performance.</p>
-        <span class="tool-cta">Discover the offer <span class="arw">→</span></span>
-      </a>
-    </div>
-    <div class="tools-more reveal"><a href="/outils/en.html">See all tools and solutions</a></div>
+    <span class="ts-label">Online tools</span>
+    <nav class="ts-links" aria-label="Online tools"><a href="https://app.chrconsulting.fr/decouvrir">Management software</a><a href="/ratios/en.html">Ratio diagnosis</a><a href="/plan-de-maitrise-sanitaire/en.html">Food safety plan generator</a><a href="/lightspeed/en.html">POS system</a></nav>
+    <a class="ts-all" href="/outils/en.html">All tools <span class="arw">→</span></a>
   </div>
 </section>
 
@@ -896,7 +874,7 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
     <h2>Your next opening deserves an operator.</h2>
     <p class="lead on-dark">A new venture, a venue to turn around, an opening to secure? Let’s talk — the first meeting is free and without commitment.</p>
     <div class="hero-actions">
-      <a href="https://wa.me/33679894512?text=Hello%20CHR%20Consulting%2C%20I%20would%20like%20to%20discuss%20my%20project." class="btn btn-primary" target="_blank" rel="noopener">Message us on WhatsApp <span class="arw">→</span></a>
+      <a href="https://wa.me/33679894512?text=Hello%20CHR%20Consulting%2C%20I%20would%20like%20to%20discuss%20my%20project." class="btn btn-primary" target="_blank" rel="noopener">Discuss your project <span class="arw">→</span></a>
       <button
         data-cal-namespace="entretien-expert"
         data-cal-link="chrconsultingparis/entretien-expert"
@@ -904,10 +882,10 @@ footer{background:var(--marine);color:#fff;padding:4rem 0 2.5rem}
         class="btn btn-ghost"
         style="border:1px solid rgba(159,178,217,.45);color:#fff;background:transparent;cursor:pointer;font-family:inherit"
       >
-        Book an expert consultation <span class="arw">→</span>
+        Expert session · €150 <span class="arw">→</span>
       </button>
-      <a href="mailto:contact@chrconsulting.fr?subject=Introduction%20request%20—%20CHR%20Consulting" class="btn btn-ghost">Send an email</a>
     </div>
+    <p class="cta-alt">Prefer email? <a href="mailto:contact@chrconsulting.fr?subject=Introduction%20request%20—%20CHR%20Consulting">contact@chrconsulting.fr</a></p>
     <div class="cta-socials">
       <span>Follow CHR Consulting:</span>
       <a href="https://www.linkedin.com/company/chr-consulting-sas/" target="_blank" rel="noopener" title="LinkedIn — CHR Consulting">LinkedIn</a>
