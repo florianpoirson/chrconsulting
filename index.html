@@ -277,6 +277,29 @@ section.tools-strip{padding:0}
 .book-link{margin-top:1.6rem}.book-link a{color:var(--roi);font-weight:600;text-decoration:none;border-bottom:1px solid var(--azur-clair)}.book-link a:hover{border-bottom-color:var(--roi)}
 .cta-alt{margin-top:1.4rem;font-size:.9rem;color:#C9D6EE}.cta-alt a{color:#fff}
 @media(max-width:700px){.ts-all{margin-left:0}}
+.services{background:#fff}
+.services .tools-grid{margin-top:2.6rem}
+.svc-more{margin-top:2rem;font-size:.95rem;color:var(--gris);line-height:1.8}
+.svc-more a{color:var(--marine);text-decoration:none;border-bottom:1px solid var(--ligne)}
+.svc-more a:hover{color:var(--roi);border-bottom-color:var(--roi)}
+.svc-more a.all{color:var(--roi);font-weight:600;border:0;white-space:nowrap}
+.c360-more{margin-top:1.8rem}.c360-more a{color:#fff;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}.c360-more a:hover{border-bottom-color:#fff}
+.proof{background:var(--ciel-2)}
+section.proof{padding-bottom:clamp(3.5rem,6vw,5rem)}
+section.proof+section{padding-top:clamp(3.5rem,6vw,5rem)}
+.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.proof-links{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:1.6rem}
+.proof-links a{color:var(--roi);font-weight:600;text-decoration:none}
+.proof-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ligne);border:1px solid var(--ligne);border-radius:14px;overflow:hidden}
+.proof-stats div{background:#fff;padding:1.6rem 1.5rem}
+.proof-stats b{display:block;font-family:var(--display);font-weight:400;font-size:2rem;color:var(--marine);line-height:1.1}
+.proof-stats span{display:block;margin-top:.45rem;font-size:.86rem;color:var(--gris);line-height:1.5}
+.proof-press{margin-top:2.6rem;display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.6rem;padding-top:1.6rem;border-top:1px solid var(--ligne)}
+.proof-press span{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--azur)}
+.proof-press a{font-family:var(--display);font-size:1.05rem;color:var(--marine);text-decoration:none;opacity:.85}
+.proof-press a:hover{opacity:1;color:var(--roi)}
+@media(max-width:900px){.proof-grid{grid-template-columns:1fr;gap:2.2rem}}
+@media(max-width:480px){.proof-stats{grid-template-columns:1fr}}
 </style>
 <script type="application/ld+json">
 {
@@ -639,6 +662,7 @@ section.tools-strip{padding:0}
 <script src="/assets/nav.js" defer></script>
 </head>
 <body>
+<script>(function(){var m={approche:'/expertises/#approche',expertises:'/expertises/','savoir-faire':'/expertises/#savoir-faire',fondateur:'/cabinet/',references:'/cabinet/#parcours',outils:'/outils/',calculateur:'/ratios/',impact:'#confiance'};var h=location.hash.slice(1);if(m[h])location.replace(m[h]);})();</script>
 <div id="splash" aria-hidden="true">
   <img class="s-logo" src="/assets/logo-chr.webp" alt="">
   <div class="s-word">CHR Consulting</div>
@@ -651,14 +675,14 @@ section.tools-strip{padding:0}
       <span class="txt"><span class="mark">CHR Consulting</span><span class="sub">Paris · depuis 2012</span></span>
     </a>
     <nav class="nav-links">
-      <a href="#approche">Approche</a><div class="dd"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-outils">Outils &amp; solutions <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dd-panel" id="dd-outils"><a href="https://app.chrconsulting.fr/decouvrir"><b>Outil de pilotage</b><span>Prime Cost, achats, fiches techniques et équipe, au quotidien</span></a><a href="/ratios/"><b>Diagnostic ratios</b><span>Vos ratios clés comparés aux standards du secteur</span></a><a href="/plan-de-maitrise-sanitaire/"><b>Générateur de PMS</b><span>Votre plan de maîtrise sanitaire, prêt en quelques minutes</span></a><a href="/lightspeed/"><b>Système de caisse</b><span>Un système de caisse Lightspeed installé et paramétré par un expert</span></a><a href="/magazine/"><b>Le magazine</b><span>Repères, ratios et cas concrets, chaque trimestre</span></a><a class="dd-all" href="/outils/">Tous les outils →</a></div></div><a href="#c360">Ouverture 360</a><a href="#rdv-expert">Rendez-vous expert</a><a href="#fondateur">Le cabinet</a>
+      <div class="dd"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-expertises">Expertises <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dd-panel" id="dd-expertises"><a href="/ouvrir-un-restaurant/"><b>Ouvrir un restaurant</b><span>Ouverture 360 : du concept au premier service</span></a><a href="/audit-restaurant/"><b>Audit &amp; rentabilité</b><span>Comprendre pourquoi un établissement ne gagne pas assez</span></a><a href="/conception-cuisine-professionnelle/"><b>Conception de cuisine</b><span>Dimensionnement, implantation, équipements</span></a><a href="/reprise-fonds-de-commerce/"><b>Reprise de fonds de commerce</b><span>Audit, bail et valorisation avant d’acheter</span></a><a href="/foncieres/"><b>Foncières &amp; investisseurs</b><span>Programmation F&amp;B et choix de l’exploitant</span></a><a class="dd-all" href="/expertises/">Toutes les expertises →</a></div></div><div class="dd"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-outils">Outils &amp; solutions <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dd-panel" id="dd-outils"><a href="https://app.chrconsulting.fr/decouvrir"><b>Outil de pilotage</b><span>Prime Cost, achats, fiches techniques et équipe, au quotidien</span></a><a href="/ratios/"><b>Diagnostic ratios</b><span>Vos ratios clés comparés aux standards du secteur</span></a><a href="/plan-de-maitrise-sanitaire/"><b>Générateur de PMS</b><span>Votre plan de maîtrise sanitaire, prêt en quelques minutes</span></a><a href="/lightspeed/"><b>Système de caisse</b><span>Une caisse Lightspeed installée et paramétrée par un expert</span></a><a class="dd-all" href="/outils/">Tous les outils →</a></div></div><div class="dd"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-cabinet">Le cabinet <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dd-panel" id="dd-cabinet"><a href="/cabinet/"><b>Florian Poirson &amp; le cabinet</b><span>Un cabinet dirigé par un opérationnel, depuis 2012</span></a><a href="/references/"><b>Références</b><span>Établissements et groupes accompagnés</span></a><a href="/references/#presse"><b>Presse &amp; interventions</b><span>Ils parlent de nous</span></a><a href="/magazine/"><b>Le magazine</b><span>Repères, ratios et cas concrets, chaque trimestre</span></a></div></div><a href="/#rdv-expert">Rendez-vous expert</a>
     </nav>
     <a href="#contact" class="nav-cta">Contact</a>
     <a href="/en.html" class="lang-switch" title="English version" aria-label="Switch to English">EN</a>
     <button class="m-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="m-menu"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav class="m-menu" id="m-menu" aria-label="Menu"><a href="#approche">Approche</a><div class="m-group"><p>Outils &amp; solutions</p><a href="https://app.chrconsulting.fr/decouvrir">Outil de pilotage<span>Prime Cost, achats, fiches techniques et équipe, au quotidien</span></a><a href="/ratios/">Diagnostic ratios<span>Vos ratios clés comparés aux standards du secteur</span></a><a href="/plan-de-maitrise-sanitaire/">Générateur de PMS<span>Votre plan de maîtrise sanitaire, prêt en quelques minutes</span></a><a href="/lightspeed/">Système de caisse<span>Un système de caisse Lightspeed installé et paramétré par un expert</span></a><a href="/magazine/">Le magazine<span>Repères, ratios et cas concrets, chaque trimestre</span></a><a href="/outils/">Tous les outils →</a></div><a href="#c360">Ouverture 360</a><a href="#rdv-expert">Rendez-vous expert</a><a href="#fondateur">Le cabinet</a><a class="m-cta" href="#contact">Contact</a></nav>
+<nav class="m-menu" id="m-menu" aria-label="Menu"><div class="m-group"><p>Expertises</p><a href="/ouvrir-un-restaurant/">Ouvrir un restaurant<span>Ouverture 360 : du concept au premier service</span></a><a href="/audit-restaurant/">Audit &amp; rentabilité<span>Comprendre pourquoi un établissement ne gagne pas assez</span></a><a href="/conception-cuisine-professionnelle/">Conception de cuisine<span>Dimensionnement, implantation, équipements</span></a><a href="/reprise-fonds-de-commerce/">Reprise de fonds de commerce<span>Audit, bail et valorisation avant d’acheter</span></a><a href="/foncieres/">Foncières &amp; investisseurs<span>Programmation F&amp;B et choix de l’exploitant</span></a><a href="/expertises/">Toutes les expertises →</a></div><div class="m-group"><p>Outils &amp; solutions</p><a href="https://app.chrconsulting.fr/decouvrir">Outil de pilotage<span>Prime Cost, achats, fiches techniques et équipe, au quotidien</span></a><a href="/ratios/">Diagnostic ratios<span>Vos ratios clés comparés aux standards du secteur</span></a><a href="/plan-de-maitrise-sanitaire/">Générateur de PMS<span>Votre plan de maîtrise sanitaire, prêt en quelques minutes</span></a><a href="/lightspeed/">Système de caisse<span>Une caisse Lightspeed installée et paramétrée par un expert</span></a><a href="/outils/">Tous les outils →</a></div><div class="m-group"><p>Le cabinet</p><a href="/cabinet/">Florian Poirson &amp; le cabinet<span>Un cabinet dirigé par un opérationnel, depuis 2012</span></a><a href="/references/">Références<span>Établissements et groupes accompagnés</span></a><a href="/references/#presse">Presse &amp; interventions<span>Ils parlent de nous</span></a><a href="/magazine/">Le magazine<span>Repères, ratios et cas concrets, chaque trimestre</span></a></div><a href="/#rdv-expert">Rendez-vous expert</a><a class="m-cta" href="/#contact">Contact</a></nav>
 
 <section class="hero" id="top">
   <div class="hero-bg"></div>
@@ -666,16 +690,16 @@ section.tools-strip{padding:0}
   <div class="hero-inner wrap">
     <span class="hero-badge"><span class="dot"></span>Cabinet indépendant · Paris · depuis 2012</span>
     <h1 class="reveal">De l'idée à l'exploitation <em>rentable</em>.</h1>
-    <p class="sub reveal">Nous accompagnons investisseurs, porteurs de projet et exploitants dans l'audit, l'ouverture, le développement et la performance de leurs cafés, hôtels et restaurants — en France et à l'international.</p>
+    <p class="sub reveal">Cabinet de conseil en cafés, hôtels et restaurants. Nous aidons investisseurs, porteurs de projet et exploitants à ouvrir, auditer et rendre rentables leurs établissements, en France et à l'international.</p>
     <div class="hero-actions reveal">
       <a href="#contact" class="btn btn-primary">Discuter de votre projet <span class="arw">→</span></a>
       <a href="#rdv-expert" class="btn btn-ghost">Rendez-vous expert · 150&nbsp;€</a>
     </div>
     <div class="hero-meta reveal">
-      <div class="cell"><div class="num" data-count="14" data-suffix=" ans">14 ans</div><div class="lab">De cabinet indépendant</div></div>
       <div class="cell"><div class="num" data-count="25" data-suffix="+">25+</div><div class="lab">Ans d'expérience terrain</div></div>
-      <div class="cell"><div class="num" data-count="12">12</div><div class="lab">Domaines d'expertise</div></div>
-      <div class="cell"><div class="num nc">Int'l</div><div class="lab">France &amp; international</div></div>
+      <div class="cell"><div class="num" data-count="40" data-suffix="+">40+</div><div class="lab">Projets accompagnés</div></div>
+      <div class="cell"><div class="num" data-count="500" data-suffix="+">500+</div><div class="lab">Emplois soutenus</div></div>
+      <div class="cell"><div class="num" data-count="14" data-suffix=" ans">14 ans</div><div class="lab">De cabinet indépendant</div></div>
     </div>
   </div>
 </section>
@@ -687,97 +711,43 @@ section.tools-strip{padding:0}
   </div>
 </div>
 
-<section class="approche" id="approche">
+<section class="services" id="expertises-cles">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Notre approche</span>
-      <h2 class="section-title">L'expertise opérationnelle,<br>là où les projets se jouent vraiment.</h2>
+      <span class="eyebrow">Ce que nous faisons</span>
+      <h2 class="section-title">Quatre façons de vous accompagner.</h2>
     </div>
-    <div class="approche-grid">
-      <div class="approche-copy reveal">
-        <p>La plupart des projets CHR ne butent pas sur l'idée, mais sur son exécution : des flux mal pensés, une cuisine sous-dimensionnée, un P&amp;L qui dérape, des équipes recrutées trop tard.</p>
-        <p><strong>CHR Consulting fait le pont entre le concept et l'exploitation réelle.</strong> Nous intervenons sur le terrain — audit, conception, ouverture, organisation, rentabilité — avec une exigence : que l'établissement ouvre à l'heure, tienne ses standards et gagne de l'argent.</p>
-        <p>Une méthode issue de plus de vingt-cinq ans de direction d'exploitations premium, à fort volume et multi-sites, en France comme à l'international.</p>
-      </div>
-      <div class="pillars reveal">
-        <div class="pillar"><div class="idx">01</div><div><h4>Obligation de moyens, culture du résultat</h4><p>Un engagement clair, un périmètre défini, et une exigence tournée vers la performance concrète de votre exploitation.</p></div></div>
-        <div class="pillar"><div class="idx">02</div><div><h4>Sur le terrain, pas sur PowerPoint</h4><p>Ouvertures, SOP, recrutement, mise en place des standards : nous accompagnons l'exécution, pas seulement la réflexion.</p></div></div>
-        <div class="pillar"><div class="idx">03</div><div><h4>Le chiffre comme boussole</h4><p>Ratios, P&amp;L, food &amp; labour cost. Chaque décision est reliée à son impact sur la rentabilité.</p></div></div>
-        <div class="pillar"><div class="idx">04</div><div><h4>Un réseau de métier</h4><p>Cuisinistes, équipementiers, artisans, talents : un écosystème mobilisable, avec un cadre commercial transparent.</p></div></div>
-      </div>
+    <div class="tools-grid reveal">
+      <a class="tool" href="/ouvrir-un-restaurant/">
+        <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><path d="M6 20V10l6-5 6 5v10"/><path d="M10 20v-5h4v5"/></svg></span>
+        <span class="tool-tag">Création · Ouverture 360</span>
+        <h3>Ouvrir un restaurant</h3>
+        <p>Du concept au premier service : faisabilité, cuisine, préouverture, équipes et suivi des premières semaines.</p>
+        <span class="tool-cta">Préparer l’ouverture <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/audit-restaurant/">
+        <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><rect x="6" y="11" width="3" height="6" rx=".6"/><rect x="11" y="7" width="3" height="10" rx=".6"/><rect x="16" y="13" width="3" height="4" rx=".6"/></svg></span>
+        <span class="tool-tag">Diagnostic · Rentabilité</span>
+        <h3>Audit &amp; rentabilité</h3>
+        <p>Chiffres, achats, masse salariale, carte et organisation : pourquoi votre établissement ne gagne pas assez, et quoi faire.</p>
+        <span class="tool-cta">Lancer un audit <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/conception-cuisine-professionnelle/">
+        <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M4 13h16"/><path d="M8 6c0-1 1-1 1-2M12 6c0-1 1-1 1-2M16 6c0-1 1-1 1-2"/></svg></span>
+        <span class="tool-tag">Conception · Cuisine</span>
+        <h3>Conception de cuisine</h3>
+        <p>Dimensionnement, implantation, marche en avant, équipements et extraction : une cuisine efficace dès le premier service.</p>
+        <span class="tool-cta">Concevoir la cuisine <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/lightspeed/">
+        <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="13" height="10" rx="1.6"/><path d="M9.5 14v3M6 20h7"/><rect x="17.5" y="9" width="3.5" height="11" rx="1"/></svg></span>
+        <span class="tool-tag">Caisse · Lightspeed</span>
+        <h3>Système de caisse</h3>
+        <p>Une caisse Lightspeed installée et paramétrée par un expert de l'exploitation, au service de votre performance.</p>
+        <span class="tool-cta">Découvrir l’offre <span class="arw">→</span></span>
+      </a>
     </div>
-  </div>
-</section>
-
-<section class="impact" id="impact">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow on-dark">Notre impact</span>
-      <h2 class="section-title on-dark">Un partenaire opérationnel<br>qui crée de la valeur.</h2>
-      <p class="lead on-dark" style="margin-top:1.2rem">Depuis 2012, CHR Consulting transforme des idées en établissements viables : des ouvertures réussies, des équipes recrutées, du chiffre d'affaires généré et de la rentabilité durable.</p>
-    </div>
-    <div class="impact-grid reveal">
-      <div class="istat">
-        <div class="inum"><span class="val" data-count="40" data-suffix="+">40+</span></div>
-        <div class="ilab">Projets accompagnés</div>
-        <div class="idesc">Cafés, restaurants, hôtels et cuisines centrales, en création comme en développement.</div>
-      </div>
-      <div class="istat">
-        <div class="inum"><span class="val" data-count="500" data-suffix="+">500+</span></div>
-        <div class="ilab">Emplois soutenus</div>
-        <div class="idesc">Recrutement, structuration et montée en compétences des équipes accompagnées.</div>
-      </div>
-      <div class="istat">
-        <div class="inum"><span class="val" data-count="50" data-suffix=" M€+">50 M€+</span></div>
-        <div class="ilab">De CA généré &amp; piloté</div>
-        <div class="idesc">Chiffre d'affaires développé au sein des exploitations pilotées et conseillées.</div>
-      </div>
-      <div class="istat">
-        <div class="inum"><span class="val" data-count="14" data-suffix=" ans">14 ans</span></div>
-        <div class="ilab">D'expertise indépendante</div>
-        <div class="idesc">Un cabinet ancré dans le métier, sur le terrain, depuis 2012.</div>
-      </div>
-    </div>
-    <p class="impact-note reveal">Le compteur de projets s'enrichit à chaque nouvelle mission. <a href="#contact">Le prochain pourrait être le vôtre.</a></p>
-  </div>
-</section>
-
-<section class="expertises" id="expertises">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Domaines d'intervention</span>
-      <h2 class="section-title">Une expertise, douze terrains.</h2>
-      <p class="lead" style="margin-top:1.2rem">De l'audit au pilotage quotidien, nous couvrons l'ensemble de la chaîne de valeur d'un établissement CHR.</p>
-    </div>
-    <div class="exp-grid reveal">
-      <div class="exp"><div class="no">01 · Diagnostic</div><h3><a class="exp-link" href="/audit-restaurant/">Audit &amp; conseil</a></h3><p>État des lieux opérationnel et économique, identification des leviers et plan d'actions priorisé.</p></div>
-      <div class="exp"><div class="no">02 · Cadre</div><h3>Réglementation &amp; normes</h3><p>ERP, hygiène, sécurité, accessibilité : anticipation et mise en conformité des obligations.</p></div>
-      <div class="exp"><div class="no">03 · Lancement</div><h3><a class="exp-link" href="/ouvrir-un-restaurant/">Création &amp; ouverture</a></h3><p>Cadrage du projet, rétroplanning et coordination des préouvertures jusqu'au jour J.</p></div>
-      <div class="exp"><div class="no">04 · Finance</div><h3>Rentabilité &amp; P&amp;L</h3><p>Construction du compte d'exploitation, prévisionnel et suivi des marges par centre de profit.</p></div>
-      <div class="exp"><div class="no">05 · Achats</div><h3>Gestion des achats</h3><p>Food cost, référencement fournisseurs, négociation et maîtrise des coûts matières.</p></div>
-      <div class="exp"><div class="no">06 · Humain</div><h3>Management &amp; recrutement</h3><p>Organisation, SOP, recrutement, formation et structuration managériale des équipes.</p></div>
-      <div class="exp"><div class="no">07 · Cuisine</div><h3><a class="exp-link" href="/conception-cuisine-professionnelle/">Conception &amp; aménagement</a></h3><p>Dimensionnement, implantation, flux et cahier des charges technique des cuisines professionnelles.</p></div>
-      <div class="exp"><div class="no">08 · Image</div><h3>Image &amp; communication</h3><p>Positionnement, cohérence de marque et expérience client au service de l'attractivité.</p></div>
-      <div class="exp"><div class="no">09 · Pilotage</div><h3>Gestion &amp; tableaux de bord</h3><p>Indicateurs, reporting et outils pour décider sur des données fiables au quotidien.</p></div>
-      <div class="exp"><div class="no">10 · Croissance</div><h3>Développement &amp; financement</h3><p>Repositionnement d'enseignes, structuration de la croissance et appui au financement.</p></div>
-      <div class="exp"><div class="no">11 · Actif</div><h3><a class="exp-link" href="/reprise-fonds-de-commerce/">Fonds de commerce &amp; valorisation</a></h3><p>Préparation à la cession ou à l'acquisition, valorisation et sécurisation de l'opération.</p></div>
-      <div class="exp"><div class="no">12 · Formation</div><h3>Hygiène &amp; permis d'exploitation</h3><p>Formations réglementaires HACCP et permis d'exploitation — formateur agréé.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="gallery" id="savoir-faire">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Le savoir-faire en images</span>
-      <h2 class="section-title">L'opérationnel, concrètement.</h2>
-      <p class="lead" style="margin-top:1.2rem">Data de pilotage, conception de cuisine, optimisation des flux : quelques-uns des leviers que nous activons sur le terrain.</p>
-    </div>
-    <div class="gal-grid reveal">
-      <figure class="gal-item"><div class="gal-img"><img loading="lazy" src="/assets/galerie-tableaux-de-bord.webp" alt="Tableaux de bord et pilotage de la performance"></div><figcaption><strong>Tableaux de bord</strong><span>Piloter l'activité en temps réel, décider sur des données fiables.</span></figcaption></figure>
-      <figure class="gal-item"><div class="gal-img"><img loading="lazy" src="/assets/galerie-conception-cuisine.webp" alt="Conception de cuisine professionnelle"></div><figcaption><strong>Conception de cuisine</strong><span>Des cuisines performantes, fonctionnelles et durables.</span></figcaption></figure>
-      <figure class="gal-item"><div class="gal-img"><img loading="lazy" src="/assets/galerie-optimisation-flux.webp" alt="Optimisation des flux de production et de service"></div><figcaption><strong>Optimisation des flux</strong><span>Des circulations fluides pour la rapidité et la rentabilité.</span></figcaption></figure>
-    </div>
+    <p class="svc-more reveal">Aussi&nbsp;: <a href="/reprise-fonds-de-commerce/">reprise de fonds de commerce</a> · <a href="/foncieres/">foncières &amp; investisseurs</a> · <a href="/expertises/#formation">formations hygiène et permis d'exploitation</a> · <a href="/outils/">outils en ligne</a> — <a class="all" href="/expertises/">Toutes nos expertises <span class="arw">→</span></a></p>
   </div>
 </section>
 
@@ -794,6 +764,7 @@ section.tools-strip{padding:0}
           <div class="it"><span class="k">03</span><div><b>Ouverture</b> — <span>soft opening, formation des équipes, mise en place des standards.</span></div></div>
           <div class="it"><span class="k">04</span><div><b>Stabilisation</b> — <span>suivi des ratios, ajustements et pilotage des premières semaines.</span></div></div>
         </div>
+        <p class="c360-more"><a href="/ouvrir-un-restaurant/">Tout savoir sur l'accompagnement à l'ouverture <span class="arw">→</span></a></p>
       </div>
       <div class="c360-visual reveal">
         <div class="orbit">
@@ -808,92 +779,34 @@ section.tools-strip{padding:0}
   </div>
 </section>
 
-<section class="founder" id="fondateur">
+<section class="proof" id="confiance">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Le cabinet</span>
-      <h2 class="section-title">Un cabinet dirigé par un opérationnel.</h2>
-    </div>
-    <div class="founder-grid">
-      <div class="founder-card reveal">
-        <span class="seal">Depuis 2012</span>
-        <div class="name">Florian Poirson</div>
-        <div class="role">Fondateur · Conseil opérationnel en hôtellerie &amp; restauration</div>
-        <p class="bio">Plus de vingt-cinq ans en direction d'exploitations premium — ouvertures, gros volumes, multi-sites — de la France au Maroc. Reconnu pour combiner excellence opérationnelle, qualité de service et performance économique.</p>
-        <div class="founder-stats">
-          <div class="s"><div class="v">25 ans+</div><div class="l">D'expérience terrain</div></div>
-          <div class="s"><div class="v">12</div><div class="l">Domaines d'expertise</div></div>
-          <div class="s"><div class="v">Multi-sites</div><div class="l">Groupes &amp; enseignes</div></div>
-          <div class="s"><div class="v">France + Int'l</div><div class="l">Paris · Alpes · Maroc</div></div>
-        </div>
-      </div>
-      <div class="founder-copy reveal">
-        <p class="lead">De la direction de groupes multi-sites à l'ouverture de concepts premium, un parcours entièrement construit sur le terrain de l'exploitation.</p>
-        <div class="cred">
-          <div class="c"><span class="b">—</span><div><strong>Création</strong> — <em>conception et ouverture de concepts, du cadrage à la première assiette servie.</em></div></div>
-          <div class="c"><span class="b">—</span><div><strong>Accompagnement</strong> — <em>direction d'exploitations premium, repositionnement et redressement de la rentabilité.</em></div></div>
-          <div class="c"><span class="b">—</span><div><strong>Multi-sites &amp; international</strong> — <em>pilotage de groupes en France, dans les Alpes et au Maroc.</em></div></div>
-          <div class="c"><span class="b">—</span><div><strong>Formation</strong> — <em>formateur agréé CCIP-IDF · certifié ICPF &amp; PSI · Master Management Opérationnel.</em></div></div>
-          <div class="c"><span class="b">—</span><div><strong>Entrepreneuriat</strong> — <em>fondateur d'un cabinet indépendant et auteur de « Piloter un restaurant par les ratios ».</em></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="refs" id="references">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Un parcours</span>
-      <h2 class="section-title">Vingt-cinq ans d'exploitation,<br>au service de vos projets.</h2>
-      <p class="lead" style="margin-top:1.2rem">Un parcours construit sur le terrain, à la croisée de la création, de l'accompagnement, de la formation et de l'entrepreneuriat — en France comme à l'international.</p>
-    </div>
-    <div class="refs-marquee reveal">
-      <div class="r"><div class="n">Création</div><div class="c">Concepts &amp; ouvertures</div></div>
-      <div class="r"><div class="n">Accompagnement</div><div class="c">Direction d'exploitations</div></div>
-      <div class="r"><div class="n">Formation</div><div class="c">Formateur agréé</div></div>
-      <div class="r"><div class="n">Entrepreneuriat</div><div class="c">Cabinet indépendant</div></div>
-      <div class="r"><div class="n">International</div><div class="c">France · Alpes · Maroc</div></div>
-      <div class="r"><div class="n">Multi-sites</div><div class="c">Groupes &amp; enseignes</div></div>
-      <div class="r"><div class="n">Multi-domaines</div><div class="c">Café · Restaurant · Hôtel</div></div>
-      <div class="r"><div class="n">Premium</div><div class="c">Haut de gamme &amp; volume</div></div>
-    </div>
-    <p class="refs-note reveal">Historique complet des missions et actualités du cabinet sur <a href="https://www.linkedin.com/company/chr-consulting-sas/" target="_blank" rel="noopener" style="color:var(--roi);font-style:normal">LinkedIn</a>.</p>
-  </div>
-</section>
-
-<section class="book">
-  <div class="wrap">
-    <div class="book-inner">
-      <div class="book-cover reveal">
-        <span class="book-badge">Bientôt disponible</span>
-        <div><div class="ba">CHR Consulting</div></div>
-        <div class="bt">Piloter un restaurant par les ratios</div>
-        <div class="bl">Florian Poirson</div>
-      </div>
+    <div class="proof-grid">
       <div class="reveal">
-        <span class="eyebrow">Ressource · Bientôt disponible</span>
-        <h2 class="section-title">La méthode, mise par écrit.</h2>
-        <p class="lead" style="margin-top:1.3rem">Un guide pratique de gestion F&amp;B qui condense la méthode du cabinet : lire son établissement par ses ratios, maîtriser ses coûts et décider sur des chiffres — pas sur des impressions. </p>
-        <p class="book-link"><a href="/magazine/#inscription">Être informé de la sortie <span class="arw">→</span></a></p>
+        <span class="eyebrow">Pourquoi nous faire confiance</span>
+        <h2 class="section-title">Un cabinet dirigé par un opérationnel.</h2>
+        <p class="lead" style="margin-top:1.2rem">Florian Poirson a dirigé et ouvert des établissements pendant plus de vingt-cinq ans, en France et au Maroc, avant de fonder CHR Consulting en 2012. Formateur agréé, certifié ICPF &amp; PSI.</p>
+        <p class="proof-links"><a href="/cabinet/">Le cabinet et son fondateur <span class="arw">→</span></a><a href="/references/">Nos références <span class="arw">→</span></a></p>
+      </div>
+      <div class="proof-stats reveal">
+        <div><b>40+</b><span>projets accompagnés : cafés, restaurants, hôtels, cuisines centrales</span></div>
+        <div><b>500+</b><span>emplois soutenus par le recrutement et la structuration des équipes</span></div>
+        <div><b>50 M€+</b><span>de chiffre d'affaires généré et piloté</span></div>
+        <div><b>Depuis 2012</b><span>un cabinet indépendant, ancré dans le métier</span></div>
       </div>
     </div>
+    <p class="proof-press reveal"><span>Ils en parlent</span><a href="/references/#presse">Zenchef</a><a href="/references/#presse">Tendances Restauration</a><a href="/references/#presse">GHR</a><a href="/references/#presse">Au Cœur du CHR</a><a href="/references/#presse">Tactill</a></p>
   </div>
 </section>
+
 <section class="expertises" id="rdv-expert">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Entretien expert</span>
       <h2 class="section-title">Rendez-vous expert — Un problème, 1 heure, des réponses.</h2>
-      <p class="lead" style="margin-top:1.2rem">Besoin d'un avis extérieur rapide, sans engager un accompagnement complet&nbsp;? Le Rendez-vous expert est un échange individuel d'1 heure avec Florian Poirson, pour traiter n'importe quel sujet lié à votre projet ou à votre exploitation — audit express, second avis sur un choix stratégique, déblocage d'une situation, préparation d'ouverture, lecture de vos ratios. Vous posez le sujet, nous l'approfondissons ensemble.</p>
+      <p class="lead" style="margin-top:1.2rem">Un avis extérieur rapide, sans engager un accompagnement complet&nbsp;: une heure en visio avec Florian Poirson sur le sujet de votre choix (audit express, second avis, préparation d'ouverture, lecture de vos ratios). Sans engagement, réservation en ligne.</p>
     </div>
 
-    <div class="exp-grid exp-grid-4 reveal">
-      <div class="exp"><div class="no" style="font-size:1rem;font-weight:700;letter-spacing:normal;text-transform:none;color:var(--marine);margin-bottom:.5rem">01 - Sur mesure</div><p>Vous choisissez le sujet&nbsp;; l'échange s'adapte à votre problématique, pas l'inverse.</p></div>
-      <div class="exp"><div class="no" style="font-size:1rem;font-weight:700;letter-spacing:normal;text-transform:none;color:var(--marine);margin-bottom:.5rem">02 - Sans engagement</div><p>Une session ponctuelle, sans suite obligatoire ni proposition commerciale imposée.</p></div>
-      <div class="exp"><div class="no" style="font-size:1rem;font-weight:700;letter-spacing:normal;text-transform:none;color:var(--marine);margin-bottom:.5rem">03 - Actionnable</div><p>Vous repartez avec des pistes concrètes, pas des généralités.</p></div>
-      <div class="exp"><div class="no" style="font-size:1rem;font-weight:700;letter-spacing:normal;text-transform:none;color:var(--marine);margin-bottom:.5rem">04 - Immédiat</div><p>Réservation en ligne, créneau confirmé instantanément.</p></div>
-    </div>
 
     <div class="founder-stats reveal" style="grid-template-columns:repeat(4,1fr);border-top:none;margin-top:3rem;padding-top:0">
       <div class="s"><div class="v">1h</div><div class="l">Durée</div></div>
@@ -915,14 +828,6 @@ section.tools-strip{padding:0}
     </div>
   </div>
 </section>
-<section class="tools-strip" id="outils"><span id="calculateur" aria-hidden="true"></span>
-  <div class="wrap">
-    <span class="ts-label">Outils en ligne</span>
-    <nav class="ts-links" aria-label="Outils en ligne"><a href="https://app.chrconsulting.fr/decouvrir">Outil de pilotage</a><a href="/ratios/">Diagnostic ratios</a><a href="/plan-de-maitrise-sanitaire/">Générateur de PMS</a><a href="/lightspeed/">Système de caisse</a></nav>
-    <a class="ts-all" href="/outils/">Tous les outils <span class="arw">→</span></a>
-  </div>
-</section>
-
 
 <section class="cta-final" id="contact">
   <div class="wrap">
@@ -952,7 +857,7 @@ section.tools-strip{padding:0}
 </section>
 <section class="faq-sec" id="faq">
   <div class="wrap">
-    <details class="faq-all"><summary>Questions fréquentes<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="faq-list"><details><summary>Comment se faire accompagner pour ouvrir un restaurant ?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>CHR Consulting accompagne les créations de cafés, restaurants et hôtels de bout en bout avec l'offre Ouverture 360 : conception et faisabilité, préouverture, ouverture, puis stabilisation avec le suivi des ratios des premières semaines. <a href="/ouvrir-un-restaurant/">L'accompagnement à l'ouverture →</a></p></details><details><summary>Combien coûte un consultant en restauration ?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Le conseil est construit sur mesure, après un premier échange, selon le périmètre et la durée de la mission. Pour un avis rapide, le Rendez-vous expert (1 heure en visio avec Florian Poirson) coûte 150 € TTC. Les solutions en ligne ont des tarifs publics : diagnostic des ratios gratuit, générateur de plan de maîtrise sanitaire à 50 € HT, outil de pilotage à 150 € HT par mois et par établissement avec 7 jours d'essai gratuit. <a href="/#rdv-expert">Réserver un Rendez-vous expert →</a></p></details><details><summary>Mon restaurant ne gagne pas assez d'argent : par où commencer ?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Par un audit : lecture du compte d'exploitation et des ratios (matières, masse salariale, prime cost, loyer), des achats, de l'organisation et de la carte, puis un plan d'actions priorisé. Le calculateur de ratios gratuit donne un premier diagnostic en quelques minutes. <a href="/audit-restaurant/">L'audit de restaurant →</a></p></details><details><summary>Concevez-vous des cuisines professionnelles ?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Oui : dimensionnement selon la carte et les volumes, implantation et marche en avant, ergonomie des postes, choix des équipements, fluides et extraction, cahier des charges et suivi jusqu'à la réception. <a href="/conception-cuisine-professionnelle/">La conception de cuisine →</a></p></details><details><summary>Accompagnez-vous les foncières et les investisseurs ?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Oui : programmation F&B d'un actif, choix du concept et de l'exploitant, cahier des charges technique, audit des locataires exploitants et loyer soutenable. <a href="/foncieres/">Foncières & investisseurs →</a></p></details><details><summary>Où intervient CHR Consulting ?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Le cabinet est basé à Paris et intervient en Île-de-France, en régions et au Maroc, sur place ou à distance.</p></details><details><summary>Qui est derrière CHR Consulting ?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Florian Poirson, fondateur du cabinet en 2012, après plus de 25 ans de direction et d'ouverture d'établissements en France et à l'international. Il est aussi formateur certifié en hygiène alimentaire et permis d'exploitation. <a href="/#fondateur">Le cabinet →</a></p></details></div></details>
+    <details class="faq-all"><summary>Questions fréquentes<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="faq-list"><details><summary>Comment se faire accompagner pour ouvrir un restaurant ?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>CHR Consulting accompagne les créations de cafés, restaurants et hôtels de bout en bout avec l'offre Ouverture 360 : conception et faisabilité, préouverture, ouverture, puis stabilisation avec le suivi des ratios des premières semaines. <a href="/ouvrir-un-restaurant/">L'accompagnement à l'ouverture →</a></p></details><details><summary>Combien coûte un consultant en restauration ?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Le conseil est construit sur mesure, après un premier échange, selon le périmètre et la durée de la mission. Pour un avis rapide, le Rendez-vous expert (1 heure en visio avec Florian Poirson) coûte 150 € TTC. Les solutions en ligne ont des tarifs publics : diagnostic des ratios gratuit, générateur de plan de maîtrise sanitaire à 50 € HT, outil de pilotage à 150 € HT par mois et par établissement avec 7 jours d'essai gratuit. <a href="/#rdv-expert">Réserver un Rendez-vous expert →</a></p></details><details><summary>Mon restaurant ne gagne pas assez d'argent : par où commencer ?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Par un audit : lecture du compte d'exploitation et des ratios (matières, masse salariale, prime cost, loyer), des achats, de l'organisation et de la carte, puis un plan d'actions priorisé. Le calculateur de ratios gratuit donne un premier diagnostic en quelques minutes. <a href="/audit-restaurant/">L'audit de restaurant →</a></p></details><details><summary>Concevez-vous des cuisines professionnelles ?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Oui : dimensionnement selon la carte et les volumes, implantation et marche en avant, ergonomie des postes, choix des équipements, fluides et extraction, cahier des charges et suivi jusqu'à la réception. <a href="/conception-cuisine-professionnelle/">La conception de cuisine →</a></p></details><details><summary>Accompagnez-vous les foncières et les investisseurs ?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Oui : programmation F&B d'un actif, choix du concept et de l'exploitant, cahier des charges technique, audit des locataires exploitants et loyer soutenable. <a href="/foncieres/">Foncières & investisseurs →</a></p></details><details><summary>Où intervient CHR Consulting ?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Le cabinet est basé à Paris et intervient en Île-de-France, en régions et au Maroc, sur place ou à distance.</p></details><details><summary>Qui est derrière CHR Consulting ?<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p>Florian Poirson, fondateur du cabinet en 2012, après plus de 25 ans de direction et d'ouverture d'établissements en France et à l'international. Il est aussi formateur certifié en hygiène alimentaire et permis d'exploitation. <a href="/cabinet/">Le cabinet →</a></p></details></div></details>
   </div>
 </section>
 
@@ -969,7 +874,7 @@ section.tools-strip{padding:0}
       </div>
       <div class="foot-col">
         <h5>Naviguer</h5>
-        <a href="#approche">Approche</a><a href="#expertises">Expertises</a><a href="#c360">Ouverture 360</a><a href="#fondateur">Le cabinet</a><a href="#references">Parcours</a><a href="/references/">Références</a><a href="/foncieres/">Foncières &amp; investisseurs</a>
+        <a href="/expertises/">Expertises</a><a href="/ouvrir-un-restaurant/">Ouvrir un restaurant</a><a href="/audit-restaurant/">Audit &amp; rentabilité</a><a href="/reprise-fonds-de-commerce/">Reprise de fonds de commerce</a><a href="/foncieres/">Foncières &amp; investisseurs</a><a href="/cabinet/">Le cabinet</a><a href="/references/">Références</a>
       </div>
       <div class="foot-col">
         <h5><a class="h5-link" href="/outils/">Outils &amp; solutions</a></h5>
