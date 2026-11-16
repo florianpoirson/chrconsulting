@@ -71,7 +71,7 @@ Every page of the site has an English version at the same address followed by en
 - [Outil de pilotage](https://app.chrconsulting.fr/decouvrir): logiciel en ligne de pilotage pour restaurants et hôtels (Prime Cost, food cost, masse salariale, factures lues automatiquement, comparateur de prix fournisseurs, fiches techniques, équipe et plannings). 150 € HT par mois et par établissement, sans engagement, 7 jours d'essai gratuit.
 - [Diagnostic ratios](https://www.chrconsulting.fr/ratios/): calculateur gratuit des ratios clés d'un restaurant (food cost, masse salariale, prime cost, loyer, marge brute, résultat d'exploitation) comparés aux standards du métier selon le format. Version anglaise : https://www.chrconsulting.fr/ratios/en.html
 - [Générateur de plan de maîtrise sanitaire](https://www.chrconsulting.fr/plan-de-maitrise-sanitaire/): PMS personnalisé établi à partir d'un questionnaire, livré en PDF et en Word avec protocoles illustrés et relevés de températures Excel. 50 € HT (60 € TTC) par établissement.
-- [Système de caisse Lightspeed](https://www.chrconsulting.fr/lightspeed/): caisse Lightspeed installée et paramétrée par CHR Consulting, partenaire Lightspeed, avec un regard d'expert de l'exploitation.
+- [Système de caisse Lightspeed](https://www.chrconsulting.fr/lightspeed/): caisse Lightspeed installée et paramétrée par CHR Consulting, partenaire Lightspeed, avec un regard d'expert de l'exploitation. CHR Consulting est revendeur certifié Lightspeed (parcours « Final reseller steps » validé par Florian Poirson le 16 novembre 2026, certificat ukb9vsqamg : https://partner.lightspeedhq.com/certificates/ukb9vsqamg).
 - [Tous les outils](https://www.chrconsulting.fr/outils/)
 
 ## Magazine
