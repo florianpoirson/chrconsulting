@@ -53,3 +53,47 @@
 @media(max-width:900px){.issue,.next-grid{grid-template-columns:1fr}.issue-cover{max-width:320px}}
 @media(max-width:560px){.next-topics .t{grid-template-columns:1fr;gap:.2rem}}
 .signup form[hidden],.signup .alt[hidden]{display:none}
+
+/* Cahiers de tendances */
+.mag-trends{background:var(--ciel-2,#F4F8FF);padding:clamp(3.5rem,7vw,6rem) 0;border-top:1px solid var(--ligne)}
+.tr-head{max-width:68ch}
+.tr-num{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gris);margin-top:1.2rem}
+.tr-head h2{font-family:var(--display);font-weight:400;font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.1;color:var(--marine);margin:.6rem 0 1rem}
+.tr-sign{font-size:.85rem;color:var(--gris);margin-top:.9rem;font-style:italic}
+.tr-figure{margin-top:2.4rem;display:grid;grid-template-columns:auto 1fr;grid-template-areas:"k k" "n p";gap:.4rem 2rem;align-items:center;background:linear-gradient(165deg,#0F2F63,#143A78 60%,#0F2F63);color:#fff;border-radius:16px;padding:clamp(1.6rem,4vw,2.4rem)}
+.tr-figure .k{grid-area:k;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--azur-clair)}
+.tr-figure .n{grid-area:n;font-family:var(--display);font-weight:400;font-size:clamp(3rem,7vw,4.6rem);line-height:1}
+.tr-figure p{grid-area:p;color:#DCE6F7;font-size:.95rem;max-width:62ch}
+.tr-list{margin-top:2.4rem;display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.trend{background:#fff;border:1px solid var(--ligne);border-radius:16px;padding:clamp(1.5rem,3vw,2.2rem);display:flex;flex-direction:column}
+.trend:first-child{grid-column:1/-1}
+.tr-tag{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--azur);display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.tr-tag b{font-family:var(--display);font-size:1.05rem;letter-spacing:.04em;color:var(--roi)}
+.tr-tag span{color:var(--marine);border:1px solid var(--ligne);border-radius:999px;padding:.2rem .6rem;letter-spacing:.08em}
+.trend h3{font-family:var(--display);font-weight:500;font-size:clamp(1.35rem,2.4vw,1.7rem);line-height:1.15;color:var(--marine);margin:.8rem 0 .9rem}
+.trend p{color:var(--encre);font-size:.95rem;margin-bottom:.8rem}
+.trend p strong{font-weight:600;color:var(--marine)}
+.trend .tr-sub{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--azur);margin:.6rem 0 .4rem}
+.trend ul{list-style:none;padding:0;margin:0 0 1.2rem;border-top:1px solid var(--ligne)}
+.trend li{font-size:.9rem;color:var(--gris);padding:.55rem 0;border-bottom:1px solid var(--ligne)}
+.trend li b{color:var(--encre);font-weight:600}
+.verdict{margin-top:auto !important;font-size:.9rem !important;color:var(--encre);border-radius:10px;padding:.9rem 1rem;background:var(--ciel)}
+.verdict span{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:999px;padding:.25rem .65rem;margin-right:.5rem;color:#fff}
+.v-int{background:var(--vert-bg,rgba(31,157,107,.12))}.v-int span{background:var(--vert,#1F9D6B)}
+.v-test{background:var(--orange-bg,rgba(217,138,43,.14))}.v-test span{background:var(--orange,#D98A2B)}
+.v-surv{background:var(--ciel)}.v-surv span{background:var(--azur)}
+.tr-out{margin-top:1.4rem;background:#fff;border:1px dashed var(--azur-clair,#9FB2D9);border-radius:16px;padding:clamp(1.5rem,3vw,2.2rem)}
+.tr-out h3{font-family:var(--display);font-weight:500;font-size:1.4rem;color:var(--marine);margin-bottom:.8rem}
+.tr-out ul{list-style:none;padding:0;margin:0}
+.tr-out li{font-size:.92rem;color:var(--gris);padding:.55rem 0;border-top:1px solid var(--ligne)}
+.tr-out li b{color:var(--encre);font-weight:600}
+.tr-cta{margin-top:2.4rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.2rem}
+.tr-cta p{font-size:1.05rem;color:var(--marine);max-width:52ch}
+.tr-sources{margin-top:2rem;font-size:.82rem;color:var(--gris)}
+.tr-sources summary{cursor:pointer;font-weight:600;color:var(--marine)}
+.tr-sources ul{margin:.8rem 0;padding-left:1.1rem}
+.tr-sources li{margin:.3rem 0}
+.tr-sources a{color:var(--roi);text-decoration:underline}
+.tr-next{margin-top:1.2rem;font-size:.85rem;color:var(--gris)}
+@media(max-width:900px){.tr-list{grid-template-columns:1fr}.tr-figure{grid-template-columns:1fr;grid-template-areas:"k" "n" "p"}}
+.mag-hero .mag-hero-trends{margin-top:1.4rem;font-size:.98rem}.mag-hero .mag-hero-trends a{color:#fff;text-decoration:underline;text-underline-offset:3px}

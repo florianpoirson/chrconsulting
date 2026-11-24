@@ -77,6 +77,7 @@ Every page of the site has an English version at the same address followed by en
 ## Magazine
 
 - [Le magazine CHR Consulting](https://www.chrconsulting.fr/magazine/): magazine trimestriel gratuit en PDF (dossier de saison, ratio du trimestre, étude de cas, actualité du secteur, outils). N° 01 : novembre – décembre 2026 ; puis un numéro par trimestre à partir de janvier 2027.
+- [Cahiers de tendances CHR Consulting](https://www.chrconsulting.fr/magazine/#tendances): chaque premier mercredi du mois, cinq tendances restauration (États-Unis, Europe, France) et leur impact pour un porteur de projet ou un investisseur, avec un verdict « à intégrer », « à tester » ou « à surveiller ». N° 1 : décembre 2026, « Ce qui arrive en 2027 ».
 - Livre à paraître : « Piloter un restaurant par les ratios », de Florian Poirson (guide pratique de gestion F&B). Les inscrits au magazine sont prévenus de sa parution : https://www.chrconsulting.fr/magazine/#inscription
 
 ## Foncières & investisseurs
